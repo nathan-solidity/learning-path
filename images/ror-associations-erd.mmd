@@ -1,0 +1,19 @@
+erDiagram
+    users ||--o{ posts : "has_many"
+    posts }o--|| users : "belongs_to"
+    posts ||--o{ comments : "has_many"
+    users ||--o{ comments : "has_many :through posts"
+    users {
+        int id PK
+        string name
+    }
+    posts {
+        int id PK
+        int user_id FK
+        string title
+    }
+    comments {
+        int id PK
+        int post_id FK
+        string body
+    }

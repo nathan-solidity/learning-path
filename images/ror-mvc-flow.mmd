@@ -1,0 +1,9 @@
+flowchart TB
+    U([Trình duyệt]) -->|"HTTP request — GET /posts"| R[Routes<br/>config/routes.rb]
+    R -->|"khớp route → chọn action"| C[Controller<br/>PostsController#index]
+    C -->|"gọi truy vấn"| M[Model<br/>Post ActiveRecord]
+    M -->|"SELECT ..."| DB[(Database)]
+    DB -->|"bản ghi"| M2[Model trả @posts]
+    M2 --> C2[Controller đưa dữ liệu cho view]
+    C2 -->|"render"| V[View<br/>index.html.erb]
+    V -->|"HTML response"| U

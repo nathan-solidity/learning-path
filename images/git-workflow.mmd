@@ -1,0 +1,18 @@
+flowchart LR
+    subgraph WD["🖥️ Working Directory"]
+        A["File dự án của bạn<br/>(thay đổi chưa theo dõi)"]
+    end
+    subgraph SA["📥 Staging Area"]
+        B["Thay đổi đã được<br/>đánh dấu để commit"]
+    end
+    subgraph LR2["📦 Local Repository"]
+        C["Thay đổi đã commit<br/>(.git ở máy bạn)"]
+    end
+    subgraph RR["☁️ Remote Repository (GitHub)"]
+        D["Thay đổi đã đẩy lên<br/>cho cả nhóm"]
+    end
+    A -->|"git add"| B
+    B -->|"git commit"| C
+    C -->|"git push"| D
+    D -.->|"git pull / fetch"| A
+    C -.->|"git checkout / restore"| A

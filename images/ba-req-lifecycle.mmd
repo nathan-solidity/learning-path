@@ -1,0 +1,15 @@
+stateDiagram-v2
+    [*] --> DeXuat: yêu cầu phát sinh
+    DeXuat --> PhanTich: elicit + làm rõ
+    PhanTich --> UuTien: prioritize (MoSCoW)
+    UuTien --> Chot: approve / sign-off
+    Chot --> TrienKhai: dev implement
+    TrienKhai --> Verify: QA + acceptance criteria
+    Verify --> Chot: chưa đạt → sửa
+    Verify --> DuyTri: đạt → maintain
+    DuyTri --> PhanTich: change request
+    DuyTri --> [*]
+    note right of Chot
+        Trace xuyên suốt:
+        yêu cầu ↔ spec ↔ code ↔ test
+    end note

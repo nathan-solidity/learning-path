@@ -1,0 +1,10 @@
+flowchart LR
+    subgraph B["TRƯỚC"]
+        w1["🖥️ WD: old.py"]
+        g1["Git: theo dõi old.py"]
+    end
+    subgraph A["SAU — git rm old.py"]
+        w2["🖥️ WD: (đã xóa file)"]
+        g2["Git: gỡ theo dõi (staged)"]
+    end
+    B ==>|"git rm old.py"| A

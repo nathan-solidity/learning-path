@@ -1,0 +1,20 @@
+flowchart TB
+    subgraph INNER["INNER JOIN"]
+        direction LR
+        note1["Chỉ giữ hàng KHỚP ở CẢ hai bảng.<br/>Khách không có đơn → bị loại."]
+    end
+    subgraph LEFT["LEFT JOIN"]
+        direction LR
+        note2["Giữ TẤT CẢ hàng bảng TRÁI.<br/>Không khớp bên phải → cột phải = NULL.<br/>Vd: liệt kê mọi khách kể cả chưa mua."]
+    end
+    subgraph RIGHT["RIGHT JOIN"]
+        direction LR
+        note3["Giữ TẤT CẢ hàng bảng PHẢI.<br/>Gương của LEFT JOIN."]
+    end
+    subgraph FULL["FULL OUTER JOIN"]
+        direction LR
+        note4["Giữ TẤT CẢ hàng cả hai bảng.<br/>Không khớp → NULL ở phía thiếu.<br/>(MySQL không hỗ trợ trực tiếp)"]
+    end
+    INNER --> LEFT --> RIGHT --> FULL
+    key["ON c.id = o.customer_id — nối qua khóa ngoại.<br/>Chọn loại JOIN theo: có cần giữ hàng không khớp không?"]
+    FULL -.-> key

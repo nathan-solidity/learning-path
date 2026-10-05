@@ -1,0 +1,10 @@
+flowchart LR
+    T["Transient<br/>(new, chưa quản lý)"]
+    M["Managed<br/>(trong Persistence Context,<br/>dirty checking tự UPDATE)"]
+    D["Detached<br/>(hết transaction,<br/>không còn theo dõi)"]
+    R["Removed<br/>(đánh dấu xoá)"]
+    T -->|"persist() / save()"| M
+    M -->|"transaction đóng"| D
+    D -->|"merge()"| M
+    M -->|"remove() / delete()"| R
+    R -->|"flush → DELETE"| DB[(DB)]

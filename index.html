@@ -1,0 +1,1934 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learning Path — Lộ trình học theo vai trò</title>
+<style>
+  :root {
+    --bg: #f5f6f8;
+    --panel: #ffffff;
+    --border: #e0e2e8;
+    --text: #1a1d24;
+    --muted: #6b7280;
+    --accent: #3b5fd9;
+    --accent-contrast: #ffffff;
+    --hover: #eef0f4;
+    --active-bg: #e6ebfb;
+    --input-bg: #ffffff;
+    --tag-bg: #eceef2;
+    --ok: #2e9e5b;
+    --ok-bg: #e6f6ec;
+    --track-line: #d3d7e0;
+  }
+  html.dark {
+    --bg: #0f1117;
+    --panel: #171a23;
+    --border: #2a2e3a;
+    --text: #e6e6e6;
+    --muted: #9aa0ac;
+    --accent: #5b8def;
+    --accent-contrast: #ffffff;
+    --hover: #20242f;
+    --active-bg: #1a2030;
+    --input-bg: #10131a;
+    --tag-bg: #2a2e3a;
+    --ok: #4cc781;
+    --ok-bg: #14301f;
+    --track-line: #333849;
+  }
+  @media (prefers-color-scheme: dark) {
+    html:not(.light) {
+      --bg: #0f1117; --panel: #171a23; --border: #2a2e3a; --text: #e6e6e6;
+      --muted: #9aa0ac; --accent: #5b8def; --accent-contrast: #ffffff;
+      --hover: #20242f; --active-bg: #1a2030; --input-bg: #10131a;
+      --tag-bg: #2a2e3a; --ok: #4cc781; --ok-bg: #14301f; --track-line: #333849;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    height: 100vh;
+    overflow: hidden;
+  }
+  button { font-family: inherit; }
+  a { color: var(--accent); }
+
+  /* Topbar */
+  .topbar {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 18px;
+    border-bottom: 1px solid var(--border);
+    background: var(--panel);
+  }
+  .topbar .brand { font-weight: 600; font-size: 15px; }
+  .topbar .spacer { flex: 1; }
+  .topbar .role-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 10px; border-radius: 999px;
+    background: var(--active-bg); color: var(--accent);
+    font-size: 13px; font-weight: 500;
+  }
+  .icon-btn {
+    height: 32px; padding: 0 10px;
+    border-radius: 8px; border: 1px solid var(--border);
+    background: transparent; color: var(--text); cursor: pointer;
+    font-size: 13px; display: inline-flex; align-items: center; gap: 6px;
+  }
+  .icon-btn:hover { background: var(--hover); }
+
+  /* Layout */
+  .layout { display: flex; height: calc(100vh - 53px); }
+  .roadmap {
+    width: 340px; flex-shrink: 0;
+    border-right: 1px solid var(--border);
+    background: var(--panel);
+    overflow-y: auto; padding: 16px;
+  }
+  .content { flex: 1; overflow-y: auto; padding: 28px 36px; }
+
+  /* Survey */
+  .survey-wrap {
+    height: calc(100vh - 53px); overflow-y: auto;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 48px 20px;
+  }
+  .survey-wrap h2 { font-size: 24px; margin: 0 0 6px; }
+  .survey-wrap p.sub { color: var(--muted); margin: 0 0 28px; text-align: center; }
+  .track-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px; width: 100%; max-width: 760px;
+  }
+  .track-card {
+    border: 1px solid var(--border); border-radius: 12px;
+    background: var(--panel); padding: 18px; cursor: pointer;
+    transition: border-color .15s, transform .1s;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .track-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .track-card .tc-icon { font-size: 30px; }
+  .track-card .tc-title { font-weight: 600; font-size: 16px; }
+  .track-card .tc-summary { color: var(--muted); font-size: 13px; line-height: 1.5; }
+  .track-card .tc-meta { color: var(--muted); font-size: 12px; margin-top: 4px; }
+  .track-card .tc-progress {
+    height: 6px; border-radius: 3px; background: var(--tag-bg); overflow: hidden; margin-top: 6px;
+  }
+  .track-card .tc-progress > div { height: 100%; background: var(--ok); width: 0; }
+  .track-card.is-group .tc-title::after {
+    content: "›"; margin-left: 6px; color: var(--muted); font-weight: 400;
+  }
+  .track-card .tc-badge {
+    display: inline-block; align-self: flex-start; margin-top: 2px;
+    padding: 2px 9px; border-radius: 999px; font-size: 11px; font-weight: 600;
+    background: var(--tag-bg); color: var(--muted); letter-spacing: .02em;
+  }
+  .track-card.coming {
+    cursor: default; opacity: .55;
+  }
+  .track-card.coming:hover { border-color: var(--border); transform: none; }
+
+  /* Back link (variant picker) */
+  .survey-back {
+    background: none; border: none; color: var(--accent); cursor: pointer;
+    font-size: 13px; padding: 0; margin-bottom: 18px; align-self: center;
+  }
+  .survey-back:hover { text-decoration: underline; }
+
+  /* Roadmap panel */
+  .rm-head { margin-bottom: 14px; }
+  .rm-head .rm-title { font-size: 17px; font-weight: 600; }
+  .rm-head .rm-sum { color: var(--muted); font-size: 12.5px; line-height: 1.5; margin-top: 4px; }
+  .overall {
+    margin: 14px 0 18px; padding: 12px; border-radius: 10px;
+    background: var(--active-bg);
+  }
+  .overall .ov-row { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px; }
+  .overall .ov-pct { font-weight: 600; color: var(--accent); }
+  .bar { height: 8px; border-radius: 4px; background: var(--tag-bg); overflow: hidden; }
+  .bar > div { height: 100%; background: var(--accent); width: 0; transition: width .3s; }
+
+  .level-block { margin-bottom: 18px; }
+  .level-head { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; }
+  .level-head .lv-title { font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+  .level-head .lv-pct { font-size: 12px; color: var(--ok); font-weight: 600; }
+  .level-desc { font-size: 12px; color: var(--muted); margin: 0 0 8px; line-height: 1.4; }
+
+  .node {
+    position: relative; padding: 10px 12px 10px 34px;
+    border: 1px solid var(--border); border-radius: 10px;
+    margin-bottom: 8px; cursor: pointer; background: var(--bg);
+  }
+  .node:hover { border-color: var(--accent); }
+  .node.active { border-color: var(--accent); background: var(--active-bg); }
+  .node .n-dot {
+    position: absolute; left: 10px; top: 12px;
+    width: 16px; height: 16px; border-radius: 50%;
+    border: 2px solid var(--track-line); background: var(--panel);
+  }
+  .node.done .n-dot { background: var(--ok); border-color: var(--ok); }
+  .node.partial .n-dot { background: linear-gradient(90deg, var(--ok) 50%, var(--panel) 50%); border-color: var(--ok); }
+  .node .n-title { font-size: 13.5px; font-weight: 500; }
+  .node .n-meta { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+  .node .n-check { font-size: 11.5px; color: var(--muted); }
+  .node.done .n-check { color: var(--ok); font-weight: 600; }
+
+  /* Content / topic detail */
+  .empty-hint { color: var(--muted); text-align: center; margin-top: 80px; }
+  .topic-header { margin-bottom: 4px; }
+  .topic-header h1 { font-size: 22px; margin: 0 0 6px; }
+  .topic-header .th-meta { color: var(--muted); font-size: 13px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .prose { line-height: 1.7; font-size: 14.5px; max-width: 780px; }
+  .prose h2 { font-size: 18px; margin-top: 26px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  .prose h3 { font-size: 15.5px; margin-top: 20px; }
+  .prose code { background: var(--tag-bg); padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+  .prose pre { background: var(--tag-bg); padding: 14px; border-radius: 8px; overflow-x: auto; }
+  .prose pre code { background: none; padding: 0; }
+  .prose table { border-collapse: collapse; margin: 12px 0; display: block; overflow-x: auto; }
+  .prose th, .prose td { border: 1px solid var(--border); padding: 7px 11px; text-align: left; font-size: 13.5px; }
+  .prose th { background: var(--tag-bg); }
+  .prose blockquote { border-left: 3px solid var(--accent); margin: 12px 0; padding: 4px 14px; color: var(--muted); }
+  .prose a { text-decoration: none; }
+  .prose a:hover { text-decoration: underline; }
+  .prose img {
+    /* Ảnh diagram thường rộng hơn cột chữ (780px) — cho tràn ra full chiều
+       rộng vùng đọc để chữ trong diagram không bị co lại. */
+    width: 100%; max-width: 1100px; height: auto; display: block;
+    margin: 16px 0; border: 1px solid var(--border);
+    border-radius: 8px; background: #fff; padding: 8px;
+    cursor: zoom-in;
+  }
+
+  /* Lightbox — click ảnh để phóng to toàn màn hình */
+  .img-lightbox {
+    position: fixed; inset: 0; z-index: 200;
+    background: rgba(0,0,0,.82); display: flex;
+    align-items: center; justify-content: center;
+    padding: 24px; cursor: zoom-out;
+  }
+  .img-lightbox img {
+    max-width: 96vw; max-height: 94vh; width: auto;
+    border-radius: 8px; background: #fff; padding: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,.5);
+  }
+
+  /* Checklist */
+  .checklist-box {
+    margin-top: 30px; max-width: 780px;
+    border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+  }
+  .checklist-box .cl-head {
+    padding: 12px 16px; background: var(--tag-bg);
+    display: flex; align-items: center; justify-content: space-between;
+    font-weight: 600; font-size: 14px;
+  }
+  .checklist-box .cl-head .cl-count { color: var(--muted); font-weight: 500; font-size: 13px; }
+  .cl-item {
+    display: flex; gap: 10px; padding: 12px 16px;
+    border-top: 1px solid var(--border); cursor: pointer; font-size: 14px; line-height: 1.5;
+  }
+  .cl-item:hover { background: var(--hover); }
+  .cl-item input { margin-top: 3px; width: 16px; height: 16px; flex-shrink: 0; cursor: pointer; }
+  .cl-item.checked { background: var(--ok-bg); }
+  .cl-item.checked span { color: var(--muted); text-decoration: line-through; }
+
+  .related-box { margin-top: 22px; max-width: 780px; }
+  .related-box .rb-title { font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+  .rel-pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 5px 11px; margin: 0 6px 6px 0; border-radius: 999px;
+    background: var(--tag-bg); font-size: 12.5px; text-decoration: none; color: var(--text);
+  }
+  .rel-pill:hover { background: var(--accent); color: var(--accent-contrast); }
+  .rel-pill .rp-kind { opacity: .7; font-size: 11px; }
+
+  .nav-btns { display: flex; justify-content: space-between; margin-top: 34px; max-width: 780px; }
+  .nav-btns button { padding: 8px 16px; }
+  .nav-btns button:disabled { opacity: .4; cursor: default; }
+
+  .toast {
+    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+    background: var(--text); color: var(--bg); padding: 10px 18px;
+    border-radius: 8px; font-size: 13px; opacity: 0; transition: opacity .2s; pointer-events: none;
+  }
+  .toast.show { opacity: 1; }
+
+  /* Chat panel */
+  .chat-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,.35);
+    opacity: 0; pointer-events: none; transition: opacity .2s; z-index: 40;
+  }
+  .chat-overlay.open { opacity: 1; pointer-events: auto; }
+  .chat-panel {
+    position: fixed; top: 0; right: 0; height: 100vh; width: 420px; max-width: 92vw;
+    background: var(--panel); border-left: 1px solid var(--border);
+    display: flex; flex-direction: column; z-index: 50;
+    transform: translateX(100%); transition: transform .25s; box-shadow: -8px 0 24px rgba(0,0,0,.12);
+  }
+  .chat-panel.open { transform: translateX(0); }
+  .chat-hd {
+    display: flex; align-items: center; gap: 8px;
+    padding: 14px 16px; border-bottom: 1px solid var(--border);
+  }
+  .chat-hd h2 { font-size: 15px; margin: 0; flex: 1; }
+  .chat-hd .sub { font-size: 12px; color: var(--muted); font-weight: 400; }
+  .chat-hd button {
+    border: 1px solid var(--border); background: transparent; color: var(--text);
+    width: 30px; height: 30px; border-radius: 7px; cursor: pointer; font-size: 15px;
+  }
+  .chat-hd button:hover { background: var(--hover); }
+  .chat-messages { flex: 1; overflow-y: auto; padding: 16px; }
+  .chat-empty { color: var(--muted); font-size: 13px; line-height: 1.6; text-align: center; margin-top: 40px; }
+  .chat-empty .ex { display: block; margin-top: 12px; }
+  .chat-empty .ex button {
+    display: inline-block; margin: 4px 4px 0 0; padding: 6px 11px;
+    border: 1px solid var(--border); background: var(--bg); color: var(--text);
+    border-radius: 999px; font-size: 12px; cursor: pointer; text-align: left;
+  }
+  .chat-empty .ex button:hover { border-color: var(--accent); }
+  .chat-msg { margin-bottom: 18px; }
+  .chat-msg .q {
+    background: var(--active-bg); color: var(--text); padding: 8px 12px;
+    border-radius: 10px; font-size: 13.5px; margin-bottom: 8px; display: inline-block; max-width: 100%;
+  }
+  .chat-msg .a { font-size: 13.5px; line-height: 1.65; }
+  .chat-msg .a p:first-child { margin-top: 0; }
+  .chat-msg .a ul, .chat-msg .a ol { padding-left: 20px; margin: 6px 0; }
+  .chat-msg .a code { background: var(--tag-bg); padding: 1px 5px; border-radius: 4px; font-size: 12.5px; }
+  .chat-msg .a pre { background: var(--tag-bg); padding: 12px; border-radius: 8px; overflow-x: auto; }
+  .chat-msg .a table { border-collapse: collapse; margin: 8px 0; display: block; overflow-x: auto; }
+  .chat-msg .a th, .chat-msg .a td { border: 1px solid var(--border); padding: 5px 9px; font-size: 12.5px; }
+  .chat-related { margin-top: 8px; }
+  .chat-related .lbl { font-size: 11px; color: var(--muted); margin-right: 4px; }
+  .chat-related button {
+    border: 1px solid var(--border); background: var(--bg); color: var(--accent);
+    padding: 3px 9px; margin: 3px 4px 0 0; border-radius: 999px; font-size: 12px; cursor: pointer;
+  }
+  .chat-related button:hover { background: var(--accent); color: var(--accent-contrast); }
+  .chat-loading { color: var(--muted); font-size: 13px; padding: 4px 0; }
+  .chat-error { color: #c0392b; font-size: 13px; background: var(--ok-bg); padding: 8px 12px; border-radius: 8px; }
+  html.dark .chat-error { color: #ff8a80; }
+  .chat-input-row { display: flex; gap: 8px; padding: 12px 16px; border-top: 1px solid var(--border); }
+  .chat-input-row textarea {
+    flex: 1; resize: none; border: 1px solid var(--border); border-radius: 8px;
+    padding: 9px 11px; font-family: inherit; font-size: 13.5px; background: var(--input-bg);
+    color: var(--text); max-height: 120px;
+  }
+  .chat-send { padding: 0 16px; border: none; border-radius: 8px; background: var(--accent);
+    color: var(--accent-contrast); cursor: pointer; font-size: 14px; }
+  .chat-send:disabled { opacity: .5; cursor: default; }
+  .chat-hd button.key-missing { border-color: #e0a100; }
+  .key-box { padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 13px; line-height: 1.6; background: var(--bg); }
+  .key-box h3 { font-size: 13.5px; margin: 0 0 6px; }
+  .key-box p { margin: 6px 0; }
+  .key-box ol { padding-left: 20px; margin: 6px 0; }
+  .key-box a { color: var(--accent); }
+  .key-box .key-status { font-weight: 600; }
+  .key-box .key-row { display: flex; gap: 8px; margin: 8px 0; }
+  .key-box input {
+    flex: 1; min-width: 0; border: 1px solid var(--border); border-radius: 8px; padding: 7px 10px;
+    font-family: ui-monospace, monospace; font-size: 12.5px; background: var(--input-bg); color: var(--text);
+  }
+  .key-box button {
+    border: 1px solid var(--border); background: var(--panel); color: var(--text);
+    border-radius: 8px; padding: 6px 12px; cursor: pointer; font-size: 12.5px;
+  }
+  .key-box button.primary { background: var(--accent); color: var(--accent-contrast); border-color: var(--accent); }
+  .key-box details { margin-top: 6px; }
+  .key-box summary { cursor: pointer; color: var(--muted); }
+  .key-box .note { color: var(--muted); font-size: 12px; }
+
+  /* SQL Playground widget */
+  .sqlpg {
+    margin: 20px 0; max-width: 780px;
+    border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+    background: var(--panel);
+  }
+  .sqlpg-tabs { display: flex; border-bottom: 1px solid var(--border); background: var(--tag-bg); }
+  .sqlpg-tab {
+    padding: 10px 16px; border: none; background: transparent; cursor: pointer;
+    font-size: 13px; font-weight: 500; color: var(--muted); border-bottom: 2px solid transparent;
+  }
+  .sqlpg-tab.active { color: var(--accent); border-bottom-color: var(--accent); background: var(--panel); }
+  .sqlpg-tab:hover:not(.active) { color: var(--text); }
+  .sqlpg-body { padding: 16px; }
+  .sqlpg-pane { display: none; }
+  .sqlpg-pane.active { display: block; }
+  .sqlpg-status { font-size: 12.5px; color: var(--muted); margin-bottom: 10px; }
+  .sqlpg-status.err { color: #c0392b; }
+  html.dark .sqlpg-status.err { color: #ff8a80; }
+
+  /* Query Builder */
+  .qb-cols { display: flex; gap: 16px; flex-wrap: wrap; }
+  .qb-col { flex: 1; min-width: 200px; }
+  .qb-col h4 { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 0 0 8px; }
+  .qb-tables { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .qb-table-btn {
+    padding: 5px 11px; border: 1px solid var(--border); border-radius: 999px;
+    background: var(--bg); color: var(--text); cursor: pointer; font-size: 12.5px;
+  }
+  .qb-table-btn.active { background: var(--accent); color: var(--accent-contrast); border-color: var(--accent); }
+  .qb-fields { border: 1px solid var(--border); border-radius: 8px; max-height: 260px; overflow-y: auto; }
+  .qb-field {
+    display: flex; align-items: center; gap: 8px; padding: 7px 11px;
+    border-bottom: 1px solid var(--border); font-size: 13px; cursor: pointer;
+  }
+  .qb-field:last-child { border-bottom: none; }
+  .qb-field:hover { background: var(--hover); }
+  .qb-field input { width: 15px; height: 15px; cursor: pointer; }
+  .qb-field .qb-type { margin-left: auto; font-size: 11px; color: var(--muted); text-transform: uppercase; }
+  .qb-field .qb-agg {
+    margin-left: 8px; font-size: 11px; padding: 1px 4px;
+    border: 1px solid var(--border); border-radius: 6px;
+    background: var(--card, #fff); color: var(--fg, inherit); cursor: pointer;
+  }
+  .qb-field.qb-related { background: var(--active-bg); }
+  .qb-field.qb-related .qb-jointag {
+    margin-left: auto; font-size: 11px; color: var(--accent); font-weight: 600;
+    padding: 1px 7px; border: 1px solid var(--accent); border-radius: 999px;
+  }
+  .qb-indent { display: inline-block; }
+
+  .sqlpg-sqlbox {
+    width: 100%; min-height: 120px; resize: vertical;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 13px; line-height: 1.5; padding: 12px; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--input-bg); color: var(--text);
+  }
+  .sqlpg-gen {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 13px; line-height: 1.55; padding: 12px; border-radius: 8px;
+    background: #0d1117; color: #e6edf3; white-space: pre; overflow-x: auto; margin: 12px 0;
+  }
+  .sqlpg-actions { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .sqlpg-btn {
+    padding: 8px 16px; border: none; border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 500;
+  }
+  .sqlpg-btn.primary { background: var(--accent); color: var(--accent-contrast); }
+  .sqlpg-btn.ghost { background: var(--bg); color: var(--text); border: 1px solid var(--border); }
+  .sqlpg-btn:disabled { opacity: .5; cursor: default; }
+  .sqlpg-result { margin-top: 14px; }
+  .sqlpg-result table { border-collapse: collapse; width: 100%; display: block; overflow-x: auto; }
+  .sqlpg-result th, .sqlpg-result td {
+    border: 1px solid var(--border); padding: 6px 10px; font-size: 12.5px; text-align: left;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: nowrap;
+  }
+  .sqlpg-result th { background: var(--tag-bg); position: sticky; top: 0; }
+  .sqlpg-result td.null { color: var(--muted); font-style: italic; }
+  .sqlpg-rowcount { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .sqlpg-samples { margin-top: 12px; }
+  .sqlpg-samples .lbl { font-size: 11.5px; color: var(--muted); margin-right: 6px; }
+  .sqlpg-samples button {
+    border: 1px solid var(--border); background: var(--bg); color: var(--accent);
+    padding: 4px 10px; margin: 3px 5px 0 0; border-radius: 999px; font-size: 12px; cursor: pointer;
+  }
+  .sqlpg-samples button:hover { background: var(--accent); color: var(--accent-contrast); }
+  .sqlpg-schema-note { font-size: 12px; color: var(--muted); margin-top: 10px; line-height: 1.5; }
+
+  .hidden { display: none !important; }
+
+  /* ---------- SQL Playground ---------- */
+  .pg-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 40;
+    opacity: 0; pointer-events: none; transition: opacity .2s; }
+  .pg-overlay.show { opacity: 1; pointer-events: auto; }
+  .pg-panel { position: fixed; inset: 3vh 3vw; background: var(--bg); border: 1px solid var(--border);
+    border-radius: 14px; z-index: 41; display: none; grid-template-rows: auto 1fr;
+    box-shadow: 0 20px 60px rgba(0,0,0,.4); overflow: hidden; }
+  .pg-panel.show { display: grid; }
+  .pg-head { display: flex; align-items: center; gap: 10px; padding: 12px 16px;
+    border-bottom: 1px solid var(--border); }
+  .pg-head h2 { font-size: 16px; margin: 0; }
+  .pg-head .sub { color: var(--muted); font-size: 12.5px; font-weight: 400; }
+  .pg-head .spacer { flex: 1; }
+  .pg-body { display: grid; grid-template-columns: 300px 1fr; min-height: 0; }
+  .pg-side { border-right: 1px solid var(--border); overflow: auto; padding: 12px; }
+  .pg-main { display: grid; grid-template-rows: auto auto 1fr; min-height: 0; padding: 12px; gap: 10px; }
+  .pg-toolbar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .pg-toolbar select { padding: 6px 8px; border: 1px solid var(--border); border-radius: 7px;
+    background: var(--input-bg); color: var(--text); font-size: 13px; }
+  #pgSql { width: 100%; min-height: 120px; resize: vertical; font-family: ui-monospace, Menlo, monospace;
+    font-size: 13.5px; border: 1px solid var(--border); border-radius: 8px; padding: 10px;
+    background: var(--input-bg); color: var(--text); }
+  .pg-run { padding: 7px 16px; border: none; border-radius: 8px; background: var(--accent);
+    color: var(--accent-contrast); cursor: pointer; font-size: 13.5px; font-weight: 600; }
+  .pg-result { overflow: auto; min-height: 0; }
+  .pg-table-wrap { overflow-x: auto; }
+  .pg-table { border-collapse: collapse; font-size: 13px; width: 100%; }
+  .pg-table th, .pg-table td { border: 1px solid var(--border); padding: 5px 10px; text-align: left; white-space: nowrap; }
+  .pg-table th { background: var(--input-bg); position: sticky; top: 0; }
+  .pg-null { color: var(--muted); font-style: italic; }
+  .pg-msg { color: var(--muted); font-size: 13px; padding: 6px 2px; }
+  .pg-ok { color: #2e8b57; }
+  .pg-err { color: #c0392b; font-size: 13.5px; padding: 8px; background: rgba(192,57,43,.08); border-radius: 8px; }
+  .pg-warn { color: #b8860b; font-size: 13.5px; padding: 10px; background: rgba(184,134,11,.1);
+    border: 1px solid rgba(184,134,11,.35); border-radius: 8px; line-height: 1.5; }
+  .pg-schema-title, .pg-rel-title { font-size: 12px; text-transform: uppercase; letter-spacing: .04em;
+    color: var(--muted); margin: 4px 0 8px; }
+  .pg-rel-title { margin-top: 14px; }
+  .pg-tbl { margin-bottom: 12px; }
+  .pg-tbl-name { font-weight: 600; font-size: 13.5px; cursor: pointer; }
+  .pg-tbl-name:hover { color: var(--accent); }
+  .pg-tbl-desc { display: block; font-weight: 400; font-size: 11.5px; color: var(--muted); }
+  .pg-cols { display: flex; flex-direction: column; gap: 2px; margin: 4px 0 0 8px; }
+  .pg-col { font-size: 12.5px; cursor: pointer; font-family: ui-monospace, monospace; }
+  .pg-col:hover { color: var(--accent); }
+  .pg-col i { color: var(--muted); font-style: normal; font-size: 11px; }
+  .pg-key { display: inline-block; margin-left: 5px; font-size: 10px; padding: 0 5px;
+    border-radius: 4px; background: var(--accent); color: var(--accent-contrast); font-family: inherit; }
+  .pg-ref { margin-left: 5px; font-size: 10.5px; color: var(--muted); }
+  .pg-rels { display: flex; flex-direction: column; gap: 4px; }
+  .pg-rel { font-size: 12px; color: var(--muted); }
+  .pg-rel b { color: var(--accent); }
+  .pg-tbl-name[data-tbl] { display: flex; flex-direction: column; }
+  .pg-tbl-name[data-tbl]::before { content: ""; }
+  /* header sort/filter */
+  .pg-th { position: relative; }
+  .pg-th-name { cursor: pointer; user-select: none; }
+  .pg-th-name:hover { color: var(--accent); }
+  .pg-th-fil { margin-left: 6px; border: none; background: transparent; cursor: pointer;
+    color: var(--muted); font-size: 11px; padding: 0 2px; border-radius: 4px; }
+  .pg-th-fil:hover { color: var(--accent); background: var(--input-bg); }
+  .pg-th-filtered { color: var(--accent); }
+  .pg-th-filtered .pg-th-fil { color: var(--accent); }
+  /* chips filter đang áp dụng */
+  .pg-chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 8px;
+    font-size: 12.5px; color: var(--muted); }
+  .pg-chip { display: inline-flex; align-items: center; gap: 4px; background: var(--input-bg);
+    border: 1px solid var(--border); border-radius: 20px; padding: 2px 8px; font-size: 12px; color: var(--text); }
+  .pg-chip button { border: none; background: transparent; cursor: pointer; color: var(--muted); font-size: 12px; padding: 0; }
+  .pg-chip button:hover { color: #c0392b; }
+  .pg-chip-clear { border: none; background: transparent; cursor: pointer; color: var(--accent); font-size: 12px; text-decoration: underline; }
+  /* popup filter */
+  .pg-filpop { position: fixed; z-index: 50; width: 230px; background: var(--bg);
+    border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,.3);
+    padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+  .pg-filpop-hd { font-size: 13px; }
+  .pg-filpop-hd i { color: var(--muted); font-style: normal; font-size: 11px; }
+  .pg-filpop select, .pg-filpop input { width: 100%; padding: 7px 8px; border: 1px solid var(--border);
+    border-radius: 7px; background: var(--input-bg); color: var(--text); font-size: 13px; box-sizing: border-box; }
+  .pg-filpop-btns { display: flex; gap: 8px; }
+  .pg-filpop-btns .pg-run { flex: 1; }
+  /* ERD SVG */
+  .pg-erd-wrap { display: flex; flex-direction: column; gap: 8px; }
+  .pg-erd-hd { font-size: 13px; color: var(--muted); }
+  .pg-erd { width: 100%; height: auto; max-height: 62vh; border: 1px solid var(--border);
+    border-radius: 10px; background: var(--input-bg); }
+  .pg-erd-line { stroke: var(--muted); stroke-width: 1.6; fill: none; opacity: .65; }
+  .pg-erd-mark { stroke: var(--accent); stroke-width: 1.8; }
+  .pg-erd-badge-bg { fill: var(--bg); stroke: var(--border); stroke-width: 1; }
+  .pg-erd-badge { fill: var(--accent); font-size: 11px; font-weight: 700; text-anchor: middle;
+    font-family: ui-monospace, monospace; }
+  .pg-erd-box { cursor: pointer; }
+  .pg-erd-rect { fill: var(--bg); stroke: var(--border); stroke-width: 1.4; }
+  .pg-erd-box:hover .pg-erd-rect { stroke: var(--accent); stroke-width: 2; }
+  .pg-erd-head { fill: var(--accent); opacity: .92; }
+  .pg-erd-title { fill: var(--accent-contrast); font-size: 12.5px; font-weight: 700;
+    font-family: ui-monospace, monospace; }
+  .pg-erd-col { fill: var(--text); font-size: 11px; font-family: ui-monospace, monospace; }
+  .pg-erd-type { fill: var(--muted); font-size: 9.5px; font-family: ui-monospace, monospace; }
+  @media (max-width: 760px) { .pg-body { grid-template-columns: 1fr; } .pg-side { max-height: 30vh; } }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="brand">📚 Learning Path</span>
+  <span id="roleChip" class="role-chip hidden"></span>
+  <span class="spacer"></span>
+  <button id="changeRoleBtn" class="icon-btn hidden">↩︎ Đổi vai trò</button>
+  <button id="askBtn" class="icon-btn hidden" title="Hỏi thêm về nội dung đang học">💬 Hỏi thêm</button>
+  <button id="pgBtn" class="icon-btn hidden" title="Gõ SQL và xem kết quả thật trên dữ liệu demo">🎮 SQL Playground</button>
+  <button id="exportBtn" class="icon-btn" title="Lưu tiến độ ra file JSON">⬇︎ Export</button>
+  <button id="importBtn" class="icon-btn" title="Nạp tiến độ từ file JSON">⬆︎ Import</button>
+  <input id="importFile" type="file" accept="application/json" class="hidden">
+  <button id="themeBtn" class="icon-btn" title="Đổi giao diện sáng/tối">◐</button>
+</div>
+
+<!-- SURVEY -->
+<div id="survey" class="survey-wrap">
+  <button id="surveyBack" class="survey-back hidden">← Tất cả vai trò</button>
+  <h2 id="surveyTitle">Bạn muốn học theo vai trò nào?</h2>
+  <p id="surveySub" class="sub">Chọn vai trò để vào lộ trình từ cơ bản đến nâng cao. Tiến độ tự lưu trên trình duyệt này.</p>
+  <div id="trackGrid" class="track-grid"></div>
+</div>
+
+<!-- MAIN -->
+<div id="main" class="layout hidden">
+  <aside class="roadmap">
+    <div class="rm-head">
+      <div id="rmTitle" class="rm-title"></div>
+      <div id="rmSummary" class="rm-sum"></div>
+    </div>
+    <div class="overall">
+      <div class="ov-row">
+        <span>Tiến độ tổng</span>
+        <span id="ovPct" class="ov-pct">0%</span>
+      </div>
+      <div class="bar"><div id="ovBar"></div></div>
+      <div class="ov-row" style="margin-top:8px; margin-bottom:0;">
+        <span id="ovCount" style="color:var(--muted);"></span>
+      </div>
+    </div>
+    <div id="levels"></div>
+  </aside>
+
+  <main class="content">
+    <div id="topicArea">
+      <div class="empty-hint">Chọn một mục trong lộ trình bên trái để bắt đầu.</div>
+    </div>
+  </main>
+</div>
+
+<!-- CHAT PANEL -->
+<div id="chatOverlay" class="chat-overlay"></div>
+<div id="chatPanel" class="chat-panel">
+  <div class="chat-hd">
+    <h2>💬 Hỏi thêm <span class="sub" id="chatScope"></span></h2>
+    <button id="keyBtn" title="Gemini API key của bạn">🔑</button>
+    <button id="chatClearBtn" title="Xóa lịch sử hỏi đáp">🗑</button>
+    <button id="chatCloseBtn" title="Đóng">✕</button>
+  </div>
+  <div id="keyBox" class="key-box hidden">
+    <h3>🔑 Gemini API key của bạn</h3>
+    <p>Trạng thái: <span id="keyStatus" class="key-status">Chưa có key</span></p>
+    <div class="key-row">
+      <input id="keyInput" type="password" autocomplete="off" spellcheck="false" placeholder="Dán API key (AIza...)">
+      <button id="keySaveBtn" class="primary">Lưu</button>
+    </div>
+    <div class="key-row">
+      <button id="keyDeleteBtn">Xóa key khỏi trình duyệt này</button>
+    </div>
+    <p class="note">
+      Key được mã hóa (AES-GCM) và chỉ lưu trên trình duyệt này. Mỗi lần hỏi, key được gửi kèm
+      request tới server để gọi Gemini — server không lưu, không ghi log key.
+      Mã hóa chỉ chống đọc trộm dữ liệu trình duyệt, không thay thế việc giữ máy an toàn.
+    </p>
+    <details>
+      <summary>Cách tạo key (miễn phí)</summary>
+      <ol>
+        <li>Mở <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a>, đăng nhập Google.</li>
+        <li>Bấm <b>Create API key</b>, chọn (hoặc tạo) một Google Cloud project.</li>
+        <li>Copy key, dán vào ô trên rồi bấm <b>Lưu</b>.</li>
+      </ol>
+      <p class="note">Key gói miễn phí có giới hạn số request/phút và /ngày. Đọc
+        <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">điều khoản Gemini API</a>
+        về cách Google dùng dữ liệu ở gói miễn phí — không hỏi nội dung bí mật/nội bộ.</p>
+    </details>
+    <details>
+      <summary>Cách xóa / thu hồi key</summary>
+      <ol>
+        <li><b>Xóa khỏi trình duyệt này</b>: bấm nút "Xóa key khỏi trình duyệt này" ở trên.
+          Thao tác này <b>không</b> vô hiệu hóa key phía Google.</li>
+        <li><b>Thu hồi hẳn</b>: mở <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a>,
+          bấm biểu tượng thùng rác cạnh key → key ngừng hoạt động ở mọi nơi.</li>
+        <li>Nghi key bị lộ → thu hồi ngay rồi tạo key mới.</li>
+      </ol>
+    </details>
+  </div>
+  <div id="chatMessages" class="chat-messages"></div>
+  <div class="chat-input-row">
+    <textarea id="chatInput" rows="1" placeholder="Hỏi về nội dung đang học... (Enter để gửi)"></textarea>
+    <button id="chatSend" class="chat-send">Gửi</button>
+  </div>
+</div>
+
+<!-- SQL PLAYGROUND -->
+<div id="pgOverlay" class="pg-overlay"></div>
+<div id="pgPanel" class="pg-panel">
+  <div class="pg-head">
+    <h2>🎮 SQL Playground</h2>
+    <span class="sub">Gõ SQL, chạy thật trên 5 bảng demo (SQLite trong trình duyệt). UPDATE/DELETE chỉ mô phỏng — không đổi dữ liệu.</span>
+    <span class="spacer"></span>
+    <button id="pgCloseBtn" class="icon-btn" title="Đóng">✕</button>
+  </div>
+  <div class="pg-body">
+    <div id="pgSchema" class="pg-side"></div>
+    <div class="pg-main">
+      <div class="pg-toolbar">
+        <button id="pgRun" class="pg-run">▶ Chạy (Ctrl/⌘+Enter)</button>
+        <button id="pgErd" class="icon-btn" title="Xem sơ đồ quan hệ 5 bảng">🗺 Sơ đồ</button>
+        <button id="pgClear" class="icon-btn">Xóa</button>
+        <select id="pgSamples"></select>
+      </div>
+      <textarea id="pgSql" placeholder="SELECT * FROM customers;" spellcheck="false"></textarea>
+      <div id="pgResult" class="pg-result"></div>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="/vendor/sql-wasm.js"></script>
+<script src="/vendor/sql-demo.js?v=4"></script>
+<script src="/vendor/sql-playground.js?v=4"></script>
+<script>
+const STORAGE_KEY = "learning-path-progress-v1";
+let TRACK = null;        // dữ liệu track đang xem
+let CURRENT = null;      // topic id đang mở
+let progress = loadProgress();  // { checked: { "trackKey::topicId::idx": true }, lastTrack: "ba" }
+
+// ---------- Theme ----------
+const html = document.documentElement;
+const savedTheme = localStorage.getItem("lp-theme");
+if (savedTheme) html.classList.add(savedTheme);
+document.getElementById("themeBtn").onclick = () => {
+  const dark = !html.classList.contains("dark");
+  html.classList.remove("dark", "light");
+  html.classList.add(dark ? "dark" : "light");
+  localStorage.setItem("lp-theme", dark ? "dark" : "light");
+};
+
+// ---------- Progress storage ----------
+function loadProgress() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch (e) {}
+  return { checked: {}, lastTrack: null };
+}
+function saveProgress() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+}
+function keyOf(trackKey, topicId, idx) { return trackKey + "::" + topicId + "::" + idx; }
+
+// ---------- Toast ----------
+let toastTimer = null;
+function toast(msg) {
+  const el = document.getElementById("toast");
+  el.textContent = msg;
+  el.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove("show"), 1800);
+}
+
+// ---------- Survey ----------
+let SURVEY_ENTRIES = [];   // cache kết quả /api/tracks
+
+async function loadSurvey() {
+  const res = await fetch("/api/tracks");
+  SURVEY_ENTRIES = await res.json();
+  renderRoleSurvey();
+}
+
+// Màn 1: danh sách vai trò (role đơn + group)
+function renderRoleSurvey() {
+  document.getElementById("surveyBack").classList.add("hidden");
+  document.getElementById("surveyTitle").textContent = "Bạn muốn học theo vai trò nào?";
+  document.getElementById("surveySub").textContent =
+    "Chọn vai trò để vào lộ trình từ cơ bản đến nâng cao. Tiến độ tự lưu trên trình duyệt này.";
+
+  const grid = document.getElementById("trackGrid");
+  grid.innerHTML = "";
+  SURVEY_ENTRIES.forEach(entry => {
+    if (entry.kind === "group") grid.appendChild(groupCard(entry));
+    else grid.appendChild(trackCard(entry));
+  });
+}
+
+// Card cho group (vd Dev) — click để vào màn chọn nhánh
+function groupCard(entry) {
+  const card = document.createElement("div");
+  card.className = "track-card is-group" + (entry.coming_soon ? " coming" : "");
+  const done = countCheckedForGroup(entry);
+  const total = entry.variants.reduce((s, v) => s + v.checklist_count, 0);
+  const pct = total ? Math.round(done / total * 100) : 0;
+  const ready = entry.variants.filter(v => !v.coming_soon).length;
+  const meta = entry.coming_soon
+    ? `<span class="tc-badge">Sắp có</span>`
+    : `<div class="tc-meta">${ready} lộ trình · ${entry.variant_count} nhánh</div>
+       <div class="tc-progress"><div style="width:${pct}%"></div></div>
+       <div class="tc-meta">${pct}% hoàn thành</div>`;
+  card.innerHTML =
+    `<div class="tc-icon">${entry.icon}</div>
+     <div class="tc-title">${entry.title}</div>
+     <div class="tc-summary">${entry.summary || ""}</div>
+     ${meta}`;
+  if (!entry.coming_soon) card.onclick = () => renderVariantSurvey(entry);
+  return card;
+}
+
+// Card cho track đơn (vd BA) hoặc 1 variant bên trong group
+function trackCard(tr) {
+  const card = document.createElement("div");
+  card.className = "track-card" + (tr.coming_soon ? " coming" : "");
+  const title = tr.variant || tr.title;
+  const summary = tr.variant_desc || tr.summary || "";
+  if (tr.coming_soon) {
+    card.innerHTML =
+      `<div class="tc-icon">${tr.icon}</div>
+       <div class="tc-title">${title}</div>
+       <div class="tc-summary">${summary}</div>
+       <span class="tc-badge">Sắp có</span>`;
+    return card;
+  }
+  const done = countCheckedForTrack(tr.key);
+  const total = tr.checklist_count;
+  const pct = total ? Math.round(done / total * 100) : 0;
+  card.innerHTML =
+    `<div class="tc-icon">${tr.icon}</div>
+     <div class="tc-title">${title}</div>
+     <div class="tc-summary">${summary}</div>
+     <div class="tc-meta">${tr.level_count} cấp độ · ${tr.topic_count} bài · ${total} mục tự đánh giá</div>
+     <div class="tc-progress"><div style="width:${pct}%"></div></div>
+     <div class="tc-meta">${pct}% hoàn thành</div>`;
+  card.onclick = () => openTrack(tr.key);
+  return card;
+}
+
+// Màn 2: chọn nhánh trong 1 group (vd Dev → Ruby on Rails / Java)
+function renderVariantSurvey(entry) {
+  document.getElementById("surveyBack").classList.remove("hidden");
+  document.getElementById("surveyTitle").textContent = `${entry.icon} ${entry.title} — chọn hướng học`;
+  document.getElementById("surveySub").textContent =
+    entry.summary || "Chọn ngôn ngữ/framework bạn muốn học chuyên sâu.";
+  const grid = document.getElementById("trackGrid");
+  grid.innerHTML = "";
+  entry.variants.forEach(v => {
+    const card = trackCard({ ...v, icon: v.icon });
+    grid.appendChild(card);
+  });
+}
+
+document.getElementById("surveyBack").onclick = renderRoleSurvey;
+
+function countCheckedForTrack(trackKey) {
+  let n = 0;
+  const prefix = trackKey + "::";
+  for (const k in progress.checked) {
+    if (k.startsWith(prefix) && progress.checked[k]) n++;
+  }
+  return n;
+}
+function countCheckedForGroup(entry) {
+  return entry.variants.reduce((s, v) => s + countCheckedForTrack(v.key), 0);
+}
+
+// ---------- Open track ----------
+async function openTrack(trackKey) {
+  const res = await fetch("/api/track/" + trackKey);
+  if (!res.ok) { toast("Không tải được track"); return; }
+  TRACK = await res.json();
+  progress.lastTrack = trackKey;
+  saveProgress();
+
+  document.getElementById("survey").classList.add("hidden");
+  document.getElementById("main").classList.remove("hidden");
+  document.getElementById("changeRoleBtn").classList.remove("hidden");
+  document.getElementById("askBtn").classList.remove("hidden");
+  document.getElementById("pgBtn").classList.toggle("hidden", trackKey !== "sql");
+  const chip = document.getElementById("roleChip");
+  chip.classList.remove("hidden");
+  chip.innerHTML = `${TRACK.icon} ${TRACK.title}`;
+  renderChat();
+
+  document.getElementById("rmTitle").textContent = "Lộ trình " + TRACK.title;
+  document.getElementById("rmSummary").textContent = TRACK.summary || "";
+
+  renderRoadmap();
+  // mở topic đầu tiên chưa hoàn thành, hoặc topic đầu
+  const firstUnfinished = TRACK.topics.find(t => !isTopicDone(t)) || TRACK.topics[0];
+  if (firstUnfinished) openTopic(firstUnfinished.id);
+  else showIntro();
+}
+
+document.getElementById("changeRoleBtn").onclick = () => {
+  document.getElementById("main").classList.add("hidden");
+  document.getElementById("survey").classList.remove("hidden");
+  document.getElementById("changeRoleBtn").classList.add("hidden");
+  document.getElementById("askBtn").classList.add("hidden");
+  document.getElementById("pgBtn").classList.add("hidden");
+  document.getElementById("roleChip").classList.add("hidden");
+  closeChat();
+  TRACK = null; CURRENT = null;
+  loadSurvey();
+};
+
+// ---------- Progress helpers on TRACK ----------
+function topicChecked(topic) {
+  let n = 0;
+  topic.checklist.forEach((_, i) => {
+    if (progress.checked[keyOf(TRACK.key, topic.id, i)]) n++;
+  });
+  return n;
+}
+function isTopicDone(topic) {
+  return topic.checklist.length > 0 && topicChecked(topic) === topic.checklist.length;
+}
+function levelStats(levelKey) {
+  let done = 0, total = 0;
+  TRACK.topics.filter(t => t.level === levelKey).forEach(t => {
+    total += t.checklist.length;
+    done += topicChecked(t);
+  });
+  return { done, total };
+}
+function overallStats() {
+  let done = 0, total = 0;
+  TRACK.topics.forEach(t => { total += t.checklist.length; done += topicChecked(t); });
+  return { done, total };
+}
+
+// ---------- Render roadmap ----------
+function renderRoadmap() {
+  const ov = overallStats();
+  const pct = ov.total ? Math.round(ov.done / ov.total * 100) : 0;
+  document.getElementById("ovPct").textContent = pct + "%";
+  document.getElementById("ovBar").style.width = pct + "%";
+  document.getElementById("ovCount").textContent = `${ov.done}/${ov.total} mục tự đánh giá đã tick`;
+
+  const wrap = document.getElementById("levels");
+  wrap.innerHTML = "";
+  TRACK.levels.forEach(lv => {
+    const topics = TRACK.topics.filter(t => t.level === lv.key);
+    if (!topics.length) return;
+    const st = levelStats(lv.key);
+    const lvPct = st.total ? Math.round(st.done / st.total * 100) : 0;
+
+    const block = document.createElement("div");
+    block.className = "level-block";
+    block.innerHTML =
+      `<div class="level-head">
+         <span class="lv-title">${lv.title}</span>
+         <span class="lv-pct">${lvPct}%</span>
+       </div>
+       <p class="level-desc">${lv.desc || ""}</p>`;
+
+    topics.forEach(t => {
+      const c = topicChecked(t), tot = t.checklist.length;
+      let cls = "node";
+      if (tot && c === tot) cls += " done";
+      else if (c > 0) cls += " partial";
+      if (CURRENT === t.id) cls += " active";
+      const node = document.createElement("div");
+      node.className = cls;
+      node.innerHTML =
+        `<span class="n-dot"></span>
+         <div class="n-title">${t.title}</div>
+         <div class="n-meta">${t.est ? "⏱ " + t.est + " · " : ""}<span class="n-check">${c}/${tot} tự đánh giá</span></div>`;
+      node.onclick = () => openTopic(t.id);
+      block.appendChild(node);
+    });
+    wrap.appendChild(block);
+  });
+}
+
+// ---------- Related links ----------
+// Glossary/playbook/skills chỉ chạy local → bản deploy ẩn các pill này để không ra link chết
+const IS_LOCAL = ["localhost", "127.0.0.1"].includes(location.hostname);
+const GLOSSARY_URL = "http://localhost:5030";
+const PLAYBOOK_URL = "http://localhost:5025";
+const SKILLS_URL = "http://localhost:5031";
+function relatedPill(ref) {
+  const [kind, ...rest] = ref.split(":");
+  const val = rest.join(":");
+  let href = "#", label = val, kindLabel = kind;
+  if (kind === "glossary") { href = GLOSSARY_URL; kindLabel = "thuật ngữ"; }
+  else if (kind === "playbook") { href = PLAYBOOK_URL; kindLabel = "tình huống"; }
+  else if (kind === "skill") { href = SKILLS_URL; kindLabel = "skill"; label = "/" + val; }
+  return `<a class="rel-pill" href="${href}" target="_blank" rel="noopener">
+            <span class="rp-kind">${kindLabel}</span> ${label}</a>`;
+}
+
+// ---------- Open topic ----------
+function showIntro() {
+  CURRENT = null;
+  document.getElementById("topicArea").innerHTML =
+    `<div class="prose">${TRACK.intro_html || ""}</div>`;
+  renderRoadmap();
+}
+
+function openTopic(topicId) {
+  const idx = TRACK.topics.findIndex(t => t.id === topicId);
+  const topic = TRACK.topics[idx];
+  if (!topic) return;
+  CURRENT = topicId;
+
+  const levelTitle = (TRACK.levels.find(l => l.key === topic.level) || {}).title || "";
+
+  let checklistHtml = "";
+  if (topic.checklist.length) {
+    const c = topicChecked(topic);
+    const items = topic.checklist.map((q, i) => {
+      const checked = !!progress.checked[keyOf(TRACK.key, topic.id, i)];
+      return `<label class="cl-item ${checked ? "checked" : ""}" data-idx="${i}">
+                <input type="checkbox" ${checked ? "checked" : ""}>
+                <span>${q}</span>
+              </label>`;
+    }).join("");
+    checklistHtml =
+      `<div class="checklist-box">
+         <div class="cl-head">
+           <span>✅ Tự kiểm tra kiến thức</span>
+           <span class="cl-count" id="clCount">${c}/${topic.checklist.length} đã nắm</span>
+         </div>
+         ${items}
+       </div>`;
+  }
+
+  let relatedHtml = "";
+  if (IS_LOCAL && topic.related.length) {
+    relatedHtml =
+      `<div class="related-box">
+         <div class="rb-title">Tra cứu thêm</div>
+         ${topic.related.map(relatedPill).join("")}
+       </div>`;
+  }
+
+  const prev = TRACK.topics[idx - 1];
+  const next = TRACK.topics[idx + 1];
+  const navHtml =
+    `<div class="nav-btns">
+       <button class="icon-btn" id="prevBtn" ${prev ? "" : "disabled"}>← ${prev ? prev.title : "Đầu lộ trình"}</button>
+       <button class="icon-btn" id="nextBtn" ${next ? "" : "disabled"}>${next ? next.title : "Hết lộ trình"} →</button>
+     </div>`;
+
+  document.getElementById("topicArea").innerHTML =
+    `<div class="topic-header">
+       <h1>${topic.title}</h1>
+       <div class="th-meta">
+         <span>📖 ${levelTitle}</span>
+         ${topic.est ? `<span>⏱ ${topic.est}</span>` : ""}
+       </div>
+     </div>
+     <div class="prose">${topic.html}</div>
+     ${checklistHtml}
+     ${relatedHtml}
+     ${navHtml}`;
+
+  // checklist events — nghe "change" trên checkbox (label tự toggle input)
+  document.querySelectorAll(".cl-item").forEach(el => {
+    const box = el.querySelector("input");
+    box.addEventListener("change", () => {
+      const i = parseInt(el.dataset.idx, 10);
+      const k = keyOf(TRACK.key, topic.id, i);
+      if (box.checked) progress.checked[k] = true;
+      else delete progress.checked[k];
+      el.classList.toggle("checked", box.checked);
+      saveProgress();
+      // cập nhật count + roadmap
+      const c2 = topicChecked(topic);
+      const cnt = document.getElementById("clCount");
+      if (cnt) cnt.textContent = `${c2}/${topic.checklist.length} đã nắm`;
+      renderRoadmap();
+      maybeCongrats(topic);
+    });
+  });
+
+  // nhúng SQL Playground nếu bài có marker [[sql-playground]]
+  mountSqlPlayground();
+
+  // click ảnh diagram → mở lightbox phóng to
+  document.querySelectorAll(".prose img").forEach(img => {
+    img.addEventListener("click", () => {
+      const box = document.createElement("div");
+      box.className = "img-lightbox";
+      const big = document.createElement("img");
+      big.src = img.src; big.alt = img.alt;
+      box.appendChild(big);
+      box.addEventListener("click", () => box.remove());
+      document.body.appendChild(box);
+    });
+  });
+
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  if (prev) prevBtn.onclick = () => openTopic(prev.id);
+  if (next) nextBtn.onclick = () => openTopic(next.id);
+
+  document.querySelector(".content").scrollTop = 0;
+  renderRoadmap();
+}
+
+let lastCongratsTopic = null;
+function maybeCongrats(topic) {
+  if (isTopicDone(topic) && lastCongratsTopic !== topic.id) {
+    lastCongratsTopic = topic.id;
+    const idx = TRACK.topics.findIndex(t => t.id === topic.id);
+    const next = TRACK.topics[idx + 1];
+    if (next) toast(`🎉 Xong "${topic.title}"! Tiếp theo: ${next.title}`);
+    else toast(`🎉 Bạn đã hoàn thành toàn bộ lộ trình ${TRACK.title}!`);
+  } else if (!isTopicDone(topic)) {
+    lastCongratsTopic = null;
+  }
+}
+
+// ---------- Export / Import ----------
+document.getElementById("exportBtn").onclick = () => {
+  const blob = new Blob([JSON.stringify(progress, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  const date = new Date().toISOString().slice(0, 10);
+  a.href = url;
+  a.download = `learning-path-progress-${date}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+  toast("Đã export tiến độ ra file JSON");
+};
+document.getElementById("importBtn").onclick = () => document.getElementById("importFile").click();
+document.getElementById("importFile").onchange = (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const data = JSON.parse(reader.result);
+      if (!data || typeof data !== "object" || typeof data.checked !== "object") {
+        throw new Error("format");
+      }
+      progress = { checked: data.checked || {}, lastTrack: data.lastTrack || progress.lastTrack };
+      saveProgress();
+      toast("Đã nạp tiến độ từ file");
+      if (TRACK) { renderRoadmap(); if (CURRENT) openTopic(CURRENT); }
+      else loadSurvey();
+    } catch (err) {
+      toast("File không hợp lệ");
+    }
+  };
+  reader.readAsText(file);
+  e.target.value = "";
+};
+
+// ---------- Chat (hỏi Gemini) ----------
+const CHAT_KEY = "learning-path-chat-v1";
+const CHAT_MAX = 50;
+function loadChat() {
+  try { return JSON.parse(localStorage.getItem(CHAT_KEY)) || {}; } catch (e) { return {}; }
+}
+function saveChat(all) { localStorage.setItem(CHAT_KEY, JSON.stringify(all)); }
+function trackChatHistory() {
+  if (!TRACK) return [];
+  const all = loadChat();
+  return all[TRACK.key] || [];
+}
+function pushChatHistory(entry) {
+  const all = loadChat();
+  const list = all[TRACK.key] || [];
+  list.push(entry);
+  all[TRACK.key] = list.slice(-CHAT_MAX);
+  saveChat(all);
+}
+
+function openChat() {
+  document.getElementById("chatPanel").classList.add("open");
+  document.getElementById("chatOverlay").classList.add("open");
+  document.getElementById("chatInput").focus();
+}
+function closeChat() {
+  document.getElementById("chatPanel").classList.remove("open");
+  document.getElementById("chatOverlay").classList.remove("open");
+}
+
+const EXAMPLE_QS = [
+  "REST và SOAP khác nhau chỗ nào?",
+  "Cho ví dụ Acceptance Criteria tốt và xấu",
+  "Khi nào dùng JOIN thay vì truy vấn 2 lần?",
+];
+
+function renderChat() {
+  if (!TRACK) return;
+  document.getElementById("chatScope").textContent = "· " + TRACK.title;
+  const box = document.getElementById("chatMessages");
+  const hist = trackChatHistory();
+  if (!hist.length) {
+    box.innerHTML =
+      `<div class="chat-empty">
+         Hỏi tự do về nội dung lộ trình <b>${TRACK.title}</b>. Câu trả lời bám theo các bài
+         học; nếu ngoài phạm vi sẽ được nói rõ.
+         <span class="ex">Ví dụ:${EXAMPLE_QS.map(q=>`<button data-q="${q.replace(/"/g,'&quot;')}">${q}</button>`).join("")}</span>
+       </div>`;
+    box.querySelectorAll(".ex button").forEach(b => {
+      b.onclick = () => { document.getElementById("chatInput").value = b.dataset.q; sendChat(); };
+    });
+    return;
+  }
+  box.innerHTML = hist.map(m => renderChatMsg(m)).join("");
+  bindRelatedButtons(box);
+  box.scrollTop = box.scrollHeight;
+}
+
+function renderChatMsg(m) {
+  let related = "";
+  if (m.related && m.related.length) {
+    related = `<div class="chat-related"><span class="lbl">Xem lại bài:</span>` +
+      m.related.map(id => {
+        const t = TRACK.topics.find(t => t.id === id);
+        const label = t ? t.title : id;
+        return `<button data-topic="${id}">${label}</button>`;
+      }).join("") + `</div>`;
+  }
+  return `<div class="chat-msg">
+            <div class="q">${escapeHtml(m.q)}</div>
+            <div class="a">${m.answer_html ? sanitizeHtml(m.answer_html) : escapeHtml(m.a || "")}</div>
+            ${related}
+          </div>`;
+}
+
+function bindRelatedButtons(scope) {
+  scope.querySelectorAll(".chat-related button").forEach(b => {
+    b.onclick = () => { closeChat(); openTopic(b.dataset.topic); };
+  });
+}
+
+function escapeHtml(s) {
+  return (s || "").replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]));
+}
+
+// Sanitize HTML câu trả lời LLM (kể cả lịch sử cũ trong localStorage) — allowlist tag/attr.
+// DOMParser tạo document "inert": script/onerror không chạy trong lúc parse.
+const SAFE_TAGS = new Set(["P","BR","HR","UL","OL","LI","CODE","PRE","STRONG","EM","B","I","DEL",
+  "BLOCKQUOTE","TABLE","THEAD","TBODY","TR","TH","TD","H1","H2","H3","H4","H5","H6","A"]);
+function sanitizeHtml(dirty) {
+  const doc = new DOMParser().parseFromString(`<div>${dirty || ""}</div>`, "text/html");
+  const walk = (node) => {
+    [...node.children].forEach(el => {
+      if (!SAFE_TAGS.has(el.tagName)) {
+        if (["SCRIPT","STYLE","IFRAME","OBJECT","EMBED","TEMPLATE"].includes(el.tagName)) {
+          el.remove();
+        } else {
+          el.replaceWith(doc.createTextNode(el.textContent));
+        }
+        return;
+      }
+      const href = el.tagName === "A" ? el.getAttribute("href") || "" : "";
+      const lang = el.tagName === "CODE" ? el.getAttribute("class") || "" : "";
+      [...el.attributes].forEach(a => el.removeAttribute(a.name));
+      if (/^https?:\/\//i.test(href)) {
+        el.setAttribute("href", href);
+        el.setAttribute("target", "_blank");
+        el.setAttribute("rel", "noopener noreferrer");
+      }
+      if (/^language-[\w-]+$/.test(lang)) el.setAttribute("class", lang);
+      walk(el);
+    });
+  };
+  const root = doc.body.firstChild;
+  walk(root);
+  return root.innerHTML;
+}
+
+// ---------- Gemini key (BYOK) — mã hóa AES-GCM, khóa non-extractable trong IndexedDB ----------
+// Ciphertext ở localStorage; CryptoKey không export được nên copy localStorage sang máy khác
+// không giải mã được. Không chống được XSS (code trên trang vẫn dùng được khóa) → sanitize ở trên.
+const GKEY_STORE = "learning-path-gemini-key-v1";
+const GKEY_DB = "learning-path-crypto";
+
+function idbOpen() {
+  return new Promise((resolve, reject) => {
+    const req = indexedDB.open(GKEY_DB, 1);
+    req.onupgradeneeded = () => req.result.createObjectStore("keys");
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+}
+async function idbReq(mode, fn) {
+  const db = await idbOpen();
+  return new Promise((resolve, reject) => {
+    const req = fn(db.transaction("keys", mode).objectStore("keys"));
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+}
+async function getWrapKey(create) {
+  let k = await idbReq("readonly", s => s.get("aes"));
+  if (!k && create) {
+    k = await crypto.subtle.generateKey({ name: "AES-GCM", length: 256 }, false, ["encrypt", "decrypt"]);
+    await idbReq("readwrite", s => s.put(k, "aes"));
+  }
+  return k;
+}
+const b64 = (buf) => btoa(String.fromCharCode(...new Uint8Array(buf)));
+const unb64 = (s) => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+
+async function saveGeminiKey(plain) {
+  const k = await getWrapKey(true);
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const ct = await crypto.subtle.encrypt({ name: "AES-GCM", iv }, k, new TextEncoder().encode(plain));
+  localStorage.setItem(GKEY_STORE, JSON.stringify({ iv: b64(iv), ct: b64(ct), tail: plain.slice(-4) }));
+}
+async function loadGeminiKey() {
+  try {
+    const rec = JSON.parse(localStorage.getItem(GKEY_STORE) || "null");
+    if (!rec) return null;
+    const k = await getWrapKey(false);
+    if (!k) return null;
+    const pt = await crypto.subtle.decrypt({ name: "AES-GCM", iv: unb64(rec.iv) }, k, unb64(rec.ct));
+    return new TextDecoder().decode(pt);
+  } catch (e) {
+    return null;  // khóa mất/không khớp (vd xóa site data một phần) → coi như chưa có key
+  }
+}
+async function deleteGeminiKey() {
+  localStorage.removeItem(GKEY_STORE);
+  try { await idbReq("readwrite", s => s.delete("aes")); } catch (e) {}
+}
+function geminiKeyTail() {
+  try { return (JSON.parse(localStorage.getItem(GKEY_STORE) || "null") || {}).tail || null; }
+  catch (e) { return null; }
+}
+
+function refreshKeyUi() {
+  const tail = geminiKeyTail();
+  document.getElementById("keyStatus").textContent = tail ? `Đã lưu (…${tail})` : "Chưa có key";
+  document.getElementById("keyBtn").classList.toggle("key-missing", !tail);
+  document.getElementById("keyDeleteBtn").disabled = !tail;
+}
+function toggleKeyBox(show) {
+  const box = document.getElementById("keyBox");
+  box.classList.toggle("hidden", show === undefined ? !box.classList.contains("hidden") : !show);
+  refreshKeyUi();
+}
+
+let chatBusy = false;
+async function sendChat() {
+  if (chatBusy || !TRACK) return;
+  const input = document.getElementById("chatInput");
+  const q = input.value.trim();
+  if (!q) return;
+  const userKey = await loadGeminiKey();
+  // Local: server có thể dùng GEMINI_API_KEY của máy dev làm fallback; bản deploy bắt buộc BYOK
+  if (!userKey && !IS_LOCAL) {
+    toggleKeyBox(true);
+    toast("Nhập Gemini API key của bạn trước khi hỏi");
+    return;
+  }
+  input.value = "";
+  input.style.height = "auto";
+  chatBusy = true;
+  document.getElementById("chatSend").disabled = true;
+
+  const box = document.getElementById("chatMessages");
+  // xóa màn hình rỗng nếu đang hiện
+  if (box.querySelector(".chat-empty")) box.innerHTML = "";
+  const pending = document.createElement("div");
+  pending.className = "chat-msg";
+  pending.innerHTML = `<div class="q">${escapeHtml(q)}</div><div class="chat-loading">Đang hỏi Gemini…</div>`;
+  box.appendChild(pending);
+  box.scrollTop = box.scrollHeight;
+
+  try {
+    const res = await fetch("/api/ask", {
+      method: "POST",
+      headers: Object.assign({ "Content-Type": "application/json" }, userKey ? { "X-Gemini-Key": userKey } : {}),
+      body: JSON.stringify({ question: q, track: TRACK.key }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || "Lỗi không xác định");
+    const entry = { q, a: data.answer, answer_html: data.answer_html, related: data.related_topics || [] };
+    pushChatHistory(entry);
+    pending.innerHTML = renderChatMsg(entry).replace(/^<div class="chat-msg">|<\/div>$/g, "");
+    bindRelatedButtons(pending);
+  } catch (err) {
+    pending.querySelector(".chat-loading")?.remove();
+    const e = document.createElement("div");
+    e.className = "chat-error";
+    e.textContent = err.message;
+    pending.appendChild(e);
+  } finally {
+    chatBusy = false;
+    document.getElementById("chatSend").disabled = false;
+    box.scrollTop = box.scrollHeight;
+  }
+}
+
+document.getElementById("askBtn").onclick = openChat;
+
+document.getElementById("pgBtn").onclick = () => window.SQLPlayground.open();
+document.getElementById("pgCloseBtn").onclick = () => window.SQLPlayground.close();
+document.getElementById("pgOverlay").onclick = () => window.SQLPlayground.close();
+document.getElementById("chatCloseBtn").onclick = closeChat;
+document.getElementById("chatOverlay").onclick = closeChat;
+document.getElementById("chatSend").onclick = sendChat;
+document.getElementById("keyBtn").onclick = () => toggleKeyBox();
+document.getElementById("keySaveBtn").onclick = async () => {
+  const input = document.getElementById("keyInput");
+  const v = input.value.trim();
+  if (!/^[A-Za-z0-9_\-]{20,200}$/.test(v)) { toast("Key không đúng định dạng"); return; }
+  try {
+    await saveGeminiKey(v);
+    input.value = "";
+    refreshKeyUi();
+    toggleKeyBox(false);
+    toast("Đã lưu key (mã hóa) trên trình duyệt này");
+  } catch (e) {
+    toast("Không lưu được key: trình duyệt chặn IndexedDB/WebCrypto (cần HTTPS hoặc localhost)");
+  }
+};
+document.getElementById("keyDeleteBtn").onclick = async () => {
+  if (!confirm("Xóa key khỏi trình duyệt này? (Key vẫn còn hiệu lực phía Google — muốn thu hồi hẳn thì xóa ở AI Studio)")) return;
+  await deleteGeminiKey();
+  refreshKeyUi();
+  toast("Đã xóa key khỏi trình duyệt này");
+};
+refreshKeyUi();
+document.getElementById("chatClearBtn").onclick = () => {
+  if (!TRACK) return;
+  const all = loadChat();
+  delete all[TRACK.key];
+  saveChat(all);
+  renderChat();
+};
+const chatInputEl = document.getElementById("chatInput");
+chatInputEl.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendChat(); }
+});
+chatInputEl.addEventListener("input", () => {
+  chatInputEl.style.height = "auto";
+  chatInputEl.style.height = Math.min(chatInputEl.scrollHeight, 120) + "px";
+});
+
+// Escape đóng lightbox ảnh
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") document.querySelectorAll(".img-lightbox").forEach(el => el.remove());
+});
+
+// ==================================================================
+// SQL PLAYGROUND — sql.js (SQLite WASM) chạy hoàn toàn trong trình duyệt
+// ==================================================================
+const SQLJS_CDN = "https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/";
+
+// Schema mẫu — khớp với ERD tool: users, orders, order_items, products,
+// categories, profiles, students, courses, enrollments.
+// Mỗi relation mô tả FK để Query Builder JOIN lồng nhiều tầng:
+//   fromCol = cột ở BẢNG ĐƯỢC JOIN (bảng con `table`)
+//   toCol   = cột ở BẢNG HIỆN TẠI (bảng cha đang đứng)
+// ON sẽ ráp động theo alias: <childAlias>.<fromCol> = <parentAlias>.<toCol>
+// (với self-join `child`, đảo hướng dùng selfInverted để ON đúng chiều).
+const SQL_SCHEMA = {
+  users: {
+    columns: [
+      { name: "id", type: "UUID" }, { name: "email", type: "TEXT" },
+      { name: "full_name", type: "TEXT" }, { name: "created_at", type: "DATE" },
+    ],
+    relations: [
+      { table: "orders", kind: "1-n", fromCol: "user_id", toCol: "id", join: "JOIN" },
+      { table: "profiles", kind: "0-1", fromCol: "user_id", toCol: "id", join: "LEFT JOIN" },
+    ],
+  },
+  profiles: {
+    columns: [
+      { name: "id", type: "UUID" }, { name: "user_id", type: "UUID" },
+      { name: "bio", type: "TEXT" }, { name: "phone", type: "TEXT" },
+    ],
+    relations: [
+      { table: "users", kind: "n-1", fromCol: "id", toCol: "user_id", join: "JOIN" },
+    ],
+  },
+  orders: {
+    columns: [
+      { name: "id", type: "UUID" }, { name: "user_id", type: "UUID" },
+      { name: "status", type: "TEXT" }, { name: "total_amount", type: "INT" },
+      { name: "created_at", type: "DATE" },
+    ],
+    relations: [
+      { table: "users", kind: "n-1", fromCol: "id", toCol: "user_id", join: "JOIN" },
+      { table: "order_items", kind: "1-n", fromCol: "order_id", toCol: "id", join: "JOIN" },
+    ],
+  },
+  order_items: {
+    columns: [
+      { name: "id", type: "UUID" }, { name: "order_id", type: "UUID" },
+      { name: "product_id", type: "UUID" }, { name: "quantity", type: "INT" },
+    ],
+    relations: [
+      { table: "orders", kind: "n-1", fromCol: "id", toCol: "order_id", join: "JOIN" },
+      { table: "products", kind: "n-1", fromCol: "id", toCol: "product_id", join: "JOIN" },
+    ],
+  },
+  products: {
+    columns: [
+      { name: "id", type: "UUID" }, { name: "name", type: "TEXT" },
+      { name: "price", type: "INT" }, { name: "category_id", type: "UUID" },
+    ],
+    relations: [
+      { table: "categories", kind: "n-1", fromCol: "id", toCol: "category_id", join: "JOIN" },
+      { table: "order_items", kind: "1-n", fromCol: "product_id", toCol: "id", join: "JOIN" },
+    ],
+  },
+  categories: {
+    columns: [
+      { name: "id", type: "UUID" }, { name: "name", type: "TEXT" },
+      { name: "parent_id", type: "UUID" },
+    ],
+    relations: [
+      // self-referencing: parent_id trỏ về chính categories.id
+      { table: "categories", kind: "self", alias: "parent",
+        fromCol: "id", toCol: "parent_id", join: "LEFT JOIN" },
+      { table: "products", kind: "1-n", fromCol: "category_id", toCol: "id", join: "JOIN" },
+    ],
+  },
+  students: {
+    columns: [
+      { name: "id", type: "UUID" }, { name: "name", type: "TEXT" },
+    ],
+    relations: [
+      // n-n students↔courses: đi qua enrollments rồi tới courses
+      { table: "enrollments", kind: "1-n", fromCol: "student_id", toCol: "id", join: "JOIN" },
+    ],
+  },
+  courses: {
+    columns: [
+      { name: "id", type: "UUID" }, { name: "title", type: "TEXT" },
+    ],
+    relations: [
+      { table: "enrollments", kind: "1-n", fromCol: "course_id", toCol: "id", join: "JOIN" },
+    ],
+  },
+  enrollments: {
+    columns: [
+      { name: "id", type: "UUID" }, { name: "student_id", type: "UUID" },
+      { name: "course_id", type: "UUID" }, { name: "enrolled_at", type: "DATE" },
+    ],
+    relations: [
+      { table: "students", kind: "n-1", fromCol: "id", toCol: "student_id", join: "JOIN" },
+      { table: "courses", kind: "n-1", fromCol: "id", toCol: "course_id", join: "JOIN" },
+    ],
+  },
+};
+
+const SQL_SEED = `
+CREATE TABLE categories (id INTEGER PRIMARY KEY, name TEXT, parent_id INTEGER);
+CREATE TABLE products (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, category_id INTEGER);
+CREATE TABLE users (id INTEGER PRIMARY KEY, email TEXT, full_name TEXT, created_at TEXT);
+CREATE TABLE profiles (id INTEGER PRIMARY KEY, user_id INTEGER, bio TEXT, phone TEXT);
+CREATE TABLE orders (id INTEGER PRIMARY KEY, user_id INTEGER, status TEXT, total_amount INTEGER, created_at TEXT);
+CREATE TABLE order_items (id INTEGER PRIMARY KEY, order_id INTEGER, product_id INTEGER, quantity INTEGER);
+CREATE TABLE students (id INTEGER PRIMARY KEY, name TEXT);
+CREATE TABLE courses (id INTEGER PRIMARY KEY, title TEXT);
+CREATE TABLE enrollments (id INTEGER PRIMARY KEY, student_id INTEGER, course_id INTEGER, enrolled_at TEXT);
+
+INSERT INTO categories (id,name,parent_id) VALUES
+  (1,'Điện tử',NULL),(2,'Điện thoại',1),(3,'Laptop',1),(4,'Sách',NULL),(5,'Sách kỹ thuật',4);
+
+INSERT INTO products (id,name,price,category_id) VALUES
+  (1,'iPhone 15',25000000,2),(2,'Galaxy S24',20000000,2),
+  (3,'MacBook Air',30000000,3),(4,'Dell XPS',28000000,3),
+  (5,'Clean Code',350000,5),(6,'SQL cơ bản',280000,5);
+
+INSERT INTO users (id,email,full_name,created_at) VALUES
+  (1,'an@example.com','Nguyễn Văn An','2026-01-05'),
+  (2,'binh@example.com','Trần Thị Bình','2026-01-12'),
+  (3,'cuong@example.com','Lê Cường','2026-02-01'),
+  (4,'dung@example.com','Phạm Dung','2026-02-20');
+-- user 4 (Dung) cố ý CHƯA có profile và CHƯA có đơn nào (minh họa quan hệ optional)
+
+INSERT INTO profiles (id,user_id,bio,phone) VALUES
+  (1,1,'Khách VIP','0900000001'),
+  (2,2,'Khách mới','0900000002'),
+  (3,3,'',NULL);
+
+INSERT INTO orders (id,user_id,status,total_amount,created_at) VALUES
+  (1,1,'paid',55000000,'2026-02-10'),
+  (2,1,'pending',350000,'2026-03-01'),
+  (3,2,'paid',20000000,'2026-02-15'),
+  (4,3,'cancelled',280000,'2026-02-28'),
+  (5,2,'pending',28000000,'2026-03-05');
+
+INSERT INTO order_items (id,order_id,product_id,quantity) VALUES
+  (1,1,1,1),(2,1,3,1),(3,2,6,1),(4,3,2,1),(5,4,6,1),(6,5,4,1);
+
+INSERT INTO students (id,name) VALUES
+  (1,'Học viên A'),(2,'Học viên B'),(3,'Học viên C');
+
+INSERT INTO courses (id,title) VALUES
+  (1,'SQL cho BA'),(2,'Nghiệp vụ IT'),(3,'Tiếng Nhật N3');
+
+INSERT INTO enrollments (id,student_id,course_id,enrolled_at) VALUES
+  (1,1,1,'2026-01-10'),(2,1,2,'2026-01-15'),(3,2,1,'2026-01-11'),
+  (4,3,3,'2026-02-01'),(5,2,3,'2026-02-02');
+`;
+
+const SQL_SAMPLES = [
+  { label: "Đơn đang pending", sql:
+    "SELECT id, user_id, status, total_amount\nFROM orders\nWHERE status = 'pending'\nORDER BY total_amount DESC;" },
+  { label: "Đếm đơn theo trạng thái", sql:
+    "SELECT status, COUNT(*) AS so_don, SUM(total_amount) AS tong_tien\nFROM orders\nGROUP BY status;" },
+  { label: "LEFT JOIN — user & profile (thấy user thiếu profile)", sql:
+    "SELECT u.full_name, p.bio\nFROM users u\nLEFT JOIN profiles p ON p.user_id = u.id;" },
+  { label: "n:n — mỗi khóa có bao nhiêu học viên", sql:
+    "SELECT c.title, COUNT(e.student_id) AS so_hoc_vien\nFROM courses c\nJOIN enrollments e ON e.course_id = c.id\nGROUP BY c.title;" },
+  { label: "Self-join — danh mục cha–con", sql:
+    "SELECT child.name AS danh_muc, parent.name AS thuoc_nhom\nFROM categories child\nLEFT JOIN categories parent ON parent.id = child.parent_id;" },
+  { label: "Tổng hợp — SUM/AVG/MIN/MAX theo trạng thái đơn", sql:
+    "SELECT status,\n       COUNT(*)          AS so_don,\n       SUM(total_amount) AS tong_tien,\n       AVG(total_amount) AS trung_binh,\n       MIN(total_amount) AS thap_nhat,\n       MAX(total_amount) AS cao_nhat\nFROM orders\nGROUP BY status;" },
+];
+
+// Chặn mọi thứ không phải SELECT/WITH (read-only)
+function isReadOnlySQL(sql) {
+  const cleaned = sql
+    .replace(/--[^\n]*/g, " ")
+    .replace(/\/\*[\s\S]*?\*\//g, " ")
+    .trim();
+  if (!cleaned) return { ok: false, reason: "Chưa có câu SQL." };
+  const forbidden = /\b(INSERT|UPDATE|DELETE|DROP|ALTER|CREATE|REPLACE|TRUNCATE|ATTACH|DETACH|PRAGMA|VACUUM|REINDEX)\b/i;
+  if (forbidden.test(cleaned)) {
+    return { ok: false, reason: "Chỉ cho phép truy vấn đọc (SELECT). Nguyên tắc an toàn của BA." };
+  }
+  const first = cleaned.split(/\s+/)[0].toUpperCase();
+  if (first !== "SELECT" && first !== "WITH") {
+    return { ok: false, reason: "Câu truy vấn phải bắt đầu bằng SELECT (hoặc WITH)." };
+  }
+  return { ok: true };
+}
+
+let _sqlDbPromise = null;
+function getSqlDb() {
+  if (_sqlDbPromise) return _sqlDbPromise;
+  _sqlDbPromise = (async () => {
+    if (!window.initSqlJs) {
+      await new Promise((resolve, reject) => {
+        const s = document.createElement("script");
+        s.src = SQLJS_CDN + "sql-wasm.js";
+        s.onload = resolve;
+        s.onerror = () => reject(new Error("Không tải được sql.js từ CDN (kiểm tra mạng)."));
+        document.head.appendChild(s);
+      });
+    }
+    const SQL = await window.initSqlJs({ locateFile: f => SQLJS_CDN + f });
+    const db = new SQL.Database();
+    db.run(SQL_SEED);
+    return db;
+  })();
+  return _sqlDbPromise;
+}
+
+// ---------- Query Builder state ----------
+// state = {
+//   base: "students",
+//   nodes: Map(alias -> { table, parentAlias, rel, order }),  // cây JOIN
+//   cols:  Set("alias.col"),
+// }
+// alias base = tên bảng; alias con = parentAlias + "__" + (rel.alias||rel.table),
+// đảm bảo duy nhất theo đường đi (path) → JOIN lồng nhiều tầng, cùng bảng nhiều nhánh OK.
+function childAlias(parentAlias, rel) {
+  return parentAlias + "__" + (rel.alias || rel.table);
+}
+
+// Tên hiển thị alias trong SQL: base giữ nguyên tên bảng; con dùng alias rút gọn
+// (bỏ tiền tố base cho gọn) nếu không đụng độ; ở đây dùng nguyên alias path cho an toàn.
+// Alias kết quả của aggregate — gồm cả alias bảng để duy nhất khi 2 bảng có cột trùng tên.
+// "orders.total_amount" → "sum_orders_total_amount"; alias lồng "a__b.qty" → "sum_a__b_qty".
+function aggAlias(fn, col) {
+  const safe = col.replace(/\./g, "_");
+  return `${fn.toLowerCase()}_${safe}`;
+}
+
+function buildSQL(state) {
+  if (!state.base) return "-- Chọn bảng gốc để bắt đầu";
+
+  // Thứ tự JOIN: cha phải xuất hiện trước con → sort theo order thêm vào,
+  // nhưng đảm bảo parent luôn có mặt (đã đảm bảo khi thêm node).
+  const joinNodes = [...state.nodes.values()]
+    .filter(n => n.parentAlias !== null)
+    .sort((a, b) => a.order - b.order);
+
+  const joinLines = joinNodes.map(n => {
+    const rel = n.rel;
+    const childA = n.alias;
+    const parentA = n.parentAlias;
+    const on = `${childA}.${rel.fromCol} = ${parentA}.${rel.toCol}`;
+    // Nếu alias khác tên bảng → thêm alias vào FROM/JOIN
+    const tableRef = childA === rel.table ? rel.table : `${rel.table} ${childA}`;
+    return `${rel.join} ${tableRef} ON ${on}`;
+  });
+
+  const cols = [...state.cols];
+  // Tách cột đã chọn thành 2 nhóm: có aggregate và không (GROUP BY dùng nhóm sau)
+  const hasAgg = state.aggs.size > 0;
+  const aggCols = [];      // "SUM(orders.total_amount) AS sum_total_amount"
+  const plainCols = [];    // cột thường (đưa vào SELECT và GROUP BY)
+  cols.forEach(c => {
+    const fn = state.aggs.get(c);
+    if (fn) aggCols.push(`${fn}(${c}) AS ${aggAlias(fn, c)}`);
+    else plainCols.push(c);
+  });
+
+  let selectList;
+  if (!cols.length) {
+    selectList = hasAgg ? "" : state.base + ".*";
+  } else {
+    selectList = [...plainCols, ...aggCols].join(",\n       ");
+  }
+  // Trường hợp chỉ có agg, không cột thường: SELECT chỉ gồm agg (không có base.*)
+  if (!selectList) selectList = aggCols.join(",\n       ") || state.base + ".*";
+
+  let sql = `SELECT ${selectList}\nFROM ${state.base}`;
+  if (joinLines.length) sql += "\n" + joinLines.join("\n");
+
+  // GROUP BY tự sinh: khi có ít nhất 1 aggregate, mọi cột non-agg được chọn phải
+  // xuất hiện trong GROUP BY (nguyên lý SQL: cột không tổng hợp phải được nhóm).
+  if (hasAgg && plainCols.length) {
+    sql += "\nGROUP BY " + plainCols.join(", ");
+  }
+  return sql + ";";
+}
+
+function renderSqlPlayground(container) {
+  container.innerHTML =
+    `<div class="sqlpg">
+       <div class="sqlpg-tabs">
+         <button class="sqlpg-tab active" data-pane="builder">🔧 Query Builder</button>
+         <button class="sqlpg-tab" data-pane="editor">⌨️ Viết SQL tự do</button>
+       </div>
+       <div class="sqlpg-body">
+         <div class="sqlpg-status" data-role="status">Đang tải cơ sở dữ liệu mẫu…</div>
+         <div class="sqlpg-pane active" data-pane="builder">
+           <div class="qb-cols">
+             <div class="qb-col">
+               <h4>1. Chọn bảng gốc (FROM)</h4>
+               <div class="qb-tables" data-role="qb-tables"></div>
+             </div>
+             <div class="qb-col">
+               <h4>2. Chọn cột &amp; bảng liên quan</h4>
+               <div class="qb-fields" data-role="qb-fields">
+                 <div class="qb-field"><span style="color:var(--muted)">Chọn một bảng gốc bên trái.</span></div>
+               </div>
+             </div>
+           </div>
+           <div class="sqlpg-gen" data-role="qb-gen">-- Chọn bảng gốc để bắt đầu</div>
+           <div class="sqlpg-actions">
+             <button class="sqlpg-btn primary" data-role="qb-run">▶ Chạy câu này</button>
+             <button class="sqlpg-btn ghost" data-role="qb-copy">📋 Copy SQL</button>
+             <button class="sqlpg-btn ghost" data-role="qb-toeditor">✎ Mở trong ô SQL</button>
+           </div>
+         </div>
+         <div class="sqlpg-pane" data-pane="editor">
+           <textarea class="sqlpg-sqlbox" data-role="sqlbox" spellcheck="false"
+             placeholder="SELECT * FROM orders LIMIT 10;">SELECT id, full_name, email FROM users;</textarea>
+           <div class="sqlpg-samples">
+             <span class="lbl">Ví dụ:</span><span data-role="samples"></span>
+           </div>
+           <div class="sqlpg-actions">
+             <button class="sqlpg-btn primary" data-role="ed-run">▶ Chạy (Ctrl/Cmd+Enter)</button>
+           </div>
+         </div>
+         <div class="sqlpg-result" data-role="result"></div>
+         <div class="sqlpg-schema-note">
+           Bảng có sẵn: <code>users</code>, <code>profiles</code>, <code>orders</code>,
+           <code>order_items</code>, <code>products</code>, <code>categories</code> (tự nối cha–con),
+           <code>students</code>, <code>courses</code>, <code>enrollments</code>.
+           Dữ liệu mẫu cố ý có user chưa có profile/đơn để minh họa quan hệ optional.
+         </div>
+       </div>
+     </div>`;
+
+  const $ = sel => container.querySelector(`[data-role="${sel}"]`);
+  const statusEl = $("status");
+  const state = { base: null, cols: new Set(), nodes: new Map(), aggs: new Map() };
+  let joinOrder = 0;
+
+  // tab switch
+  container.querySelectorAll(".sqlpg-tab").forEach(tab => {
+    tab.onclick = () => {
+      container.querySelectorAll(".sqlpg-tab").forEach(t => t.classList.toggle("active", t === tab));
+      container.querySelectorAll(".sqlpg-pane").forEach(p =>
+        p.classList.toggle("active", p.dataset.pane === tab.dataset.pane));
+    };
+  });
+
+  // bảng gốc
+  const tablesWrap = $("qb-tables");
+  Object.keys(SQL_SCHEMA).forEach(tbl => {
+    const b = document.createElement("button");
+    b.className = "qb-table-btn"; b.textContent = tbl;
+    b.onclick = () => {
+      state.base = tbl; state.cols.clear(); state.nodes.clear(); state.aggs.clear(); joinOrder = 0;
+      // node gốc
+      state.nodes.set(tbl, { table: tbl, alias: tbl, parentAlias: null, rel: null, order: joinOrder++ });
+      tablesWrap.querySelectorAll(".qb-table-btn").forEach(x =>
+        x.classList.toggle("active", x === b));
+      renderFields();
+      refreshGen();
+    };
+    tablesWrap.appendChild(b);
+  });
+
+  const KIND_LABEL = { "1-n": "1-n", "n-1": "n-1", "0-1": "0-1", "self": "tự nối", "n-n": "n-n" };
+
+  // Render lại toàn bộ cây cột/quan hệ từ state (đệ quy). Gọi mỗi khi state đổi
+  // để đảm bảo mở/đóng nhánh lồng nhau luôn nhất quán.
+  function renderFields() {
+    const wrap = $("qb-fields");
+    wrap.innerHTML = "";
+    if (!state.base) return;
+    renderNode(wrap, state.base, 0);
+  }
+
+  // alias: alias của node hiện tại; depth: độ sâu để thụt lề
+  function renderNode(wrap, alias, depth) {
+    const node = state.nodes.get(alias);
+    const table = node.table;
+    // 1) các cột của bảng này
+    SQL_SCHEMA[table].columns.forEach(col => {
+      const key = alias + "." + col.name;
+      const row = document.createElement("label");
+      row.className = "qb-field";
+      row.style.paddingLeft = (11 + depth * 18) + "px";
+      // Hàm tổng hợp: cột số (INT) cho SUM/AVG/MIN/MAX; mọi cột đều cho COUNT.
+      const isNumeric = col.type === "INT";
+      const numFns = isNumeric ? ["SUM", "AVG", "MIN", "MAX"] : [];
+      const fnOpts = ["", "COUNT", ...numFns]
+        .map(fn => `<option value="${fn}"${state.aggs.get(key) === fn ? " selected" : ""}>${fn || "—"}</option>`)
+        .join("");
+      row.innerHTML =
+        `<input type="checkbox" ${state.cols.has(key) ? "checked" : ""}>
+         <span>${alias}.${col.name}</span>
+         <span class="qb-type">${col.type}</span>
+         <select class="qb-agg" title="Hàm tổng hợp (aggregate)">${fnOpts}</select>`;
+      const cb = row.querySelector("input");
+      const sel = row.querySelector("select");
+      cb.onchange = e => {
+        if (e.target.checked) state.cols.add(key);
+        else { state.cols.delete(key); state.aggs.delete(key); }
+        renderFields();  // cập nhật lại để dropdown reset theo trạng thái cột
+        refreshGen();
+      };
+      sel.onchange = e => {
+        const fn = e.target.value;
+        if (fn) { state.aggs.set(key, fn); state.cols.add(key); }
+        else state.aggs.delete(key);
+        renderFields();
+        refreshGen();
+      };
+      // click vào dropdown không toggle checkbox của label
+      sel.onclick = e => e.preventDefault();
+      wrap.appendChild(row);
+    });
+    // 2) các bảng liên quan (relation) — mỗi cái là 1 checkbox mở JOIN
+    (SQL_SCHEMA[table].relations || []).forEach(rel => {
+      const cAlias = childAlias(alias, rel);
+      const joined = state.nodes.has(cAlias);
+      const row = document.createElement("label");
+      row.className = "qb-field qb-related";
+      row.style.paddingLeft = (11 + depth * 18) + "px";
+      const dispName = rel.alias ? `${rel.table} (${rel.alias})` : rel.table;
+      row.innerHTML =
+        `<input type="checkbox" ${joined ? "checked" : ""}>
+         <span>▸ JOIN: <b>${dispName}</b></span>
+         <span class="qb-jointag">${KIND_LABEL[rel.kind] || rel.kind}</span>`;
+      row.querySelector("input").onchange = e => {
+        if (e.target.checked) addJoin(alias, rel);
+        else removeJoin(cAlias);
+        renderFields();   // render lại toàn cây (đơn giản & đúng cho nhánh lồng)
+        refreshGen();
+      };
+      wrap.appendChild(row);
+      // 3) nếu đã JOIN → render đệ quy bảng con ngay bên dưới
+      if (joined) renderNode(wrap, cAlias, depth + 1);
+    });
+  }
+
+  function addJoin(parentAlias, rel) {
+    const alias = childAlias(parentAlias, rel);
+    if (state.nodes.has(alias)) return;
+    state.nodes.set(alias, {
+      table: rel.table, alias, parentAlias, rel, order: joinOrder++,
+    });
+  }
+
+  // Bỏ 1 node JOIN + đệ quy bỏ mọi node con của nó + cột liên quan
+  function removeJoin(alias) {
+    // tìm con trực tiếp
+    [...state.nodes.values()].forEach(n => {
+      if (n.parentAlias === alias) removeJoin(n.alias);
+    });
+    state.nodes.delete(alias);
+    [...state.cols].forEach(c => { if (c.startsWith(alias + ".")) state.cols.delete(c); });
+    [...state.aggs.keys()].forEach(c => { if (c.startsWith(alias + ".")) state.aggs.delete(c); });
+  }
+
+  function refreshGen() {
+    $("qb-gen").textContent = buildSQL(state);
+  }
+
+  // chạy SQL, render bảng kết quả
+  async function runSQL(sql) {
+    const check = isReadOnlySQL(sql);
+    if (!check.ok) { setStatus(check.reason, true); $("result").innerHTML = ""; return; }
+    setStatus("Đang chạy…");
+    try {
+      const db = await getSqlDb();
+      const res = db.exec(sql);
+      renderResult(res);
+      setStatus("");
+    } catch (err) {
+      setStatus("Lỗi SQL: " + err.message, true);
+      $("result").innerHTML = "";
+    }
+  }
+
+  function renderResult(res) {
+    const box = $("result");
+    if (!res.length) {
+      box.innerHTML = `<div class="sqlpg-rowcount">Truy vấn chạy xong, không có dòng nào khớp.</div>`;
+      return;
+    }
+    const { columns, values } = res[0];
+    const head = columns.map(c => `<th>${escapeHtml(c)}</th>`).join("");
+    const rows = values.map(r =>
+      "<tr>" + r.map(v =>
+        v === null ? `<td class="null">NULL</td>` : `<td>${escapeHtml(String(v))}</td>`
+      ).join("") + "</tr>").join("");
+    box.innerHTML =
+      `<table><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table>
+       <div class="sqlpg-rowcount">${values.length} dòng.</div>`;
+  }
+
+  function setStatus(msg, isErr) {
+    statusEl.textContent = msg;
+    statusEl.classList.toggle("err", !!isErr);
+    statusEl.style.display = msg ? "block" : "none";
+  }
+
+  // buttons
+  $("qb-run").onclick = () => runSQL(buildSQL(state));
+  $("qb-copy").onclick = () => {
+    navigator.clipboard?.writeText(buildSQL(state));
+    toast("Đã copy SQL");
+  };
+  $("qb-toeditor").onclick = () => {
+    $("sqlbox").value = buildSQL(state);
+    container.querySelector('.sqlpg-tab[data-pane="editor"]').click();
+  };
+  $("ed-run").onclick = () => runSQL($("sqlbox").value);
+  $("sqlbox").addEventListener("keydown", e => {
+    if ((e.metaKey || e.ctrlKey) && e.key === "Enter") { e.preventDefault(); runSQL($("sqlbox").value); }
+  });
+
+  // sample buttons
+  const samplesWrap = $("samples");
+  SQL_SAMPLES.forEach(s => {
+    const b = document.createElement("button");
+    b.textContent = s.label;
+    b.onclick = () => { $("sqlbox").value = s.sql; runSQL(s.sql); };
+    samplesWrap.appendChild(b);
+  });
+
+  // preload DB
+  getSqlDb().then(() => setStatus("")).catch(err => setStatus(err.message, true));
+}
+
+// Tìm marker [[sql-playground]] trong prose (render thành <p>[[sql-playground]]</p>)
+// rồi thay bằng widget.
+function mountSqlPlayground() {
+  document.querySelectorAll(".prose p").forEach(p => {
+    if (p.textContent.trim() === "[[sql-playground]]") {
+      const holder = document.createElement("div");
+      p.replaceWith(holder);
+      renderSqlPlayground(holder);
+    }
+  });
+}
+
+// ---------- Init ----------
+(async function init() {
+  await loadSurvey();
+  if (progress.lastTrack) {
+    // tự mở lại track gần nhất
+    openTrack(progress.lastTrack);
+  }
+})();
+</script>
+</body>
+</html>

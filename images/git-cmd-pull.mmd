@@ -1,0 +1,9 @@
+flowchart LR
+    subgraph B["TRƯỚC"]
+        l1["📦 Local<br/>c1 ← c2"]
+        r1["☁️ Remote<br/>c1 ← c2 ← c3"]
+    end
+    subgraph A["SAU — git pull (fetch + merge)"]
+        l2["📦 Local<br/>c1 ← c2 ← c3"]
+    end
+    B ==>|"git pull origin main"| A

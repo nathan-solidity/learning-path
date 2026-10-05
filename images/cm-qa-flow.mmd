@@ -1,0 +1,8 @@
+flowchart TD
+    DEV[Dev gặp điểm mơ hồ trong spec] --> Q[Comtor: viết câu hỏi rõ ràng<br/>bối cảnh + phương án A/B + hỏi cụ thể]
+    Q --> SHEET[Ghi vào Q&A sheet<br/>song ngữ, có trạng thái + ngày]
+    SHEET --> CUST[Gửi khách/BrSE]
+    CUST --> ANS{Khách trả lời?}
+    ANS -->|Rõ ràng| CLOSE[Dịch lại cho dev, đóng câu hỏi]
+    ANS -->|Vẫn mơ hồ| Q
+    ANS -->|Chưa trả lời| WAIT[Câu treo = rủi ro tiến độ<br/>theo dõi & nhắc]

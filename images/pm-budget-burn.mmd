@@ -1,0 +1,5 @@
+flowchart TD
+    A[Đo định kỳ:<br/>% ngân sách đã tiêu<br/>vs % công việc đã xong] --> B{Tiền tiêu ><br/>việc hoàn thành?}
+    B -->|Có: tiêu 70%, xong 50%| RED[Cảnh báo đỏ<br/>sắp vượt ngân sách<br/>-> cắt scope / xin thêm / tăng hiệu suất]
+    B -->|Cân đối| OK[Ổn: tiếp tục theo dõi]
+    B -->|Tiêu chậm vì việc bị block| WARN[Rủi ro dồn cục về sau<br/>-> gỡ block sớm]

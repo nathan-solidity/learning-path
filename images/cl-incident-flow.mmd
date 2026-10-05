@@ -1,0 +1,7 @@
+flowchart TD
+    S[Sự cố production] --> IMPACT[1. Đánh giá tác động<br/>ảnh hưởng ai, mất gì]
+    IMPACT --> MIT[2. Cầm máu - mitigate<br/>rollback / tắt feature / chuyển traffic]
+    MIT --> STABLE[3. Ổn định & xác nhận<br/>hết ảnh hưởng]
+    STABLE --> ROOT[4. Tìm nguyên nhân gốc<br/>làm SAU, trong postmortem]
+    ROOT --> PM[5. Postmortem blameless<br/>action item có owner + hạn]
+    COMM[Song song: 1 người liên lạc khách/BrSE<br/>báo sớm, trung thực, cập nhật đều] -.-> MIT

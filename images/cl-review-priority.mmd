@@ -1,0 +1,7 @@
+flowchart TD
+    START[Thời gian review có hạn] --> A{Phần này rủi ro cao?<br/>bảo mật / tiền / dữ liệu / lõi}
+    A -->|Có| DEEP[Review sâu, kỹ từng case]
+    A -->|Không| B{Logic phức tạp<br/>hoặc hay đổi?}
+    B -->|Có| MED[Review vừa: tập trung điểm dễ sai]
+    B -->|Không, phần phụ ổn định| LIGHT[Review nhẹ / cho qua<br/>tin tưởng + spot check]
+    NOTE[Nguyên tắc: dồn công review<br/>vào chỗ hỏng thì thiệt hại lớn nhất]

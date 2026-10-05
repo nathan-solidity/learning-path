@@ -1,0 +1,11 @@
+flowchart LR
+    subgraph PROMPT["Messages"]
+        SYS["system: vai trò & quy tắc"]
+        USER["user: câu hỏi/dữ liệu"]
+    end
+    PROMPT -->|"SDK client.messages.create()"| API["LLM API<br/>(key đọc từ env)"]
+    API --> RESP["Response<br/>text / JSON"]
+    RESP --> VAL["Validate bằng Pydantic<br/>(structured output)"]
+    VAL --> APP["Dùng trong app"]
+    note["KHÔNG hard-code API key → đọc os.environ.<br/>Đừng tin mù output: validate JSON trước khi dùng.<br/>Xử lý rate limit bằng retry + backoff."]
+    API -.-> note

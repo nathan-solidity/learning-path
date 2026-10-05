@@ -1,0 +1,8 @@
+flowchart LR
+    subgraph B["TRƯỚC"]
+        w1["🖥️ old-name.py"]
+    end
+    subgraph A["SAU — git mv old-name.py new-name.py"]
+        w2["🖥️ new-name.py<br/>(Git ghi nhận là đổi tên, staged)"]
+    end
+    B ==>|"git mv old-name.py new-name.py"| A

@@ -1,0 +1,17 @@
+flowchart TB
+    P["Producer<br/>send(key=orderId, event)"]
+    subgraph Topic["Topic: orders"]
+        P0["Partition 0"]
+        P1["Partition 1"]
+        P2["Partition 2"]
+    end
+    P -->|"cùng key → cùng partition<br/>(giữ thứ tự)"| P0
+    subgraph Group["Consumer group: billing"]
+        C0["Consumer A"]
+        C1["Consumer B"]
+    end
+    P0 --> C0
+    P1 --> C0
+    P2 --> C1
+    C0 -->|"idempotent guard<br/>(at-least-once → tránh trùng)"| DB[(xử lý)]
+    C1 --> DB

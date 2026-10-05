@@ -1,0 +1,14 @@
+flowchart TB
+    subgraph JVM["JVM Memory"]
+        subgraph Heap["Heap — object sống ở đây, GC dọn"]
+            direction LR
+            Y["Young Gen<br/>(Eden + Survivor)<br/>object mới, GC nhanh"]
+            O["Old Gen<br/>object sống lâu"]
+            Y -->|"sống sót qua nhiều lần GC"| O
+        end
+        M["Metaspace<br/>metadata class (native mem)"]
+        S["Stack (mỗi thread 1)<br/>biến local, khung gọi hàm"]
+    end
+    Flags["-Xms / -Xmx: heap khởi tạo / tối đa"] -.->|cấu hình| Heap
+    OOM["OutOfMemoryError → hết Heap"] -.-> Heap
+    SOE["StackOverflowError → đệ quy sâu"] -.-> S

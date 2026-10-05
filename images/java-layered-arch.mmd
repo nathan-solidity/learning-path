@@ -1,0 +1,13 @@
+flowchart TB
+    subgraph bad["❌ Fat controller"]
+        BC["Controller<br/>chứa cả business logic + query"] --> BDB[(DB)]
+    end
+    subgraph good["✅ Layered — phụ thuộc 1 chiều"]
+        GC["Controller<br/>nhận request, validate, trả response"]
+        GS["Service<br/>business logic, transaction"]
+        GR["Repository<br/>truy cập DB"]
+        GC -->|chỉ đi xuống| GS
+        GS -->|chỉ đi xuống| GR
+        GR --> GDB[(DB)]
+    end
+    bad -.->|refactor| good

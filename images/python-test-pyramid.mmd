@@ -1,0 +1,7 @@
+flowchart TD
+    E["E2E test<br/>ÍT · chậm · toàn app từ đầu tới cuối"]
+    I["Integration test<br/>VỪA · nhiều thành phần: API + DB thật"]
+    U["Unit test — pytest<br/>NHIỀU · nhanh · rẻ nhất, mock dependency"]
+    E --> I --> U
+    note["Nguyên tắc: đáy rộng (nhiều unit test nhanh),<br/>đỉnh hẹp (ít E2E vì chậm & dễ vỡ).<br/>Mock API/DB để unit test chạy nhanh & ổn định."]
+    U -.-> note

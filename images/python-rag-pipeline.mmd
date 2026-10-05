@@ -1,0 +1,16 @@
+flowchart TB
+    subgraph INDEX["① Lập chỉ mục (offline)"]
+        DOC[("Tài liệu riêng")] --> CHUNK["Chia nhỏ (chunk)"]
+        CHUNK --> EMB["Embedding<br/>văn bản → vector"]
+        EMB --> VDB[("Vector DB")]
+    end
+    subgraph QUERY["② Truy vấn (khi user hỏi)"]
+        Q["Câu hỏi"] --> QEMB["Embedding câu hỏi"]
+        QEMB --> SEARCH["Tìm chunk gần nhất<br/>(similarity search)"]
+        VDB --> SEARCH
+        SEARCH --> CTX["Chunk liên quan"]
+        CTX --> LLM["LLM: câu hỏi + context"]
+        LLM --> ANS["Câu trả lời có dẫn chứng"]
+    end
+    note["RAG = cho LLM 'tra cứu' dữ liệu riêng trước khi trả lời.<br/>Chunk quá to → nhiễu & tốn token; quá nhỏ → mất ngữ cảnh."]
+    LLM -.-> note

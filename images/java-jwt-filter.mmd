@@ -1,0 +1,10 @@
+flowchart LR
+    U([Client]) -->|"Authorization: Bearer token"| F1
+    subgraph Chain["Security Filter Chain"]
+        F1["JwtAuthFilter<br/>đọc & xác thực token"]
+        F2["Authorization<br/>kiểm role / ownership"]
+    end
+    F1 -->|"token hợp lệ → set SecurityContext"| F2
+    F2 -->|"đủ quyền"| C["Controller"]
+    F1 -.->|"token sai/thiếu"| E401["401 Unauthorized"]
+    F2 -.->|"không đủ quyền"| E403["403 Forbidden"]

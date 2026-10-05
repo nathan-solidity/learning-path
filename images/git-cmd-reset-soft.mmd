@@ -1,0 +1,9 @@
+flowchart LR
+    subgraph B["TRƯỚC"]
+        l1["📦 c1 ← c2 ← c3 ←HEAD"]
+    end
+    subgraph A["SAU — reset --soft HEAD~1"]
+        l2["📦 c1 ← c2 ←HEAD"]
+        s2["📥 Staging: thay đổi của c3 ✓<br/>(giữ, đã stage)"]
+    end
+    B ==>|"git reset --soft HEAD~1"| A

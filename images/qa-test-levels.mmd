@@ -1,0 +1,13 @@
+flowchart TD
+    A["Acceptance / UAT<br/>Khách · BrSE xác nhận đúng nhu cầu"]:::a
+    S["System (E2E)<br/>QA · toàn hệ thống end-to-end"]:::s
+    I["Integration<br/>Dev/QA · nhiều module ghép (API ↔ DB)"]:::i
+    U["Unit<br/>Dev · 1 hàm/class riêng lẻ"]:::u
+    A --> S --> I --> U
+    cost["Bug bắt ở level càng CAO<br/>→ sửa càng ĐẮT.<br/>Vì vậy: dev viết unit test,<br/>QA đẩy test sớm ở integration/system"]:::note
+    A -.-> cost
+    classDef a fill:#ede7f6,stroke:#5e35b1
+    classDef s fill:#e3f2fd,stroke:#1976d2
+    classDef i fill:#e0f2f1,stroke:#00897b
+    classDef u fill:#e8f5e9,stroke:#43a047
+    classDef note fill:#fffde7,stroke:#f9a825

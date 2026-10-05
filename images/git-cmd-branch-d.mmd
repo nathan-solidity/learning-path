@@ -1,0 +1,9 @@
+flowchart LR
+    subgraph B["TRƯỚC"]
+        m1["main ●←HEAD"]
+        f1["feature/login ● (đã merge)"]
+    end
+    subgraph A["SAU — git branch -d feature/login"]
+        m2["main ●←HEAD"]
+    end
+    B ==>|"git branch -d feature/login"| A

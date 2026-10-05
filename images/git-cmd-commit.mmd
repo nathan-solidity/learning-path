@@ -1,0 +1,10 @@
+flowchart LR
+    subgraph B["TRƯỚC"]
+        s1["📥 Staging<br/>app.py ✓"]
+        l1["📦 Local Repo<br/>c1 ← c2"]
+    end
+    subgraph A["SAU — git commit"]
+        s2["📥 Staging<br/>(trống)"]
+        l2["📦 Local Repo<br/>c1 ← c2 ← c3"]
+    end
+    B ==>|"git commit -m msg"| A

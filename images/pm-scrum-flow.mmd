@@ -1,0 +1,10 @@
+flowchart LR
+    PB[Product Backlog<br/>PO ưu tiên] --> SP[Sprint Planning]
+    SP --> SB[Sprint Backlog<br/>team cam kết]
+    SB --> SPRINT
+    subgraph SPRINT[Sprint 1-4 tuần]
+        DAILY[Daily Scrum<br/>đồng bộ 15 phút]
+    end
+    SPRINT --> REV[Sprint Review<br/>demo + feedback]
+    REV --> RETRO[Retrospective<br/>cải tiến cách làm]
+    RETRO --> SP

@@ -1,0 +1,13 @@
+flowchart LR
+    CSV[("CSV / Excel / SQL")] -->|"pd.read_csv()"| DF
+    subgraph DF["DataFrame (bảng 2 chiều)"]
+        direction TB
+        H["cột: name · age · city  (mỗi cột = 1 Series)"]
+        R0["index 0 | An  | 25 | HN"]
+        R1["index 1 | Bình | 30 | HCM"]
+        R2["index 2 | Chi | 28 | ĐN"]
+        H --- R0 --- R1 --- R2
+    end
+    DF -->|"loc/iloc · boolean filter · groupby"| OUT["Kết quả<br/>đã lọc / tổng hợp"]
+    note["Hàng có index, cột có tên.<br/>Ưu tiên thao tác cả cột (vectorization)<br/>thay vì lặp từng dòng."]
+    DF -.-> note

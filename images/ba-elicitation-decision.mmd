@@ -1,0 +1,12 @@
+flowchart TD
+    START{Cần khai thác<br/>yêu cầu gì?} --> Q1{Nhiều bên<br/>cần thống nhất?}
+    Q1 -->|Có| WS[Workshop]
+    Q1 -->|Không| Q2{Cần ý kiến<br/>số đông?}
+    Q2 -->|Định tính, nhóm nhỏ| FG[Focus Group]
+    Q2 -->|Định lượng, diện rộng| SV[Survey / Questionnaire]
+    Q2 -->|Không| Q3{Đã có<br/>tài liệu cũ?}
+    Q3 -->|Có| DA[Document Analysis]
+    Q3 -->|Không| Q4{Cần hiểu<br/>cách họ làm thật?}
+    Q4 -->|Có| OB[Observation]
+    Q4 -->|Muốn họ hình dung UI| PR[Prototyping]
+    Q4 -->|1-1 chuyên sâu| IV[Interview]

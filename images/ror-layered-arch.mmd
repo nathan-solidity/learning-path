@@ -1,0 +1,12 @@
+flowchart TD
+    subgraph before["❌ Fat controller / fat model"]
+        C1[Controller] -->|"chứa cả<br/>logic nghiệp vụ"| M1[(DB)]
+    end
+    subgraph after["✅ Tách tầng"]
+        C2[Controller<br/>chỉ điều phối] --> S[Service Object<br/>logic nghiệp vụ]
+        C2 --> FO[Form Object<br/>validate input đa model]
+        S --> M2[Model<br/>truy vấn + rule dữ liệu]
+        DEC[Decorator/Presenter<br/>logic hiển thị] --> V[View]
+        M2 --> DB2[(DB)]
+    end
+    before -.->|refactor| after

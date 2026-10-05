@@ -1,0 +1,14 @@
+flowchart TB
+    subgraph Container["Spring IoC Container — tạo & quản lý bean"]
+        C["@RestController<br/>TodoController"]
+        S["@Service<br/>TodoService"]
+        R["@Repository<br/>TodoRepository"]
+    end
+    Container -->|"inject qua constructor"| C
+    Container -->|inject| S
+    Container -->|inject| R
+    C -->|gọi| S
+    S -->|gọi| R
+    R --> DB[(Database)]
+    note["Bạn KHÔNG tự new object —<br/>Spring tạo bean và tiêm vào nơi cần"]
+    note -.-> Container

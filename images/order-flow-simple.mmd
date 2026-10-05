@@ -1,0 +1,8 @@
+flowchart LR
+    A([Bắt đầu]) --> B[Nhận đơn]
+    B --> C{Số tiền > 10tr?}
+    C -->|Không| D[Cấp 1 duyệt]
+    C -->|Có| E[Cấp 1 duyệt]
+    E --> F[Cấp 2 duyệt]
+    D --> G([Kết thúc])
+    F --> G

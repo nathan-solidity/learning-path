@@ -1,0 +1,10 @@
+flowchart LR
+    subgraph B["TRƯỚC"]
+        w1["🖥️ Working Dir<br/>app.py (đã sửa)"]
+        s1["📥 Staging<br/>(trống)"]
+    end
+    subgraph A["SAU — git add app.py"]
+        w2["🖥️ Working Dir<br/>(sạch)"]
+        s2["📥 Staging<br/>app.py ✓"]
+    end
+    B ==>|"git add app.py"| A

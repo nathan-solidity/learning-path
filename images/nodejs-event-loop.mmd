@@ -1,0 +1,12 @@
+flowchart TD
+    JS["Code JavaScript (đơn luồng)"] --> STACK["Call Stack<br/>chạy code đồng bộ"]
+    STACK -->|"gặp việc chờ: I/O, timer, DB"| OFF["Giao ra ngoài<br/>(libuv / OS)"]
+    OFF -->|"xong: Promise"| MICRO["Microtask queue<br/>Promise .then / await"]
+    OFF -->|"xong: timer, I/O"| MACRO["Macrotask queue<br/>setTimeout, I/O callback"]
+    LOOP{{"Event Loop — khi Call Stack rỗng"}}
+    STACK --> LOOP
+    MICRO -->|"① dọn HẾT microtask trước"| LOOP
+    MACRO -->|"② rồi mới 1 macrotask"| LOOP
+    LOOP -->|"đẩy callback vào Call Stack"| STACK
+    note["Thứ tự chạy: đồng bộ → microtask (Promise) → macrotask (setTimeout).<br/>Việc CPU nặng chạy đồng bộ sẽ CHẶN vòng lặp → cả server đơ."]
+    LOOP -.-> note

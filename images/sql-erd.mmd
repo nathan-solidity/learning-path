@@ -1,0 +1,28 @@
+erDiagram
+    CUSTOMERS ||--o{ ORDERS : "đặt (1 khách - nhiều đơn)"
+    ORDERS ||--|{ ORDER_ITEMS : "gồm"
+    PRODUCTS ||--o{ ORDER_ITEMS : "xuất hiện trong"
+    CUSTOMERS {
+        int id PK "khóa chính"
+        string name
+        string email "UNIQUE"
+        string city
+    }
+    ORDERS {
+        int id PK
+        int customer_id FK "khóa ngoại → customers.id"
+        decimal total_amount
+        string status
+        timestamp created_at
+    }
+    ORDER_ITEMS {
+        int id PK
+        int order_id FK "→ orders.id"
+        int product_id FK "→ products.id"
+        int quantity
+    }
+    PRODUCTS {
+        int id PK
+        string name
+        decimal price
+    }

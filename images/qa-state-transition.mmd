@@ -1,0 +1,19 @@
+stateDiagram-v2
+    [*] --> ChoXuLy: tạo đơn
+    ChoXuLy --> DangGiao: duyệt
+    DangGiao --> HoanThanh: giao xong
+    ChoXuLy --> DaHuy: huỷ
+    DangGiao --> DaHuy: huỷ
+    HoanThanh --> [*]
+    DaHuy --> [*]
+
+    ChoXuLy: Chờ xử lý
+    DangGiao: Đang giao
+    HoanThanh: Hoàn thành
+    DaHuy: Đã huỷ
+
+    note right of DaHuy
+        Test cả chuyển KHÔNG hợp lệ:
+        "Đã huỷ" → "Đang giao" phải bị CHẶN.
+        Bug hay lọt ở các chuyển bị cấm này.
+    end note

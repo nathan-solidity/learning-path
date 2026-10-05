@@ -1,0 +1,15 @@
+sequenceDiagram
+    participant U as Người dùng
+    participant F as Form (has_one_attached)
+    participant AS as ActiveStorage
+    participant B as Storage (disk/S3)
+    participant V as View
+    U->>F: Chọn file + submit
+    F->>AS: attach file vào record
+    AS->>B: Lưu file gốc
+    AS-->>F: Tạo blob + attachment
+    Note over U,V: Khi hiển thị
+    V->>AS: image_tag(post.image.variant(resize_to_limit: [300,300]))
+    AS->>B: Sinh variant (lần đầu) + cache
+    B-->>V: Ảnh đã resize
+    V-->>U: Hiển thị ảnh

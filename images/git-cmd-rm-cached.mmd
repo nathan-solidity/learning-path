@@ -1,0 +1,10 @@
+flowchart LR
+    subgraph B["TRƯỚC"]
+        w1["🖥️ WD: .env"]
+        g1["Git: theo dõi .env"]
+    end
+    subgraph A["SAU — git rm --cached .env"]
+        w2["🖥️ WD: .env ✅ vẫn còn trên đĩa"]
+        g2["Git: KHÔNG còn theo dõi<br/>(thêm .env vào .gitignore)"]
+    end
+    B ==>|"git rm --cached .env"| A

@@ -1,0 +1,9 @@
+flowchart LR
+    subgraph B["TRƯỚC"]
+        w1["🖥️ Working Dir<br/>app.py (đã sửa)"]
+        l1["📦 Local: bản commit cuối"]
+    end
+    subgraph A["SAU — git restore app.py"]
+        w2["🖥️ Working Dir<br/>app.py (về bản commit cuối)<br/>⚠️ thay đổi bị bỏ"]
+    end
+    B ==>|"git restore app.py"| A

@@ -1,0 +1,10 @@
+flowchart LR
+    subgraph B["TRƯỚC"]
+        l1["📦 Local<br/>c1 ← c2 ← c3"]
+        r1["☁️ Remote<br/>c1 ← c2"]
+    end
+    subgraph A["SAU — git push"]
+        l2["📦 Local<br/>c1 ← c2 ← c3"]
+        r2["☁️ Remote<br/>c1 ← c2 ← c3"]
+    end
+    B ==>|"git push origin main"| A

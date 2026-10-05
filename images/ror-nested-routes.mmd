@@ -1,0 +1,5 @@
+flowchart TB
+    N1["Nested (lồng theo cha)<br/>index / new / create"] --> N2["/posts/:post_id/comments"]
+    S1["Shallow (phẳng, có id riêng)<br/>show / edit / update / destroy"] --> S2["/comments/:id"]
+    N2 --> NOTE["shallow: true → tránh URL quá dài<br/><br/>/posts/1/comments/2/edit ❌<br/>/comments/2/edit ✅"]
+    S2 --> NOTE

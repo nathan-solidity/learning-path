@@ -1,0 +1,7 @@
+flowchart TD
+    M["main"] --> F1["feature/login"]
+    M --> F2["feature/payment"]
+    M --> F3["feature/profile"]
+    F1 -.->|"merge khi xong"| M
+    F2 -.->|"merge khi xong"| M
+    F3 -.->|"merge khi xong"| M

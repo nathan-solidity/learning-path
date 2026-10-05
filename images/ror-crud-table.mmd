@@ -1,0 +1,6 @@
+flowchart LR
+    C["Post.create<br/>(title, body)"] -->|INSERT| DB[(posts)]
+    R["Post.find(1)<br/>Post.where(...)"] -->|SELECT| DB
+    U["post.update<br/>(title: ...)"] -->|UPDATE| DB
+    D["post.destroy"] -->|DELETE| DB
+    DB --- cols["posts<br/>─────<br/>id (PK)<br/>title<br/>body<br/>created_at<br/>updated_at"]

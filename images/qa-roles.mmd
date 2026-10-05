@@ -1,0 +1,14 @@
+flowchart TD
+    subgraph QA["QA — Quality Assurance"]
+        A["Phòng lỗi bằng QUY TRÌNH<br/>review spec, chuẩn hóa cách làm,<br/>định nghĩa Definition of Done"]
+    end
+    subgraph QC["QC — Quality Control"]
+        B["Tìm lỗi trong SẢN PHẨM<br/>chạy test case, so kết quả với spec"]
+    end
+    subgraph T["Tester"]
+        C["Người THỰC THI kiểm thử<br/>viết & chạy test, log bug"]
+    end
+    QA -->|"phòng bệnh (trước khi lỗi sinh ra)"| QC
+    QC -->|"chữa bệnh (lỗi đã có, đi tìm)"| T
+    note["Dự án offshore nhỏ: 1 người hay kiêm cả ba —<br/>nhưng đừng đánh mất góc QA (review spec sớm)"]
+    QA -.-> note

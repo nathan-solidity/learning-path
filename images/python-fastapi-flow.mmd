@@ -1,0 +1,9 @@
+flowchart LR
+    REQ([HTTP request]) --> ROUTE["Routing<br/>khớp path + method"]
+    ROUTE --> DEP["Dependencies<br/>Depends(): auth, DB session"]
+    DEP --> VAL["Pydantic validate<br/>parse & kiểm tra body/query"]
+    VAL --> HANDLER["Path operation function<br/>async def handler(...)"]
+    HANDLER --> RESP["Response model<br/>Pydantic serialize → JSON"]
+    RESP --> OUT([HTTP response])
+    note["Pydantic tự validate input & serialize output.<br/>Sai kiểu → FastAPI trả 422 tự động, chưa vào handler.<br/>/docs sinh Swagger UI tự động từ type hint."]
+    VAL -.-> note

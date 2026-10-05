@@ -1,0 +1,9 @@
+flowchart LR
+    subgraph B["TRƯỚC"]
+        w1["🖥️ WD: thay đổi đang làm dở"]
+    end
+    subgraph A["SAU — git stash"]
+        w2["🖥️ WD: (sạch) ✅ chuyển branch được"]
+        st["📌 Stash: cất tạm thay đổi"]
+    end
+    B ==>|"git stash"| A

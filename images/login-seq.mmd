@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant U as Người dùng
+    participant F as Frontend
+    participant A as API/Backend
+    participant D as Database
+    U->>F: Nhập email + mật khẩu
+    F->>A: POST /login
+    A->>D: Truy vấn user theo email
+    D-->>A: Thông tin user (hash mật khẩu)
+    A->>A: Kiểm tra mật khẩu
+    alt Đúng
+        A-->>F: 200 + token
+        F-->>U: Vào trang chính
+    else Sai
+        A-->>F: 401 Unauthorized
+        F-->>U: Báo "Sai thông tin đăng nhập"
+    end

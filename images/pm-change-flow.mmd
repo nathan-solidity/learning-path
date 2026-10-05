@@ -1,0 +1,7 @@
+flowchart TD
+    REQ[Yêu cầu thay đổi<br/>ghi lại: ai, gì, vì sao] --> EVAL[Đánh giá tác động<br/>scope / time / cost / quality]
+    EVAL --> DEC{Người có thẩm quyền<br/>khách / PO qua BrSE}
+    DEC -->|Duyệt| UP[Cập nhật kế hoạch<br/>+ phụ lục nếu 受託<br/>+ thông báo team]
+    DEC -->|Từ chối| LOG1[Ghi nhận lý do]
+    DEC -->|Hoãn| LOG2[Đưa vào backlog chờ]
+    UP --> TRACE[Lưu dấu vết:<br/>ai đồng ý gì, khi nào]

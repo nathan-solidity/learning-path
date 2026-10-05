@@ -1,0 +1,10 @@
+flowchart TB
+    subgraph bad["❌ N+1 query — 101 truy vấn với 100 post"]
+        Q0["Post.all → 1 query lấy danh sách"] --> L0["Lặp qua từng post"]
+        L0 --> Q1["post.author → query riêng<br/>#1, #2, #3 ... #N"]
+    end
+    bad -->|"thêm includes / preload"| good
+    subgraph good["✅ Eager loading — chỉ 2 truy vấn"]
+        G0["Post.includes(:author)"] --> G1["query 1: SELECT posts"]
+        G0 --> G2["query 2: SELECT authors<br/>WHERE id IN (...)"]
+    end

@@ -1,0 +1,17 @@
+flowchart TD
+    F["Chức năng: Thanh toán đơn hàng"]
+    F --> H["Happy path<br/>nhập đúng, đủ tiền, mạng ổn<br/>→ đơn tạo thành công"]
+    F --> E1["Nhập số lượng ÂM?"]
+    F --> E2["Bấm Submit 2 lần liên tiếp?"]
+    F --> E3["Mất mạng giữa chừng?"]
+    F --> E4["Thẻ hết hạn / sai số?"]
+    H:::happy
+    E1:::edge
+    E2:::edge
+    E3:::edge
+    E4:::edge
+    note["'Chạy được' = chỉ mới thử happy path.<br/>Đa số BUG thật nằm ở các nhánh edge case này."]:::note
+    E3 -.-> note
+    classDef happy fill:#e8f5e9,stroke:#2e7d32
+    classDef edge fill:#ffebee,stroke:#c62828
+    classDef note fill:#fffde7,stroke:#f9a825

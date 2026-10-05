@@ -1,0 +1,9 @@
+flowchart TB
+    OUT["📤 OUTPUT metric — 'phần mềm chạy đúng?'<br/><br/>• Số đơn tạo thành công&nbsp;&nbsp;&nbsp;• Uptime 99.9%<br/>• Thời gian phản hồi &lt; 2s"]
+    OUTCOME["🎯 OUTCOME metric — 'có tạo ra giá trị nghiệp vụ?'<br/><br/>• Tỉ lệ chốt đơn tăng&nbsp;&nbsp;&nbsp;• Thời gian xử lý mỗi đơn giảm<br/>• Chi phí vận hành giảm"]
+    NOTE["Solution Evaluation đo OUTCOME, không dừng ở output.<br/>Khách hàng trả tiền cho giá trị, không phải cho uptime."]
+    OUT -->|"chạy đúng CHƯA CHẮC tạo ra giá trị"| OUTCOME
+    OUTCOME --> NOTE
+    style OUT fill:#eef2ff,stroke:#6366f1
+    style OUTCOME fill:#ecfdf5,stroke:#10b981
+    style NOTE fill:#fffbeb,stroke:#f59e0b

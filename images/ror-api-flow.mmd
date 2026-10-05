@@ -1,0 +1,13 @@
+sequenceDiagram
+    participant C as Client (app/JS)
+    participant R as Router (/api/v1)
+    participant Ctrl as Api::V1::ProductsController
+    participant Ser as Serializer (Jbuilder)
+    participant DB as Database
+    C->>R: GET /api/v1/products (Accept: application/json)
+    R->>Ctrl: index
+    Ctrl->>DB: Product.all
+    DB-->>Ctrl: records
+    Ctrl->>Ser: render json
+    Ser-->>C: 200 JSON [{id, name, price}]
+    Note over C,Ser: REST — server quyết field trả về<br/>GraphQL — client tự chọn field cần

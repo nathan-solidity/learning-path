@@ -1,0 +1,10 @@
+flowchart LR
+    subgraph B["TRƯỚC"]
+        s1["📥 Staging: app.py ✓"]
+        w1["🖥️ WD: (sạch)"]
+    end
+    subgraph A["SAU — git restore --staged app.py"]
+        s2["📥 Staging: (trống)"]
+        w2["🖥️ WD: app.py (đã sửa)<br/>✅ thay đổi vẫn còn, chỉ bỏ stage"]
+    end
+    B ==>|"git restore --staged app.py"| A

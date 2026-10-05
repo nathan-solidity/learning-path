@@ -1,0 +1,9 @@
+flowchart LR
+    P1["Con người<br/>(thiếu training)"] --> EFFECT
+    P2["Quy trình<br/>(bước duyệt thiếu)"] --> EFFECT
+    P3["Công cụ / Hệ thống<br/>(validate lỏng)"] --> EFFECT
+    P4["Dữ liệu<br/>(nguồn không nhất quán)"] --> EFFECT
+    P5["Môi trường<br/>(khác dev vs prod)"] --> EFFECT
+    EFFECT["VẤN ĐỀ:<br/>Đơn hàng sai trạng thái"]
+    note["5 Whys: hỏi 'tại sao' 5 lần<br/>trên nhánh khả nghi nhất<br/>→ tới root cause, không dừng ở triệu chứng"]
+    EFFECT -.-> note

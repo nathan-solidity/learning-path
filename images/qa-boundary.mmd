@@ -1,0 +1,22 @@
+flowchart LR
+    subgraph INVALID1["Dưới hợp lệ"]
+        a["17"]:::bad
+    end
+    subgraph VALID["Hợp lệ: 18 – 60"]
+        b["18"]:::edge
+        c["30<br/>(đại diện)"]:::ok
+        d["60"]:::edge
+    end
+    subgraph INVALID2["Trên hợp lệ"]
+        e["61"]:::bad
+    end
+    a --- b
+    b --- c
+    c --- d
+    d --- e
+    note["Equivalence: mỗi LỚP chỉ cần 1 đại diện (30).<br/>Boundary: test ngay 2 bên mỗi biên → 17,18 và 60,61<br/>(bắt lỗi &lt; viết nhầm thành &lt;=)"]:::note
+    c -.-> note
+    classDef ok fill:#e8f5e9,stroke:#2e7d32
+    classDef edge fill:#fff3e0,stroke:#e65100
+    classDef bad fill:#ffebee,stroke:#c62828
+    classDef note fill:#fffde7,stroke:#f9a825

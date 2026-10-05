@@ -1,0 +1,7 @@
+flowchart TD
+    S["git merge feature/login"] --> C{"Cùng sửa<br/>một dòng?"}
+    C -->|"Không"| OK["✅ Gộp tự động<br/>merge thành công"]
+    C -->|"Có"| CF["⚠️ CONFLICT<br/>Git chèn marker vào file"]
+    CF --> M["&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<br/>code của main<br/>=======<br/>code của feature<br/>&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature/login"]
+    M --> FIX["1. Sửa file, giữ code đúng<br/>2. Xóa hết marker<br/>3. git add file<br/>4. git commit"]
+    FIX --> DONE["✅ Hoàn tất merge"]

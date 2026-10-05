@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant C as Client
+    participant S as Server (Express)
+    participant DB as Database
+    C->>S: POST /login (email, password)
+    S->>DB: tìm user theo email
+    DB-->>S: user + passwordHash
+    S->>S: bcrypt.compare(password, hash)
+    Note over S: sai → 401 "sai email hoặc mật khẩu"
+    S->>S: jwt.sign(payload, SECRET, 15m)
+    S-->>C: access token (15m) + refresh token (dài hạn)
+    C->>S: GET /posts  (Authorization: Bearer access)
+    S->>S: jwt.verify(access, SECRET) → gắn req.user
+    S-->>C: 200 dữ liệu
+    Note over C,S: access token hết hạn
+    C->>S: POST /refresh (refresh token)
+    S-->>C: access token mới (không cần đăng nhập lại)

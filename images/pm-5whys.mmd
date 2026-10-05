@@ -1,0 +1,7 @@
+flowchart TD
+    S[Sự cố: Release trễ 3 ngày] --> W1[Tại sao? Bug critical phát hiện muộn]
+    W1 --> W2[Tại sao muộn? Không kịp test kỹ trước release]
+    W2 --> W3[Tại sao không kịp? Sprint nhồi quá nhiều việc]
+    W3 --> W4[Tại sao nhồi quá? Ước lượng lạc quan, không trừ buffer]
+    W4 --> W5[Tại sao lạc quan? KHÔNG dùng velocity lịch sử để hiệu chỉnh]
+    W5 --> ROOT[Nguyên nhân gốc = quy trình ước lượng<br/>Sửa gốc, không mắng dev viết bug]

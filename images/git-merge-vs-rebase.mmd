@@ -1,0 +1,11 @@
+flowchart LR
+    subgraph MG["MERGE — giữ nguyên lịch sử, sinh commit gộp (M)"]
+        direction LR
+        a1["A"] --> b1["B"] --> c1["C"] --> m1(["M<br/>merge"])
+        a1 --> d1["D"] --> e1["E"] --> m1
+    end
+    subgraph RB["REBASE — lịch sử tuyến tính, commit D'/E' được ghi lại"]
+        direction LR
+        a2["A"] --> b2["B"] --> c2["C"] --> d2["D'"] --> e2["E'"]
+    end
+    MG --- RB

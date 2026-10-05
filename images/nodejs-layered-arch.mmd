@@ -1,0 +1,7 @@
+flowchart TB
+    REQ([HTTP request]) --> CTRL["Controller<br/>tầng HTTP: nhận/trả, validate"]
+    CTRL -->|"gọi"| SVC["Service<br/>tầng business logic: quy tắc nghiệp vụ"]
+    SVC -->|"gọi"| REPO["Repository<br/>tầng truy cập dữ liệu"]
+    REPO --> DB[(Database)]
+    note["Mỗi tầng chỉ gọi xuống tầng dưới, KHÔNG nhảy cóc.<br/>Controller không viết SQL · Service không biết req/res ·<br/>Repository không chứa quy tắc nghiệp vụ."]
+    SVC -.-> note

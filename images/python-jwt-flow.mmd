@@ -1,0 +1,11 @@
+sequenceDiagram
+    participant C as Client
+    participant A as FastAPI (auth)
+    participant P as Protected route
+    C->>A: POST /login (email + password)
+    A->>A: verify password (bcrypt)
+    A-->>C: JWT access token (ký bằng SECRET)
+    Note over C: lưu token, gửi kèm mỗi request
+    C->>P: GET /me (Authorization: Bearer token)
+    P->>P: get_current_user() verify chữ ký + hạn
+    P-->>C: dữ liệu user (200) hoặc 401 nếu token sai/hết hạn

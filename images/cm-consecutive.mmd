@@ -1,0 +1,8 @@
+flowchart TD
+    PREP[Chuẩn bị trước: agenda + thuật ngữ + bối cảnh] --> LISTEN[Nghe 1 đoạn]
+    LISTEN --> NOTE[Ghi chú nhanh:<br/>ý chính + CON SỐ + tên riêng]
+    NOTE --> CLEAR{Nghe rõ & hiểu?}
+    CLEAR -->|Không| ASK[Hỏi lại ngay<br/>thà chậm mà đúng]
+    ASK --> LISTEN
+    CLEAR -->|Có| DICH[Dịch đủ, trung lập<br/>không thêm, không bớt]
+    DICH --> LISTEN

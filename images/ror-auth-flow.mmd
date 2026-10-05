@@ -1,0 +1,20 @@
+sequenceDiagram
+    participant U as Người dùng
+    participant D as Devise (Authentication)
+    participant P as Pundit (Authorization)
+    participant A as Action (controller)
+    U->>D: Đăng nhập (email + mật khẩu)
+    D->>D: Kiểm tra thông tin
+    alt Sai
+        D-->>U: Chuyển về trang login
+    else Đúng
+        D-->>U: Tạo session → current_user
+        U->>P: Yêu cầu hành động (vd sửa post)
+        P->>P: PostPolicy#update? (current_user có quyền?)
+        alt Không có quyền
+            P-->>U: 403 — không được phép
+        else Có quyền
+            P->>A: Cho thực thi
+            A-->>U: Kết quả
+        end
+    end

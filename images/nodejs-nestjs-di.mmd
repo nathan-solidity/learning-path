@@ -1,0 +1,9 @@
+flowchart TB
+    subgraph container["NestJS DI Container"]
+        P["PrismaService<br/>@Injectable"]
+        S["PostsService<br/>@Injectable"]
+        P -->|"inject vào"| S
+    end
+    S -->|"inject qua constructor"| CTRL["PostsController<br/>constructor(private postsService)"]
+    note["Controller KHÔNG tự new PostsService.<br/>Nest tạo & inject giúp → tách rời tạo/dùng,<br/>đổi impl hoặc mock để test dễ dàng."]
+    CTRL -.-> note

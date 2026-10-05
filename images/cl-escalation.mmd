@@ -1,0 +1,8 @@
+flowchart TD
+    P[Gặp vấn đề / vướng mắc] --> Q1{Tự team giải quyết<br/>được không?}
+    Q1 -->|Có| SELF[Team xử lý, ghi lại cách làm]
+    Q1 -->|Không| Q2{Ảnh hưởng tiến độ<br/>hoặc cam kết khách?}
+    Q2 -->|Không, nội bộ| LEAD[C-Leader gỡ vướng<br/>trong phạm vi team]
+    Q2 -->|Có| Q3{Cần khách/BrSE<br/>quyết định?}
+    Q3 -->|Có| ESC[Escalate qua BrSE:<br/>nêu rõ vấn đề + phương án + đề xuất]
+    Q3 -->|Không, cần PM| PM[Báo PM để điều chỉnh<br/>nguồn lực / kế hoạch]

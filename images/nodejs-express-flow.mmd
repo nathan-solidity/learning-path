@@ -1,0 +1,10 @@
+flowchart LR
+    C([Client]) -->|"HTTP request"| M1["express.json()<br/>parse body"]
+    M1 --> M2["Logger / timer<br/>middleware"]
+    M2 --> M3["Auth<br/>middleware"]
+    M3 -->|"next()"| H["Route handler<br/>khớp method + path"]
+    H -->|"gọi logic / DB"| DB[(Database)]
+    DB --> H
+    H -->|"res.status().json()"| C
+    note["Middleware chạy THEO THỨ TỰ khai báo.<br/>Mỗi cái gọi next() để đi tiếp, hoặc gửi response để dừng."]
+    M2 -.-> note

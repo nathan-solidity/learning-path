@@ -1,0 +1,9 @@
+flowchart LR
+    subgraph B["TRƯỚC"]
+        l1["📦 c1 ← c2 ← c3 ←HEAD"]
+    end
+    subgraph A["SAU — reset --hard HEAD~1"]
+        l2["📦 c1 ← c2 ←HEAD"]
+        x2["❌ thay đổi của c3 bị XÓA<br/>(cứu bằng git reflog)"]
+    end
+    B ==>|"git reset --hard HEAD~1"| A

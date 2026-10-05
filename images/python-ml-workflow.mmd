@@ -1,0 +1,10 @@
+flowchart LR
+    DATA[("Dữ liệu<br/>features + label")] --> SPLIT{"train_test_split"}
+    SPLIT -->|"80% train"| TRAIN["Tập train"]
+    SPLIT -->|"20% test"| TEST["Tập test"]
+    TRAIN -->|"model.fit(X, y)"| MODEL["Model đã học"]
+    MODEL -->|"model.predict(X_test)"| PRED["Dự đoán"]
+    TEST --> PRED
+    PRED --> EVAL["Đánh giá<br/>accuracy / RMSE / F1"]
+    note["Tuyệt đối KHÔNG đánh giá trên tập train.<br/>Test là dữ liệu model CHƯA thấy → đo khả năng<br/>tổng quát hóa, phát hiện overfitting."]
+    EVAL -.-> note

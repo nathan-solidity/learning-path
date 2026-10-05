@@ -1,0 +1,26 @@
+erDiagram
+    KHACH_HANG ||--o{ DON_HANG : "đặt"
+    DON_HANG ||--|{ DONG_HANG : "gồm"
+    SAN_PHAM ||--o{ DONG_HANG : "xuất hiện trong"
+    KHACH_HANG {
+        int ma_khach PK
+        string ho_ten
+        string email
+    }
+    DON_HANG {
+        int ma_don PK
+        int ma_khach FK
+        string trang_thai
+        date ngay_dat
+    }
+    DONG_HANG {
+        int ma_dong PK
+        int ma_don FK
+        int ma_san_pham FK
+        int so_luong
+    }
+    SAN_PHAM {
+        int ma_san_pham PK
+        string ten
+        decimal don_gia
+    }

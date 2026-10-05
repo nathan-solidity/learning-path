@@ -1,0 +1,11 @@
+flowchart TB
+    subgraph build["Stage 1: build"]
+        B1["ruby:3.x base"] --> B2["bundle install<br/>(gồm build tools)"] --> B3["assets:precompile"]
+    end
+    build -->|"COPY --from=build"| runtime
+    subgraph runtime["Stage 2: runtime (nhỏ gọn)"]
+        R1["ruby:3.x slim"] --> R2["copy gems + assets<br/>từ stage build"] --> R3["chỉ giữ thứ cần chạy"]
+    end
+    runtime --> IMG["Image gọn nhẹ"]
+    IMG --> APP["app container"]
+    APP --- PG[(postgres container)]

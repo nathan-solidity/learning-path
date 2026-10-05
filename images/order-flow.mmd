@@ -1,0 +1,12 @@
+flowchart TD
+    A([Khách gửi đơn]) --> B[Nhân viên tiếp nhận đơn]
+    B --> C{Số tiền > 10 triệu?}
+    C -->|Không| D[Cấp 1 duyệt]
+    C -->|Có| E[Cấp 1 duyệt]
+    E --> F[Quản lý duyệt cấp 2]
+    D --> G{Hợp lệ?}
+    F --> G
+    G -->|Có| H[Đơn được duyệt]
+    G -->|Không| I[Từ chối + báo lý do]
+    H --> J([Kết thúc])
+    I --> J

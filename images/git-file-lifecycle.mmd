@@ -1,0 +1,6 @@
+flowchart LR
+    U["Untracked<br/>(file mới)"] -->|"git add"| S["Staged<br/>(sẵn sàng commit)"]
+    S -->|"git commit"| UM["Unmodified<br/>(đã lưu, không đổi)"]
+    UM -->|"sửa file"| M["Modified<br/>(đã đổi, chưa stage)"]
+    M -->|"git add"| S
+    UM -->|"git rm"| U

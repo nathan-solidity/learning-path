@@ -1,0 +1,13 @@
+flowchart LR
+    subgraph s1["Stage 1: build"]
+        A["npm ci<br/>(cả devDependencies)"] --> B["COPY source .ts"]
+        B --> C["npm run build<br/>tsc → dist/*.js"]
+    end
+    subgraph s2["Stage 2: production"]
+        D["npm ci --omit=dev<br/>(chỉ dependencies)"] --> E["COPY --from=build dist/"]
+        E --> F["USER node<br/>(không chạy root)"]
+        F --> G["CMD node dist/index.js"]
+    end
+    C -->|"chỉ copy dist/ sang"| E
+    note["Image production nhỏ & an toàn:<br/>không có source TS, không có devDependencies, không chạy root."]
+    G -.-> note

@@ -1,0 +1,14 @@
+flowchart LR
+    R["Yêu cầu / Spec"] --> D["Thiết kế"]
+    D --> C["Code"]
+    C --> T["Test"]
+    T --> Rel["Release"]
+    Rel --> M["Vận hành"]
+    qa1["QA vào từ ĐÂY<br/>review spec, hỏi edge case"]:::qa
+    qa1 -.-> R
+    qa2["Test sớm ở tầng<br/>integration/system"]:::qa
+    qa2 -.-> C
+    cost["Chi phí sửa lỗi tăng dần →→→<br/>bắt ở spec RẺ, bắt ở prod ĐẮT"]:::cost
+    cost -.-> M
+    classDef qa fill:#e3f2fd,stroke:#1976d2
+    classDef cost fill:#fff3e0,stroke:#e65100

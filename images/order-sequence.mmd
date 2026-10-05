@@ -1,0 +1,11 @@
+sequenceDiagram
+    participant U as Người dùng
+    participant F as Frontend
+    participant A as API
+    participant D as Database
+    U->>F: Bấm "Gửi đơn"
+    F->>A: POST /orders
+    A->>D: Lưu đơn
+    D-->>A: OK (id đơn)
+    A-->>F: 201 Created
+    F-->>U: Hiển thị "Đã gửi đơn"

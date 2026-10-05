@@ -1,0 +1,10 @@
+flowchart TD
+    A["1. Clone repo<br/>git clone url"] --> B["2. Tạo branch<br/>git checkout -b feature/login"]
+    B --> C["3. Code & commit<br/>git add . / git commit -m"]
+    C --> D["4. Push branch<br/>git push origin feature/login"]
+    D --> E["5. Mở Pull Request<br/>trên GitHub"]
+    E --> F["6. Code review<br/>cả nhóm review"]
+    F -->|"cần sửa"| C
+    F -->|"OK"| G["7. Merge PR<br/>gộp vào main"]
+    G --> H["8. Pull bản mới<br/>git pull origin main"]
+    H --> B
