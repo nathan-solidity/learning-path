@@ -10,8 +10,6 @@ checklist:
   - "Biết khi nào dùng callback và khi nào KHÔNG nên dùng (side effect ngầm)"
   - "Thêm được index cho foreign key và cột hay query, giải thích được vì sao"
 related:
-  - "skill:nta-perf-audit"
-  - "skill:nta-db-review"
   - "glossary:orm"
 ---
 
@@ -129,8 +127,7 @@ Với 100 post → 1 query lấy posts + 100 query lấy user = **101 query**. L
 | `preload`  | Query riêng cho từng bảng (2 query) | Không filter theo bảng liên quan |
 | `eager_load` | LEFT JOIN (1 query) | Cần `where` trên bảng liên quan |
 
-Gem **Bullet** tự cảnh báo N+1 lúc dev (xem level Vận hành). Skill `/nta-perf-audit` cũng
-quét được N+1 trong code.
+Gem **Bullet** tự cảnh báo N+1 lúc dev (xem level Vận hành).
 
 ## Index & performance
 

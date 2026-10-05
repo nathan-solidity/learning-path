@@ -9,9 +9,6 @@ checklist:
   - "Tránh SQL injection: dùng parameterized query, không nội suy chuỗi vào where"
   - "Hiểu Rails chống CSRF/XSS mặc định thế nào và khi nào mình vô tình tắt nó"
   - "Thêm rate limiting cho endpoint nhạy cảm bằng rack-attack"
-related:
-  - "skill:nta-perf-audit"
-  - "skill:nta-security-audit"
 ---
 
 ## Rails an toàn mặc định — nhưng đừng chủ quan
@@ -138,5 +135,4 @@ end
 ## Ghi nhớ
 
 Bảo mật Rails phần lớn là **đừng tắt cái nó đang bảo vệ bạn**. Hiệu năng thì **đo trước
-khi tối ưu**. Dùng `/nta-security-audit` (OWASP Top 10) và `/nta-perf-audit` (N+1, bottleneck)
-để quét tự động trước khi lên production.
+khi tối ưu**.

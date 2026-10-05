@@ -9,9 +9,6 @@ checklist:
   - "Điều chỉnh được cùng một nội dung cho 3 nhóm đối tượng (exec/dev/khách)"
   - "Viết được báo cáo tiến độ minh bạch kể cả khi có tin xấu"
   - "Nhận ra dấu hiệu sớm của rủi ro trước khi nó thành sự cố"
-related:
-  - "skill:nta-risk-assessment"
-  - "skill:nta-meeting-notes"
 ---
 
 ## Risk register

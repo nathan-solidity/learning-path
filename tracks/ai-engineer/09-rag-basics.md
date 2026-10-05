@@ -14,7 +14,6 @@ related:
   - "glossary:rag"
   - "glossary:embedding"
   - "glossary:vector-database"
-  - "skill:nta-security-audit"
 ---
 
 ## Vì sao quan trọng
@@ -150,7 +149,7 @@ và **RAG evaluation** (đo chất lượng). Bài này cho bạn nền để hi
   Đừng để nội dung truy xuất điều khiển hành vi model — nhất là khi RAG đi kèm tool ghi dữ liệu.
 - **Rò rỉ dữ liệu**: RAG lấy đúng chunk *user được phép xem* — lọc theo quyền qua metadata,
   đừng để user hỏi ra tài liệu của người/phòng khác.
-- **Validate output** trước khi hiển thị (bài 5). Chạy `/nta-security-audit` để soát.
+- **Validate output** trước khi hiển thị (bài 5).
 
 ## Cạm bẫy hay gặp
 

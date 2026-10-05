@@ -9,8 +9,6 @@ checklist:
   - "Dùng named routes và hiểu ưu/nhược so với push trực tiếp"
   - "Biết vì sao dự án lớn nên dùng router khai báo (go_router)"
   - "Dùng `showDialog`/`showModalBottomSheet` cho popup"
-related:
-  - "skill:nta-code-review"
 ---
 
 ## Navigator — ngăn xếp màn hình

@@ -13,7 +13,6 @@ checklist:
 related:
   - "glossary:quantization"
   - "glossary:transformer"
-  - "skill:nta-code-review"
 ---
 
 ## Vì sao quan trọng
@@ -126,8 +125,7 @@ tốn ít bộ nhớ hơn nhiều với chuỗi dài.
 | Sinh text chậm (tính lại lịch sử) | **KV cache** | Ngốn bộ nhớ theo độ dài |
 | Attention nghẽn bộ nhớ với chuỗi dài | **Flash attention** | Gần như không — cùng kết quả |
 
-Chọn đòn bẩy theo *nút thắt thật* của bạn, đo trước và sau. Đừng tối ưu mù. Dùng
-`/nta-code-review` để soát script deploy/benchmark trước khi tin số liệu.
+Chọn đòn bẩy theo *nút thắt thật* của bạn, đo trước và sau. Đừng tối ưu mù.
 
 ## Cạm bẫy hay gặp
 

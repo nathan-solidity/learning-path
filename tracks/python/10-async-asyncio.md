@@ -11,8 +11,6 @@ checklist:
   - "Biết dùng httpx/aiohttp để gọi API bất đồng bộ"
 related:
   - "glossary:async-await"
-  - "skill:nta-perf-audit"
-  - "skill:nta-code-review"
 ---
 
 ## Vì sao quan trọng

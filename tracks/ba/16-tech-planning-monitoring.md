@@ -12,8 +12,6 @@ checklist:
   - "Chọn đúng loại Review cho từng loại tài liệu và biết ai cần tham gia"
 related:
   - "glossary:ba"
-  - "skill:nta-risk-assessment"
-  - "skill:nta-effort-estimate"
   - "playbook:ba"
 ---
 
@@ -132,5 +130,4 @@ Xóa đơn               –          –            ✓
 
 Nhóm technique này trả lời câu hỏi **"trước khi lao vào lấy yêu cầu, tôi đã chuẩn bị đủ
 chưa?"**. Một BA lập kế hoạch tốt hiếm khi bị động — luôn biết ai quan trọng, việc gì đang
-treo, và rủi ro nào cần đẩy sớm. Công cụ hỗ trợ: `/nta-risk-assessment` (đánh giá rủi ro),
-`/nta-effort-estimate` (ước lượng có breakdown), `/nta-stakeholder-sim` (tập phỏng vấn).
+treo, và rủi ro nào cần đẩy sớm.

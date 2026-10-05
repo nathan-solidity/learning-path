@@ -11,7 +11,6 @@ checklist:
   - "Nhận diện và tránh vấn đề N+1 query"
 related:
   - "glossary:db"
-  - "skill:nta-perf-audit"
 ---
 
 ## Vì sao quan trọng
@@ -88,7 +87,7 @@ FROM orders o JOIN customers c ON c.id = o.customer_id;
 ```
 
 Trong ORM (SQLAlchemy, JPA, ActiveRecord, Prisma) đây là lỗi phổ biến nhất — bật eager
-loading / `JOIN` thay vì lazy load trong vòng lặp. Dùng `/nta-perf-audit` để phát hiện.
+loading / `JOIN` thay vì lazy load trong vòng lặp.
 
 ## Cạm bẫy hay gặp
 

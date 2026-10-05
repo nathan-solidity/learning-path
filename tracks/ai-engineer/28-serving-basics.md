@@ -12,8 +12,6 @@ checklist:
   - "Chọn được framework serving phù hợp với tình huống (local dev vs production GPU)"
 related:
   - "glossary:llm"
-  - "skill:nta-docker-gen"
-  - "skill:nta-infra-gen"
 ---
 
 ## Vì sao quan trọng
@@ -136,8 +134,7 @@ curl http://localhost:8000/v1/chat/completions \
        "messages": [{"role": "user", "content": "Ping"}]}'
 ```
 
-> Đóng gói server bằng Docker giúp triển khai nhất quán giữa dev và production — chạy
-> `/nta-docker-gen` để sinh Dockerfile/compose, và `/nta-infra-gen` để dựng hạ tầng GPU.
+> Đóng gói server bằng Docker giúp triển khai nhất quán giữa dev và production.
 
 ## Vì sao serving LLM khác serving model ML thường
 

@@ -46,9 +46,3 @@ tick khi bạn tự tin đã nắm. Tiến độ tính theo số item đã tick.
 | Nâng cao | Platform engineering & IDP | Hạ tầng như sản phẩm, golden path, self-service, cognitive load |
 | Nâng cao | Chaos engineering & resilience testing | Tiêm lỗi có kiểm soát, blast radius, giả thuyết, nút dừng khẩn |
 | Nâng cao | Compliance & policy as code | OPA/Kyverno, shift-left + admission control, audit trail |
-
-Bài học liên kết với các skill DevOps sẵn có (`/nta-cicd-gen`, `/nta-docker-gen`,
-`/nta-devops-review`, `/nta-devops-security`, `/nta-monitor-review`, `/nta-deploy-checklist`,
-`/nta-load-test-plan`, `/nta-infra-gen`, `/nta-scale-check`, `/nta-incident`, `/nta-env-gen`,
-`/nta-migration-gen`, `/nta-db-review`, `/nta-project-init`) để áp dụng ngay vào project thật —
-học tới đâu, chạy skill tới đó.

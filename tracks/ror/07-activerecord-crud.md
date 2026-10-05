@@ -12,7 +12,6 @@ checklist:
   - "Viết được `db/seeds.rb` và nạp dữ liệu mẫu bằng `db:seed`"
 related:
   - "glossary:orm"
-  - "skill:nta-db-review"
 ---
 
 ## ActiveRecord là gì

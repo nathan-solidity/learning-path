@@ -9,8 +9,6 @@ checklist:
   - "Biết kiểm tra quyết định đã chốt trong quá khứ trước khi đổi"
   - "Viết được change summary nêu rõ breaking change"
 related:
-  - "skill:nta-spec-diff"
-  - "skill:nta-clarify"
   - "playbook:ba"
 ---
 
@@ -52,6 +50,3 @@ Thay đổi **phá vỡ tương thích** với cái đang chạy:
 
 Breaking change phải được **nêu bật rõ** trong change summary, có kế hoạch migration và
 thông báo cho các bên bị ảnh hưởng — không âm thầm đổi.
-
-Công cụ: `/nta-spec-diff` so sánh 2 phiên bản spec, tự phát hiện breaking change; `/nta-clarify`
-scan impact toàn hệ thống.

@@ -9,9 +9,6 @@ checklist:
   - "Hiểu vì sao yêu cầu non-functional phải đo được (số cụ thể), không nói chung chung"
   - "Biết non-functional nên test sớm vì sửa muộn thường phải đổi kiến trúc"
   - "Định vị được mỗi loại non-functional sẽ đi sâu ở bài chuyên đề nào"
-related:
-  - "skill:nta-load-test-plan"
-  - "skill:nta-security-audit"
 ---
 
 ## "Làm đúng" chưa đủ — còn "làm tốt"

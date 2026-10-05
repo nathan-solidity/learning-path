@@ -11,7 +11,6 @@ checklist:
   - "Phòng SSRF bằng allowlist đích, không cho user tự do quyết định URL server gọi"
 related:
   - "glossary:dev"
-  - "skill:nta-security-audit"
 ---
 
 ## Vì sao quan trọng
@@ -90,4 +89,4 @@ if host not in ALLOWED:
 muốn — phòng bằng **anti-CSRF token**, **SameSite cookie**, và **GET không đổi state**.
 **SSRF** khiến **server** gọi tới đích nội bộ/metadata cloud — phòng bằng **allowlist đích**,
 chặn IP nội bộ, không để user tự do quyết định URL server gọi. Cả hai đến từ **niềm tin ngầm**
-— luôn hỏi "request/URL này thực sự đáng tin không". Dùng `/nta-security-audit` để rà.
+— luôn hỏi "request/URL này thực sự đáng tin không".

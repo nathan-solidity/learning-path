@@ -9,9 +9,6 @@ checklist:
   - "Mock dependency (repository/API) bằng `mocktail`"
   - "Override provider Riverpod trong test để cô lập"
   - "Viết integration test chạy trên thiết bị/emulator và đo coverage"
-related:
-  - "skill:nta-test-gen"
-  - "skill:nta-code-review"
 ---
 
 ## Ba tầng test trong Flutter

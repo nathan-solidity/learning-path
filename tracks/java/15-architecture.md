@@ -10,9 +10,6 @@ checklist:
   - "Thiết kế REST API chuẩn: versioning, pagination, error contract thống nhất"
   - "Chọn được REST / gRPC / GraphQL đúng ngữ cảnh và giải thích đánh đổi"
   - "Viết migration DB thêm cột/đổi cột theo hướng zero-downtime"
-related:
-  - "skill:nta-diagram-gen"
-  - "skill:nta-api-design-review"
 ---
 
 ## Hướng phụ thuộc — trái tim của Clean/Hexagonal
@@ -207,5 +204,4 @@ denormalize có chủ đích khi đo được vấn đề đọc, và chấp nh�
 
 Kiến trúc tốt là kiến trúc **hoãn quyết định tốn kém** lại được: hướng phụ thuộc vào trong
 để đổi tech không đụng nghiệp vụ, modular monolith để tách service khi thực sự cần chứ
-không phải khi vừa nghe trend. Dùng `/nta-diagram-gen` để vẽ ranh giới context/service
-trước khi code, và `/nta-api-design-review` soi lại hợp đồng API cho nhất quán.
+không phải khi vừa nghe trend.

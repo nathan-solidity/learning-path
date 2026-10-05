@@ -12,7 +12,6 @@ checklist:
 related:
   - "glossary:llm"
   - "glossary:token"
-  - "skill:nta-docker-gen"
 ---
 
 ## Vì sao quan trọng
@@ -151,7 +150,7 @@ def summarize_result(job_id: str) -> dict:
 ```
 
 Kiến trúc này tách **API (nhận việc, trả nhanh)** khỏi **worker (làm việc nặng)** — hai phần
-scale độc lập. Đóng gói cả hai bằng Docker để chạy nhất quán dev/prod: dùng `/nta-docker-gen`.
+scale độc lập. Đóng gói cả hai bằng Docker để chạy nhất quán dev/prod.
 
 ## Backpressure: đừng để hàng đợi phình vô hạn
 

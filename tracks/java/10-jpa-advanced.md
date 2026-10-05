@@ -11,9 +11,6 @@ checklist:
   - "Chọn đúng giữa optimistic lock (@Version) và pessimistic lock cho race condition"
   - "Cấu hình được batch insert và giải thích được HikariCP pool sizing"
   - "Thêm được index và đọc EXPLAIN để xác nhận query dùng index"
-related:
-  - "skill:nta-perf-audit"
-  - "skill:nta-db-review"
 ---
 
 ## Vì sao JPA nâng cao quan trọng
@@ -310,5 +307,4 @@ Bật `@EnableJpaAuditing` ở class config để `@CreatedDate` tự điền.
 
 JPA giúp bạn viết ít SQL, nhưng đổi lại phải hiểu nó sinh SQL thế nào. Mỗi khi lặp qua
 một collection và gọi `.getSomething()`, hỏi ngay: "đây có phải N+1 không?". Bật log SQL
-khi dev, trả DTO thay vì entity, và dùng `EXPLAIN` để chắc query dùng index. Skill
-`/nta-perf-audit` quét được N+1 và slow query trong code.
+khi dev, trả DTO thay vì entity, và dùng `EXPLAIN` để chắc query dùng index.

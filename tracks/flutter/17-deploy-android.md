@@ -9,10 +9,6 @@ checklist:
   - "Bật minify/shrink (R8) và giữ được stack trace bằng mapping file"
   - "Tạo app trên Google Play Console, điền store listing & content rating"
   - "Phát hành qua Internal testing → Closed → Production; hiểu rollout theo %"
-related:
-  - "skill:nta-deploy-checklist"
-  - "skill:nta-checklist"
-  - "skill:nta-security-audit"
 ---
 
 ## Điều kiện
@@ -134,4 +130,4 @@ Google review kỹ hơn (có thể vài ngày). Sau khi được duyệt, app xu
 Luồng Android: **keystore → cấu hình ký trong Gradle → `flutter build appbundle --release`
 → Play Console (listing + data safety + rating) → Internal/Closed → Production (staged rollout)**.
 Hai điều sống còn: **giữ keystore an toàn** (bật Play App Signing) và **tăng build number**
-mỗi lần. Dùng `/nta-deploy-checklist` để không sót bước.
+mỗi lần.

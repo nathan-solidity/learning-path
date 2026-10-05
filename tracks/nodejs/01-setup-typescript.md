@@ -11,7 +11,6 @@ checklist:
   - "Chạy được file .ts trực tiếp bằng tsx và build bằng tsc"
   - "Hiểu khác biệt giữa chạy dev (tsx) và build production (tsc → .js)"
 related:
-  - "skill:nta-code-review"
   - "glossary:typescript"
 ---
 

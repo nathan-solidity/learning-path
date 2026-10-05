@@ -9,8 +9,6 @@ checklist:
   - "Kể tên 4 trách nhiệm cốt lõi của C-Leader (cầu nối, chất lượng, gỡ vướng, phát triển team)"
   - "Nhận biết được khi nào một vấn đề cần escalate lên PM/BrSE thay vì tự xử"
   - "Xác định được ranh giới: việc nào C-Leader quyết, việc nào chỉ đề xuất"
-related:
-  - "skill:nta-orchestrate"
 ---
 
 ## C-Leader là ai?

@@ -9,7 +9,6 @@ checklist:
   - "Biết add / commit / push chuyển thay đổi qua từng vùng như thế nào"
   - "Cấu hình được user.name và user.email lần đầu dùng"
 related:
-  - "skill:nta-git-workflow"
   - "glossary:git"
 ---
 

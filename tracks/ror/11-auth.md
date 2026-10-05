@@ -10,8 +10,6 @@ checklist:
   - "Viết được một Pundit policy và gọi authorize trong controller"
   - "Ẩn/hiện nút trên view theo quyền bằng policy thay vì if role rải rác"
 related:
-  - "skill:nta-security-audit"
-  - "skill:nta-code-review"
   - "glossary:authentication"
 ---
 
@@ -174,4 +172,4 @@ Chọn 1 và nhất quán — **đừng dùng cả hai**. Bài này lấy Pundit
 
 Xác thực và phân quyền là **tuyến phòng thủ ở server**, không phải chuyện ẩn nút. Mỗi khi
 thêm action đụng dữ liệu người khác, hỏi ngay: "user nào được làm việc này, và mình check
-ở đâu?". Skill `/nta-security-audit` giúp rà các lỗ hổng auth theo OWASP.
+ở đâu?".

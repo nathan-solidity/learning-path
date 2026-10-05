@@ -9,9 +9,6 @@ checklist:
   - "Nhận luồng sự kiện native qua `EventChannel`"
   - "Đọc/ghi cấu hình native: `Info.plist` (iOS), `AndroidManifest.xml`"
   - "Xin quyền runtime (camera, vị trí...) bằng `permission_handler`"
-related:
-  - "skill:nta-code-review"
-  - "skill:nta-security-audit"
 ---
 
 ## Khi nào cần đụng tới native

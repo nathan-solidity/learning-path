@@ -11,8 +11,6 @@ checklist:
   - "Biết cách theo dõi tiến độ công việc BA và phát hiện khi bị chậm/thiếu"
 related:
   - "glossary:ba"
-  - "skill:nta-clarify"
-  - "skill:nta-effort-estimate"
   - "playbook:ba"
 ---
 
@@ -55,11 +53,8 @@ Trả lời trước các câu hỏi vận hành, tránh hỗn loạn về sau:
 
 ## Theo dõi & phát hiện chậm trễ
 
-- Danh sách câu hỏi mở với khách có đang "treo" quá lâu không? (dùng `/nta-qa-sheet`).
+- Danh sách câu hỏi mở với khách có đang "treo" quá lâu không?
 - Có yêu cầu nào chưa được làm rõ mà dev sắp cần không?
-- Ước lượng effort ban đầu (`/nta-effort-estimate`) so với thực tế lệch bao nhiêu?
+- Ước lượng effort ban đầu so với thực tế lệch bao nhiêu?
 
 > BA giỏi không đợi bị hỏi "sao chậm vậy" — mà chủ động báo sớm khi thấy rủi ro về yêu cầu.
-
-Công cụ: `/nta-clarify` (làm rõ + scan impact sớm), `/nta-effort-estimate` (ước lượng có
-breakdown), `/nta-qa-sheet` (theo dõi câu hỏi mở với khách).

@@ -10,9 +10,6 @@ checklist:
   - "Dùng generic để viết hàm/kiểu tái sử dụng (vd một hàm cho nhiều kiểu)"
   - "Xử lý được giá trị có thể null/undefined với optional chaining và nullish coalescing"
   - "Đọc được kiểu do TS suy luận (type inference) mà không cần khai báo thừa"
-related:
-  - "skill:nta-code-review"
-  - "skill:nta-refactor"
 ---
 
 ## Vì sao học sâu hệ kiểu

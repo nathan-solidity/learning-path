@@ -9,8 +9,6 @@ checklist:
   - "Đưa phản hồi cụ thể theo hành vi–tác động thay vì nhãn tính cách"
   - "Nhận diện dấu hiệu member sắp nghỉ hoặc burnout và can thiệp sớm"
   - "Hiểu vì sao giữ người rẻ hơn nhiều so với tuyển và onboard người mới"
-related:
-  - "skill:nta-meeting-notes"
 ---
 
 ## Lead giỏi làm cho người khác giỏi lên

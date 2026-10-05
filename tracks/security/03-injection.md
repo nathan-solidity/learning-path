@@ -11,7 +11,6 @@ checklist:
   - "Biết injection còn có ở NoSQL, LDAP, template — cùng một nguyên tắc phòng"
 related:
   - "glossary:db"
-  - "skill:nta-security-audit"
 ---
 
 ## Vì sao quan trọng
@@ -105,5 +104,4 @@ Mọi **injection** đều cùng một gốc: **input bị hiểu là code**. Ph
 khỏi dữ liệu** — SQL dùng **prepared statement**, command dùng **tham số dạng mảng
 (shell=False)**, các loại khác dùng API tham số hóa/escape đúng ngữ cảnh. **ORM vẫn dính**
 nếu ghép chuỗi ở raw query hay sort/filter động (dùng allowlist tên cột). Track SQL có bài
-SQL injection chi tiết hơn; bài này bao quát injection nói chung. Dùng `/nta-security-audit`
-để rà soát.
+SQL injection chi tiết hơn; bài này bao quát injection nói chung.

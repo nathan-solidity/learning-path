@@ -11,7 +11,6 @@ checklist:
   - "Giải thích vì sao ràng buộc ở tầng DB an toàn hơn chỉ validate ở app"
 related:
   - "glossary:db"
-  - "skill:nta-db-review"
 ---
 
 ## Vì sao quan trọng

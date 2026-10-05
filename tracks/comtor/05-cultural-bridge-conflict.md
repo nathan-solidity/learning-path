@@ -9,9 +9,6 @@ checklist:
   - "Truyền đạt tin xấu (delay/bug) đúng cách: nhận trách nhiệm + phương án + mốc thời gian"
   - "Bảo vệ uy tín team khi dịch mà không che giấu sự thật"
   - "Xác định được thời điểm phải escalate lên BrSE/PM thay vì tự xử lý"
-related:
-  - "skill:nta-meeting-notes"
-  - "skill:nta-qa-sheet"
 ---
 
 ## Comtor là cầu nối văn hóa, không chỉ ngôn ngữ

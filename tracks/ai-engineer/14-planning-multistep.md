@@ -11,8 +11,6 @@ checklist:
   - "Nhận ra khi agent kẹt (lặp lại lỗi cũ) và có cơ chế thoát an toàn"
 related:
   - "glossary:agent"
-  - "skill:nta-security-audit"
-  - "skill:nta-orchestrate"
 ---
 
 ## Vì sao quan trọng
@@ -113,7 +111,7 @@ khách, code sẽ chạy thật), không phải mọi câu trả lời vặt.
 
 > Reflection mạnh hơn khi **critic có góc nhìn tươi**: cho một lượt gọi riêng đóng vai người
 > phê bình, tách khỏi lượt sinh nháp — nó khắt khe hơn là bảo model "tự chấm bài mình" trong
-> cùng mạch. (Ở tầng skill, `/nta-orchestrate` tổ chức nhiều bước/nhiều vai kiểu này.)
+> cùng mạch.
 
 ## Nhận diện agent bị kẹt
 

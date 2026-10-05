@@ -78,7 +78,4 @@ thứ **phân biệt người viết query chạy được với developer làm 
   (chuyên sâu index).
 - Mỗi bài có ví dụ chạy được — nên gõ lại và chạy trên một DB thật, đừng chỉ đọc.
 
-Nội dung liên kết với `term-glossary` (tra thuật ngữ) và các skill dev
-(`/nta-db-review`, `/nta-db-consistency`, `/nta-db-seed`, `/nta-security-audit`,
-`/nta-perf-audit`...) — gặp thuật ngữ lạ thì mở glossary, muốn review schema hay audit
-truy vấn thì dùng skill tương ứng.
+Nội dung liên kết với `term-glossary` (tra thuật ngữ) — gặp thuật ngữ lạ thì mở glossary.

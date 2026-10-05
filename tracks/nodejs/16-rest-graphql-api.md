@@ -11,8 +11,6 @@ checklist:
   - "Giải thích được khi nào chọn GraphQL thay vì REST (và ngược lại)"
   - "Viết được một GraphQL resolver cơ bản trong NestJS"
 related:
-  - "skill:nta-api-design-review"
-  - "skill:nta-doc-gen"
   - "glossary:graphql"
 ---
 
@@ -36,8 +34,7 @@ GET    /api/v1/posts/:id/comments   # tài nguyên lồng nhau
 | Filter qua query | `/posts?status=published&page=2` | `/publishedPosts` |
 | Versioning | `/api/v1/...` | Đổi breaking không version |
 
-> Đừng nhét động từ vào URL (`/createPost`). HTTP method **là** động từ. Skill
-> `/nta-api-design-review` soát các lỗi convention này tự động.
+> Đừng nhét động từ vào URL (`/createPost`). HTTP method **là** động từ.
 
 ## Guard & Interceptor trong NestJS
 
@@ -85,7 +82,7 @@ SwaggerModule.setup("docs", app, doc);        // mở /docs xem UI tương tác
 ```
 
 Thêm decorator `@ApiProperty()` vào DTO → Swagger sinh tài liệu + form thử API ngay trên
-trình duyệt. Skill `/nta-doc-gen` cũng sinh OpenAPI từ code.
+trình duyệt.
 
 ## Khi nào GraphQL, khi nào REST
 

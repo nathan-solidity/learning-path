@@ -12,8 +12,6 @@ checklist:
   - "Giải thích được khác biệt tư duy giữa Express (tự lắp) và NestJS (có khung)"
 related:
   - "glossary:dependency-injection"
-  - "skill:nta-code-review"
-  - "skill:nta-refactor"
 ---
 
 ## Vì sao chuyển sang NestJS

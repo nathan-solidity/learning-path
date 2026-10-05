@@ -11,8 +11,6 @@ checklist:
   - "Xây được vòng lặp: đo → tìm khâu yếu → sửa (bài 10/11) → đo lại"
 related:
   - "glossary:rag"
-  - "skill:nta-perf-audit"
-  - "skill:nta-test-data"
 ---
 
 ## Vì sao quan trọng
@@ -163,8 +161,7 @@ và ground truth nếu có), RAGAS trả về điểm từng metric.
 
 > Cú pháp/tên hàm chính xác của RAGAS (cách dựng dataset, gọi `evaluate`, chọn LLM chấm) thay
 > đổi theo phiên bản — **xem docs chính thức của RAGAS** thay vì đoán API. Ý tưởng không đổi:
-> đưa dataset vào, nhận điểm các metric ra. Có thể dùng `/nta-test-data` để sinh bộ câu hỏi
-> eval ban đầu rồi soát tay.
+> đưa dataset vào, nhận điểm các metric ra.
 
 ## Vòng lặp cải thiện
 
@@ -180,8 +177,8 @@ Evaluation chỉ có giá trị khi nằm trong **vòng lặp**:
    thay đổi làm tệ đi hoặc chỉ tăng chi phí.
 
 > Đây là lý do các bài trước cứ nhắc "đo trước, bật sau". Không có vòng lặp này, mỗi lần thêm
-> reranking hay HyDE bạn chỉ **cảm giác** tốt hơn — có khi tăng latency (soi bằng
-> `/nta-perf-audit`) mà chất lượng không đổi.
+> reranking hay HyDE bạn chỉ **cảm giác** tốt hơn — có khi tăng latency mà
+> chất lượng không đổi.
 
 ## Cạm bẫy hay gặp
 

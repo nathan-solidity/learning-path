@@ -9,9 +9,6 @@ checklist:
   - "Xử lý được bất đồng kỹ thuật trong team mà không phá tinh thần"
   - "Xác định được đúng thời điểm và cách escalate lên PM/BrSE"
   - "Giữ được tinh thần team khi dự án áp lực (deadline, khách khó)"
-related:
-  - "skill:nta-orchestrate"
-  - "skill:nta-auto-review"
 ---
 
 ## C-Leader là phiên dịch trade-off, không chỉ phiên dịch ngôn ngữ

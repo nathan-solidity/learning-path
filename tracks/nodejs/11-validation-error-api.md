@@ -11,8 +11,6 @@ checklist:
   - "Map custom error (NotFound/Validation) sang đúng HTTP status"
   - "Không để lộ stack trace/chi tiết nội bộ cho client ở production"
 related:
-  - "skill:nta-api-design-review"
-  - "skill:nta-security-audit"
   - "glossary:validation"
 ---
 

@@ -9,9 +9,6 @@ checklist:
   - "Giải thích được triple constraint (scope/time/cost) và tại sao không thể cố định cả ba"
   - "So sánh được khi nào dùng Waterfall, khi nào dùng Agile/Scrum"
   - "Biết PM chịu trách nhiệm gì khi làm việc với khách Nhật qua BrSE"
-related:
-  - "skill:nta-meeting-notes"
-  - "skill:nta-sprint-report"
 ---
 
 ## PM là ai?

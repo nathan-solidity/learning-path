@@ -11,8 +11,6 @@ checklist:
   - "Dùng debugger (node --inspect / VS Code) đặt breakpoint thay vì console.log mọi nơi"
   - "Ghi log có cấu trúc bằng một logger (pino/winston) thay vì console.log"
 related:
-  - "skill:nta-debug"
-  - "skill:nta-code-review"
   - "glossary:stack-trace"
 ---
 
@@ -107,8 +105,7 @@ node --inspect dist/index.js      # mở cổng debug, gắn Chrome DevTools / V
 ```
 
 Trong VS Code: đặt breakpoint, chạy "Node.js: Attach", xem giá trị biến từng bước — nhanh
-hơn rải `console.log` khắp nơi rồi xóa. Với TS dùng skill `/nta-debug-setup` sinh
-`launch.json` sẵn.
+hơn rải `console.log` khắp nơi rồi xóa.
 
 ## Log có cấu trúc
 

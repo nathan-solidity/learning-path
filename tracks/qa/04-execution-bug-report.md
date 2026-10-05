@@ -10,9 +10,6 @@ checklist:
   - "Viết step to reproduce đủ để dev tái hiện lỗi mà không cần hỏi lại"
   - "Ghi rõ actual vs expected và đính kèm evidence (ảnh/log/video)"
   - "Nắm được vòng đời bug: New → Open → Fixed → Retest → Closed/Reopen"
-related:
-  - "skill:nta-test-run"
-  - "skill:nta-bug-report"
 ---
 
 ## Quy trình thực thi test
@@ -29,8 +26,7 @@ related:
 | **Skipped** | Cố tình bỏ (ngoài scope lần này) |
 
 > Ghi kết quả **ngay khi test**, kèm ngày và môi trường. "Pass" hôm qua trên build cũ không
-> có giá trị cho build hôm nay. `/nta-test-run` giúp chạy và sinh execution report pass/fail
-> kèm evidence.
+> có giá trị cho build hôm nay.
 
 ## Bug report — mắt xích quyết định giá trị QA
 
@@ -81,8 +77,6 @@ Expected: Hiện thông báo "Giỏ hàng trống, vui lòng thêm sản phẩm"
 
 > **Đừng che log lỗi**. Message như `NullPointerException at OrderService:88` là vàng cho
 > dev. Nhưng **che PII/token** trong evidence trước khi đính kèm.
-
-`/nta-bug-report` sinh bug report đúng format cho Backlog với đủ các phần trên.
 
 ## Vòng đời bug
 

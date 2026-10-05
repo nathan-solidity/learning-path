@@ -9,8 +9,6 @@ checklist:
   - "Dùng `Stack`/`Positioned` để xếp chồng widget"
   - "Hiển thị danh sách dài hiệu quả bằng `ListView.builder`"
   - "Đọc hiểu lỗi 'RenderFlex overflowed' và cách xử lý"
-related:
-  - "skill:nta-code-review"
 ---
 
 ## Row & Column — trục chính và trục phụ

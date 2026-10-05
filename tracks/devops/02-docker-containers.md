@@ -9,9 +9,6 @@ checklist:
   - "Dùng docker-compose dựng nhiều service (app + db) với network và volume"
   - "Áp dụng ít nhất 3 best practice làm image nhỏ và an toàn (base slim, non-root, .dockerignore)"
   - "Chạy container không dùng root và biết vì sao điều đó quan trọng"
-related:
-  - "skill:nta-docker-gen"
-  - "skill:nta-devops-security"
 ---
 
 ## Image vs Container

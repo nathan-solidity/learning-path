@@ -9,10 +9,6 @@ checklist:
   - "Viết được một báo cáo tiến độ ngắn theo cấu trúc: tiến độ / rủi ro / cần hỗ trợ"
   - "Áp dụng nguyên tắc hourensou (報連相) khi báo cáo cho khách Nhật"
   - "Chọn được nhịp báo cáo phù hợp (daily/weekly) theo đối tượng nhận"
-related:
-  - "skill:nta-sprint-report"
-  - "skill:nta-meeting-notes"
-  - "skill:nta-wbs"
 ---
 
 ## Công cụ là để nhìn thấy sự thật, không phải để đẹp

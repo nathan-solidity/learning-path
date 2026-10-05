@@ -9,9 +9,6 @@ checklist:
   - "Theo dõi được ngân sách thực tế vs kế hoạch (budget burn) và phát hiện vượt sớm"
   - "Giải thích được khái niệm margin (biên lợi nhuận) và vì sao PM phải quan tâm"
   - "Nắm khác biệt chi phí giữa hợp đồng ラボ (lab) và 受託 (fixed-price)"
-related:
-  - "skill:nta-effort-estimate"
-  - "skill:nta-sprint-report"
 ---
 
 ## Vì sao PM phải nghĩ về tiền

@@ -11,7 +11,6 @@ checklist:
   - "Hiểu mutable vs immutable và hệ quả khi gán/truyền tham số"
 related:
   - "glossary:mutable-immutable"
-  - "skill:nta-code-review"
 ---
 
 ## Vì sao đây là nền tảng

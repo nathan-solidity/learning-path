@@ -9,9 +9,6 @@ checklist:
   - "Hiểu ranh giới pháp lý về 偽装請負 (giả trang thầu phụ) và vì sao PM cần né"
   - "Xác định được các mốc nghiệm thu (検収) và điều kiện thanh toán trong 受託"
   - "Chọn được mô hình phù hợp theo độ rõ của scope"
-related:
-  - "skill:nta-effort-estimate"
-  - "skill:nta-risk-assessment"
 ---
 
 ## Vì sao PM offshore phải hiểu mô hình hợp đồng

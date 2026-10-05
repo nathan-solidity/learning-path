@@ -9,9 +9,6 @@ checklist:
   - "Kể tên các nguồn tốn tiền cloud phổ biến và cách phát hiện lãng phí (idle, over-provision, egress)"
   - "Chạy được load test để tìm điểm nghẽn trước khi production gặp, và đọc p95/p99 latency"
   - "Nhận ra khi nào CHƯA cần scale/tối ưu để tránh over-engineering"
-related:
-  - "skill:nta-load-test-plan"
-  - "skill:nta-scale-check"
 ---
 
 ## Scale và cost là hai mặt của một đồng xu

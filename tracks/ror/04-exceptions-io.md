@@ -10,9 +10,6 @@ checklist:
   - "Dùng `raise` để phát lỗi có message rõ ràng"
   - "Đọc/ghi file bằng File.open kèm block (tự đóng file)"
   - "Ghép đường dẫn an toàn bằng File.join thay vì nối chuỗi tay"
-related:
-  - "skill:nta-debug"
-  - "skill:nta-code-review"
 ---
 
 ## Vì sao xử lý lỗi đúng cách lại quan trọng

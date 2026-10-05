@@ -11,7 +11,6 @@ checklist:
   - "Xóa bảng an toàn bằng DROP TABLE (và IF EXISTS)"
 related:
   - "glossary:db"
-  - "skill:nta-db-review"
 ---
 
 ## Vì sao quan trọng

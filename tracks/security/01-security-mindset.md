@@ -11,7 +11,6 @@ checklist:
   - "Biết OWASP Top 10 là gì và vì sao dùng nó làm mốc"
 related:
   - "glossary:dev"
-  - "skill:nta-security-audit"
 ---
 
 ## Vì sao quan trọng
@@ -98,4 +97,4 @@ Nền tảng của mọi kỹ năng bảo mật là **không tin bất kỳ dữ
 input đều có thể độc hại đến khi được kiểm tra. Áp dụng ba nguyên tắc: **defense in depth**
 (nhiều lớp), **least privilege** (quyền tối thiểu), **fail securely** (lỗi thì từ chối). Lấy
 **OWASP Top 10** làm bản đồ các lỗ hổng cần phòng. Bảo mật là **trách nhiệm của DEV ngay lúc
-viết code**, không để dồn về cuối. Dùng `/nta-security-audit` để rà soát theo OWASP Top 10.
+viết code**, không để dồn về cuối.

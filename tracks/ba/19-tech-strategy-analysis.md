@@ -13,7 +13,6 @@ checklist:
 related:
   - "glossary:scope"
   - "glossary:rca"
-  - "skill:nta-risk-assessment"
 ---
 
 ## Strategy Analysis là gì?

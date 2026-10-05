@@ -9,9 +9,6 @@ checklist:
   - "Kể các đặc thù mobile: mạng yếu, xoay màn hình, gián đoạn (cuộc gọi), pin, cảm ứng"
   - "Phân biệt responsive web, native app và hybrid — mỗi loại test khác nhau"
   - "Biết khi nào dùng thiết bị thật vs giả lập (emulator/simulator) vs cloud device farm"
-related:
-  - "skill:nta-frontend-checklist"
-  - "skill:nta-test-run"
 ---
 
 ## "Chạy tốt trên máy tôi" không phải kết luận

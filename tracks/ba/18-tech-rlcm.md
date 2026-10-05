@@ -13,7 +13,6 @@ checklist:
 related:
   - "glossary:backlog"
   - "glossary:ac"
-  - "skill:nta-clarify"
 ---
 
 ## Requirements Life Cycle Management là gì?

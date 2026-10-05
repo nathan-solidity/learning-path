@@ -9,10 +9,6 @@ checklist:
   - "Nắm khái niệm technical debt và cách PM cân bằng tốc độ vs nợ kỹ thuật"
   - "Đọc được các chỉ số chất lượng cơ bản: defect density, escape rate, rework rate"
   - "Xây được vòng phản hồi chất lượng: đo → phân tích nguyên nhân → cải tiến"
-related:
-  - "skill:nta-checklist"
-  - "skill:nta-code-review"
-  - "skill:nta-risk-assessment"
 ---
 
 ## Chất lượng là việc của PM, không chỉ của QA

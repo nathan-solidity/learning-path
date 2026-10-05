@@ -9,9 +9,6 @@ checklist:
   - "Dùng flatMap khi có cấu trúc lồng nhau (list of list)"
   - "Làm việc với LocalDate/LocalDateTime/Duration, tránh Date cũ"
   - "Serialize/deserialize JSON bằng Jackson ObjectMapper với annotation cơ bản"
-related:
-  - "skill:nta-code-review"
-  - "skill:nta-refactor"
 ---
 
 ## Lambda & functional interface

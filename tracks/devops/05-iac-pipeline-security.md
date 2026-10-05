@@ -9,9 +9,6 @@ checklist:
   - "Quản lý secret an toàn: không commit, dùng Vault/secret manager, biết vì sao env var có giới hạn"
   - "Cấu hình image scan trong pipeline và hiểu SBOM + image signing giải quyết vấn đề gì"
   - "Áp dụng nguyên tắc least-privilege cho service account và pipeline"
-related:
-  - "skill:nta-devops-security"
-  - "skill:nta-devops-review"
 ---
 
 ## Infrastructure as Code (IaC)

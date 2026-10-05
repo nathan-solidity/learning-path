@@ -11,8 +11,6 @@ checklist:
   - "Cấu hình công cụ trong pyproject.toml và chạy trong pre-commit"
 related:
   - "glossary:type-hint"
-  - "skill:nta-code-review"
-  - "skill:nta-formatter-setup"
 ---
 
 ## Vì sao quan trọng
@@ -108,9 +106,6 @@ repos:
       - id: ruff
       - id: ruff-format
 ```
-
-> Dùng `/nta-formatter-setup` để sinh nhanh bộ config chuẩn (editorconfig + ruff + pre-commit)
-> cho cả team.
 
 ## Cạm bẫy hay gặp
 

@@ -10,8 +10,6 @@ checklist:
   - "Tránh được lỗi 'forward suy đoán như sự thật' khiến khách hiểu sai"
 related:
   - "glossary:comtor"
-  - "skill:nta-qa-sheet"
-  - "skill:nta-backlog-translate"
   - "playbook:comtor"
 ---
 
@@ -44,7 +42,7 @@ Câu hỏi với khách có vòng đời, phải theo dõi trạng thái:
 `Nháp → Đã gửi → Chờ trả lời → Đã trả lời → Đã chốt (đưa vào spec)`.
 
 Đừng để câu hỏi "rơi" — một câu chưa được trả lời mà dev đã code theo suy đoán là mầm
-bug. Công cụ `/nta-qa-sheet` quản lý lifecycle này, export song ngữ JP/VN.
+bug.
 
 ## Lỗi chí mạng: forward suy đoán như sự thật
 
@@ -57,5 +55,3 @@ spec conflict về sau. Quy tắc:
 
 > Xem playbook BA "speculating-instead-of-confirming". Verify trước khi phát ngôn là rẻ;
 > fix sau khi lan ra là đắt.
-
-Công cụ: `/nta-backlog-translate` dịch tài liệu Backlog; `/nta-qa-sheet` quản lý Q&A.

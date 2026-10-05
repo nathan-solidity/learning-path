@@ -9,9 +9,6 @@ checklist:
   - "Giải thích event loop & microtask; vì sao Dart đơn luồng vẫn 'không block'"
   - "Đưa xử lý nặng sang isolate (`compute`) để không giật UI"
   - "Chống spam gọi API bằng debounce trên stream"
-related:
-  - "skill:nta-code-review"
-  - "skill:nta-perf-audit"
 ---
 
 ## Event loop — vì sao đơn luồng vẫn mượt

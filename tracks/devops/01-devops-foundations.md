@@ -9,8 +9,6 @@ checklist:
   - "Phân biệt port, DNS, HTTP status code và kiểm tra được một service có sống không"
   - "Đọc và hiểu Git workflow (branch, PR, tag) dưới góc nhìn ops"
   - "Biết ba chỉ số DORA và vì sao chúng đo được năng lực DevOps của team"
-related:
-  - "skill:nta-deploy-checklist"
 ---
 
 ## DevOps là văn hóa, không phải một chức danh

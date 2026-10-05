@@ -9,9 +9,6 @@ checklist:
   - "Dùng risk-based testing để dồn công vào chỗ rủi ro cao thay vì test đều tay"
   - "Áp dụng pairwise/combinatorial để cắt bùng nổ tổ hợp mà vẫn phủ tương tác từng cặp"
   - "Kết hợp scripted + exploratory đúng lúc thay vì chọn một bên"
-related:
-  - "skill:nta-test-case"
-  - "skill:nta-test-case-review"
 ---
 
 ## Test case viết sẵn không bắt được mọi lỗi

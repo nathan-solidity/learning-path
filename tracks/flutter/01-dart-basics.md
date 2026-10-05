@@ -9,8 +9,6 @@ checklist:
   - "Giải thích null safety: phân biệt `String` và `String?`, dùng `?.`, `??`, `!`"
   - "Viết hàm có tham số vị trí, tham số tên (`{}`) và giá trị mặc định"
   - "Dùng collection (List/Map/Set), collection-if và spread operator `...`"
-related:
-  - "skill:nta-code-review"
 ---
 
 ## Dart là gì

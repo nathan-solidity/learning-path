@@ -11,7 +11,6 @@ checklist:
   - "Biết các phòng thủ bổ sung: validate input, không lộ lỗi SQL ra ngoài"
 related:
   - "glossary:db"
-  - "skill:nta-security-audit"
 ---
 
 ## Vì sao quan trọng
@@ -104,4 +103,3 @@ Validate input là **lớp bổ sung**, không phải thay thế prepared statem
 thể lộ hoặc xóa toàn bộ dữ liệu. Phòng thủ số 1 và bắt buộc: **prepared statement /
 parameterized query** (placeholder `?`/`$1`/`%s`), **không bao giờ nối chuỗi**. Bổ sung:
 **least privilege** cho tài khoản DB, validate input, và **không lộ lỗi SQL** ra ngoài.
-Dùng `/nta-security-audit` để rà lỗ hổng.

@@ -12,7 +12,6 @@ checklist:
   - "Viết middleware xử lý lỗi (4 tham số err, req, res, next) đặt cuối cùng"
 related:
   - "glossary:middleware"
-  - "skill:nta-code-review"
 ---
 
 ## Middleware là gì

@@ -12,7 +12,6 @@ checklist:
   - "Gói tiền xử lý + model vào một Pipeline sklearn để tránh lặp code và rò rỉ dữ liệu"
 related:
   - "glossary:machine-learning"
-  - "skill:nta-explain"
 ---
 
 ## Vì sao quan trọng

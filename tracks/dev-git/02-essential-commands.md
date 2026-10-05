@@ -9,7 +9,6 @@ checklist:
   - "Xem được lịch sử bằng git log và thay đổi bằng git diff"
   - "Viết được commit message rõ nghĩa (mỗi commit một mục đích)"
 related:
-  - "skill:nta-git-workflow"
   - "glossary:commit"
 ---
 
@@ -77,5 +76,3 @@ Fix null pointer khi user chưa có avatar
 getAvatar() trả null với user mới → NPE ở template.
 Trả về ảnh mặc định thay vì null.
 ```
-
-> Muốn tự động sinh commit message chuẩn từ diff đang có: dùng skill `/nta-git-workflow commit`.

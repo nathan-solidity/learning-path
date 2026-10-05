@@ -9,9 +9,6 @@ checklist:
   - "Giữ nguyên số liệu, tên field, giá trị điều kiện — không 'làm mượt' chúng"
   - "Dùng đúng 敬語 cơ bản (ですます) khi dịch tài liệu gửi khách"
   - "Phân biệt được câu khẳng định, phủ định, và điều kiện trong tiếng Nhật kỹ thuật"
-related:
-  - "skill:nta-translate"
-  - "skill:nta-qa-sheet"
 ---
 
 ## Nguyên tắc số một: không thêm, không bớt

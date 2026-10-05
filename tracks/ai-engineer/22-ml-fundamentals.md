@@ -13,7 +13,6 @@ checklist:
 related:
   - "glossary:machine-learning"
   - "glossary:overfitting"
-  - "skill:nta-code-review"
 ---
 
 ## Vì sao quan trọng

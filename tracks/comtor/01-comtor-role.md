@@ -9,8 +9,6 @@ checklist:
   - "Kể được ít nhất 3 kỳ vọng của khách Nhật với người làm cầu nối"
   - "Giải thích được vì sao Comtor không được tự suy diễn nội dung"
   - "Biết khi nào cần nói 'tôi cần xác nhận lại' thay vì dịch đại"
-related:
-  - "skill:nta-translate"
 ---
 
 ## Comtor là ai?

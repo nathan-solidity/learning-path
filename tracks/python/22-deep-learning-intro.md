@@ -13,7 +13,6 @@ checklist:
 related:
   - "glossary:neural-network"
   - "glossary:machine-learning"
-  - "skill:nta-explain"
 ---
 
 ## Vì sao quan trọng
@@ -132,7 +131,6 @@ Lưu ý: model và dữ liệu phải **cùng device**, nếu không PyTorch bá
 - Học chắc **đánh giá model** (bài trước) trước khi lao vào kiến trúc mạng phức tạp.
 - Khi sẵn sàng đi sâu: CNN cho ảnh, Transformer cho text, và tìm hiểu transfer learning
   (dùng lại model đã train sẵn thay vì train từ đầu).
-- Dùng skill `/nta-explain` để bóc tách code model có sẵn khi đọc dự án thật.
 
 ## Cạm bẫy hay gặp
 

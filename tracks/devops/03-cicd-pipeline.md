@@ -9,9 +9,6 @@ checklist:
   - "Truyền artifact giữa các job và cache dependencies để tăng tốc"
   - "Quản lý secret trong pipeline đúng cách (không hard-code, dùng secret store)"
   - "Phân biệt và chọn được deploy strategy: rolling, blue-green, canary"
-related:
-  - "skill:nta-cicd-gen"
-  - "skill:nta-devops-review"
 ---
 
 ## Các stage của một pipeline

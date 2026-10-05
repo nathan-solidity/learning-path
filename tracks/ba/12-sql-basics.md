@@ -13,8 +13,6 @@ checklist:
   - "Biết vì sao BA chỉ nên chạy truy vấn READ-ONLY và không tự ý sửa dữ liệu"
 related:
   - "glossary:db"
-  - "skill:nta-data-verify"
-  - "skill:nta-sql-formatter"
 ---
 
 ## Vì sao BA cần SQL
@@ -119,6 +117,3 @@ Dùng **Query Builder** để chọn bảng/cột và tự sinh câu SQL, hoặc
 - `JOIN` thiếu điều kiện `ON` → tích Descartes, số dòng nổ ra khổng lồ.
 - So sánh ngày/giờ quên timezone → lệch kết quả.
 - `COUNT(*)` vs `COUNT(cột)`: cái sau bỏ qua `NULL`.
-
-Công cụ: `/nta-data-verify` giúp BA/QA viết SQL read-only để tự verify dữ liệu theo câu
-hỏi nghiệp vụ; `/nta-sql-formatter` (tool) format SQL cho dễ đọc.

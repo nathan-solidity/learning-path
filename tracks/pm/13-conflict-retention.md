@@ -9,8 +9,6 @@ checklist:
   - "Đưa được phản hồi tiêu cực một cách xây dựng (ví dụ SBI: Situation-Behavior-Impact)"
   - "Nhận ra dấu hiệu người sắp nghỉ và can thiệp kịp thời"
   - "Hiểu chi phí thật của việc thay người và vì sao giữ người rẻ hơn tuyển mới"
-related:
-  - "skill:nta-meeting-notes"
 ---
 
 ## Xung đột và mất người: hai rủi ro âm thầm nhất

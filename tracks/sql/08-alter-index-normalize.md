@@ -11,7 +11,6 @@ checklist:
   - "Nhận biết khi nào cân nhắc denormalize để tối ưu đọc"
 related:
   - "glossary:db"
-  - "skill:nta-db-review"
 ---
 
 ## Vì sao quan trọng

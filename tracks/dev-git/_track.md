@@ -62,5 +62,4 @@ git config --list          # xem toàn bộ config
 4. **Không bao giờ** `push --force` lên branch chung (`main`, `develop`).
 5. Xử lý **conflict** cẩn thận, test lại rồi mới commit.
 
-> Nội dung liên kết với các skill Git (`/nta-git-workflow` để tạo commit message/PR
-> description, `/nta-diagram-gen` để vẽ sơ đồ). Gặp thuật ngữ lạ thì mở `term-glossary`.
+> Gặp thuật ngữ lạ thì mở `term-glossary`.

@@ -9,9 +9,6 @@ checklist:
   - "Phân biệt backup logic và physical, và vì sao phải diễn tập restore định kỳ"
   - "Hiểu read replica, connection pooling, và khi nào cần chúng để chịu tải"
   - "Nhận ra khi nào CHƯA cần sharding/replica để tránh over-engineering"
-related:
-  - "skill:nta-db-review"
-  - "skill:nta-migration-gen"
 ---
 
 ## Database là chỗ nguy hiểm nhất khi vận hành

@@ -13,7 +13,6 @@ checklist:
 related:
   - "glossary:pytorch"
   - "glossary:neural-network"
-  - "skill:nta-code-review"
 ---
 
 ## Vì sao quan trọng

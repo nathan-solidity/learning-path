@@ -13,8 +13,6 @@ checklist:
 related:
   - "glossary:nfr"
   - "glossary:db"
-  - "skill:nta-diagram-gen"
-  - "skill:nta-spec-review"
 ---
 
 ## Về nhóm technique này
@@ -234,6 +232,3 @@ RADD không phải "vẽ cho đẹp" — mỗi technique là **một cách buộ
 model buộc nghĩ hết chuyển trạng thái, decision table buộc nghĩ hết tổ hợp, NFR buộc nghĩ
 "tốt cỡ nào". Chọn technique theo *loại thông tin cần làm rõ*, và luôn để stakeholder
 confirm mô hình trước khi coi là đã chốt.
-
-Công cụ: `/nta-diagram-gen` sinh ERD/sequence/flowchart từ mô tả; `/nta-spec-review` kiểm
-tra spec thiếu NFR/edge case.

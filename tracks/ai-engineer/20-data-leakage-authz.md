@@ -13,7 +13,6 @@ checklist:
 related:
   - "glossary:rag"
   - "glossary:prompt-injection"
-  - "skill:nta-security-audit"
 ---
 
 ## Vì sao quan trọng
@@ -140,5 +139,4 @@ ngoài quyền qua RAG**. Nguyên tắc gốc: **coi mọi thứ trong prompt l�
 giờ đặt secret hay PII thô vào prompt. Với RAG, **authorization phải nằm trong truy vấn**: lọc
 theo metadata dựa trên danh tính đã xác thực ở server (nối bài 9), lọc *trước* khi lấy về chứ
 không phải sau. Thêm lớp **output filtering / PII redaction** trước khi trả cho người dùng — như
-một lưới an toàn, không thay cho việc kiểm soát quyền từ đầu. Chạy `/nta-security-audit` để soát
-các đường rò rỉ này.
+một lưới an toàn, không thay cho việc kiểm soát quyền từ đầu.

@@ -12,7 +12,6 @@ checklist:
 related:
   - "glossary:generator"
   - "glossary:decorator"
-  - "skill:nta-perf-audit"
 ---
 
 ## Vì sao quan trọng

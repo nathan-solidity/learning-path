@@ -9,8 +9,6 @@ checklist:
   - "Phát hiện được các loại bất thường: trùng, thiếu, sai định dạng, ngoài khoảng"
   - "Biết khi nào một 'bug' thực ra là dữ liệu bẩn, không phải lỗi code"
 related:
-  - "skill:nta-data-verify"
-  - "skill:nta-data-insight"
   - "glossary:db"
   - "playbook:ba"
 ---
@@ -65,6 +63,3 @@ thiếu). BA verify được điều này sẽ:
 
 > Kết luận "code sai" hay "dữ liệu sai" phải dựa trên đối chiếu thực tế, không phỏng đoán.
 > Chưa verify được thì ghi rõ "chưa xác nhận" và nêu cách sẽ kiểm chứng.
-
-Công cụ: `/nta-data-verify` (SQL read-only verify theo câu hỏi nghiệp vụ), `/nta-data-insight`
-(phân tích file Excel/CSV/log tìm pattern & anomaly).

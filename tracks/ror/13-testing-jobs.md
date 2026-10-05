@@ -10,8 +10,6 @@ checklist:
   - "Viết được một feature/system test mô phỏng thao tác user bằng Capybara"
   - "Đẩy được một tác vụ nặng sang background job với ActiveJob + Sidekiq"
 related:
-  - "skill:nta-test-gen"
-  - "skill:nta-code-review"
   - "glossary:unit-test"
 ---
 
@@ -147,9 +145,6 @@ end
 | Model spec | Logic model, validation, method | Nhanh nhất |
 | Request spec | Endpoint trả đúng status/nội dung | Nhanh |
 | System/feature | Luồng user end-to-end qua browser | Chậm — dùng cho luồng quan trọng |
-
-Skill `/nta-test-gen` sinh test scaffold cho code có sẵn; `/nta-code-review` rà coverage.
-
 
 ![Tháp test: nhiều unit test (nhanh, rẻ) ở đáy, ít E2E (chậm) ở đỉnh](/images/ror-test-pyramid.png)
 

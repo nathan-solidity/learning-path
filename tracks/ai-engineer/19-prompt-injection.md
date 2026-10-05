@@ -13,7 +13,6 @@ checklist:
 related:
   - "glossary:prompt-injection"
   - "glossary:rag"
-  - "skill:nta-security-audit"
 ---
 
 ## Vì sao quan trọng

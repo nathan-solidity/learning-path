@@ -11,8 +11,6 @@ checklist:
 related:
   - "glossary:kpi"
   - "glossary:mvp"
-  - "skill:nta-feedback-collection"
-  - "skill:nta-data-insight"
 ---
 
 ## Solution Evaluation là gì
@@ -48,8 +46,8 @@ Chọn metric gắn với **mục tiêu nghiệp vụ**, không chỉ số kỹ 
 
 ## Thu thập & xử lý feedback
 
-- **Định lượng**: số liệu sử dụng, log, khảo sát (dùng `/nta-data-insight` phân tích).
-- **Định tính**: phỏng vấn người dùng, feedback từ UAT/demo (dùng `/nta-feedback-collection`).
+- **Định lượng**: số liệu sử dụng, log, khảo sát.
+- **Định tính**: phỏng vấn người dùng, feedback từ UAT/demo.
 
 Biến feedback thành **yêu cầu cải tiến** có ưu tiên — vòng đời lại quay về Elicitation.
 Đây là lúc BA đóng vai trò liên tục, không phải one-shot.
@@ -58,6 +56,3 @@ Biến feedback thành **yêu cầu cải tiến** có ưu tiên — vòng đờ
 
 Với MVP, Solution Evaluation càng quan trọng: cả điểm của MVP là **release nhỏ để học**.
 Không đánh giá thì mất luôn ý nghĩa của việc làm MVP.
-
-Công cụ: `/nta-feedback-collection` (cấu trúc feedback UAT/demo), `/nta-data-insight` (phân
-tích file dữ liệu thật tìm pattern).

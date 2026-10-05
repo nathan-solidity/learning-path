@@ -12,7 +12,6 @@ checklist:
 related:
   - "glossary:agent"
   - "glossary:vector-database"
-  - "skill:nta-security-audit"
 ---
 
 ## Vì sao quan trọng
@@ -99,8 +98,7 @@ Supervisor:                          Handoff:
 ```
 
 Mỗi sub-agent là một agent bài 13-14 (LLM + tools + vòng lặp), chỉ khác **phạm vi hẹp** và
-**tool riêng**. Ở tầng skill, `/nta-orchestrate` là ví dụ mẫu supervisor: nhận input, chọn
-pipeline, gọi từng skill chuyên môn theo thứ tự.
+**tool riêng**.
 
 ## Khi nào KHÔNG cần multi-agent
 
@@ -125,8 +123,7 @@ Phần lớn ứng dụng thực tế **một agent tốt là đủ**. Multi-age
 - **Injection lan qua bàn giao**: nội dung độc một agent nuốt phải có thể truyền sang agent
   sau qua bước handoff. Đừng để dữ liệu quan sát điều khiển hành vi (sâu ở **AI Security**).
 - **Rò rỉ qua long-term memory dùng chung**: ký ức lưu chung có thể để agent/user này đọc dữ
-  liệu của người khác — **lọc quyền khi recall** như lọc quyền RAG (bài 9). Chạy
-  `/nta-security-audit` để soát luồng tool, memory và bàn giao.
+  liệu của người khác — **lọc quyền khi recall** như lọc quyền RAG (bài 9).
 
 ## Cạm bẫy hay gặp
 

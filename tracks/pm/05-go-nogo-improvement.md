@@ -9,9 +9,6 @@ checklist:
   - "Quyết định được giữa cắt scope và lùi lịch khi dự án trễ, kèm lý do"
   - "Đo được lead time và defect rate để đánh giá sức khỏe quy trình"
   - "Rút ra được action cải tiến cụ thể từ dữ liệu, không chỉ cảm tính"
-related:
-  - "skill:nta-deploy-checklist"
-  - "skill:nta-risk-assessment"
 ---
 
 ## Release readiness

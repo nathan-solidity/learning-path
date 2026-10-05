@@ -59,6 +59,4 @@ Nắm Ruby trước (block, method, OOP) giúp đọc được source Rails và 
 - Tài liệu chính thức: [Rails Guides](https://guides.rubyonrails.org), [Ruby docs](https://ruby-doc.org).
 - Mỗi bài có ví dụ code chạy được — nên gõ lại và chạy thử, đừng chỉ đọc.
 
-Nội dung liên kết với `term-glossary` (tra thuật ngữ) và các skill dev (`/nta-code-review`,
-`/nta-test-gen`, `/nta-refactor`...) — gặp thuật ngữ lạ thì mở glossary, muốn tự động hóa
-review/test thì dùng skill tương ứng.
+Nội dung liên kết với `term-glossary` (tra thuật ngữ) — gặp thuật ngữ lạ thì mở glossary.

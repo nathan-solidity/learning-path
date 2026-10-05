@@ -9,9 +9,6 @@ checklist:
   - "Kiểm đúng contract: status code, schema/kiểu dữ liệu, field bắt buộc, giá trị biên"
   - "Test cả happy path lẫn lỗi: 400/401/403/404/422/500 và message tương ứng"
   - "Kiểm bảo mật cơ bản qua API: authz vượt quyền, input validation, rò dữ liệu nhạy cảm"
-related:
-  - "skill:nta-postman-gen"
-  - "skill:nta-test-run"
 ---
 
 ## Vì sao QA nên test ở tầng API
@@ -102,9 +99,7 @@ GET /api/users/123/orders   (đăng nhập là user 456)
 
 ## Công cụ
 
-`/nta-postman-gen` sinh Postman/Bruno collection từ API spec — bạn thêm assertion vào là thành
-bộ test API chạy lại được, tích hợp CI. Với API spec (OpenAPI/Swagger), dùng nó làm nguồn
-contract để đối chiếu.
+Với API spec (OpenAPI/Swagger), dùng nó làm nguồn contract để đối chiếu.
 
 ## Cạm bẫy hay gặp
 
@@ -120,5 +115,4 @@ contract để đối chiếu.
 Test ở **tầng API** rẻ, nhanh, ổn định hơn qua UI và chạm đúng chỗ **logic nghiệp vụ** sống.
 Kiểm **contract**: status code, schema, field bắt buộc, giá trị biên. Giá trị lớn nhất nằm ở
 **nhánh lỗi** (400/401/403/404/422/500), không phải happy path. Và luôn thử **vượt quyền + input
-lạ** — API test là tuyến đầu bắt lỗ hổng bảo mật. Dùng `/nta-postman-gen` để biến spec thành bộ
-test chạy lại được.
+lạ** — API test là tuyến đầu bắt lỗ hổng bảo mật.

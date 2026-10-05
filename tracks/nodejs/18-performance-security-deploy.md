@@ -10,11 +10,6 @@ checklist:
   - "Tránh các lỗ hổng OWASP thường gặp trong Node (injection, secret lộ, dependency CVE)"
   - "Viết được Dockerfile multi-stage tối ưu cho Node/TS"
   - "Cấu hình graceful shutdown và health check cho production"
-related:
-  - "skill:nta-security-audit"
-  - "skill:nta-perf-audit"
-  - "skill:nta-docker-gen"
-  - "skill:nta-devops-security"
 ---
 
 ## Hiệu năng: event loop là nút cổ chai
@@ -39,7 +34,7 @@ setInterval(() => console.log("lag p99 (ms):", h.percentile(99) / 1e6), 5000);
 ```
 
 > Lag tăng đều = có gì đó đang chặn event loop. Việc CPU nặng → Worker Threads, job nền
-> (bài 14), hoặc dịch vụ riêng. Skill `/nta-perf-audit` tìm bottleneck tự động.
+> (bài 14), hoặc dịch vụ riêng.
 
 ## Tận dụng nhiều CPU: cluster / scaling
 
@@ -70,7 +65,7 @@ app.use(express.json({ limit: "100kb" }));      // giới hạn body chống pay
 |---------------|-----------|-----------|
 | Injection | Nối chuỗi vào query DB/shell | ORM (Prisma) tham số hóa; không `exec` với input |
 | Secret lộ | Hard-code / commit `.env` | Biến môi trường + `.gitignore` (bài 10) |
-| Dependency CVE | Package lỗi thời có lỗ hổng | `npm audit`, `/nta-dep-audit` định kỳ |
+| Dependency CVE | Package lỗi thời có lỗ hổng | `npm audit` định kỳ |
 | Broken auth | Token không hết hạn, không check quyền | JWT ngắn hạn + authorize (bài 12) |
 | Lộ thông tin | Trả stack trace cho client | Ẩn chi tiết ở production (bài 11) |
 
@@ -79,8 +74,7 @@ npm audit                    # quét CVE trong dependency
 npm audit fix                # vá tự động khi có bản an toàn
 ```
 
-> Chạy `/nta-security-audit` (OWASP Top 10) và `/nta-dep-audit` (CVE) trước khi lên
-> production. Đa số lỗ hổng Node đến từ **input không kiểm tra** và **dependency lỗi thời**.
+> Đa số lỗ hổng Node đến từ **input không kiểm tra** và **dependency lỗi thời**.
 
 ## Dockerfile multi-stage cho Node/TS
 
@@ -110,8 +104,7 @@ CMD ["node", "dist/index.js"]
 ![Dockerfile multi-stage cho Node: stage build cài đầy đủ dependency và chạy tsc ra dist/, stage production chỉ copy dist/ + cài dependencies production, cho image nhỏ và an toàn hơn](/images/nodejs-docker-build.png)
 
 > Multi-stage cho image **nhỏ** (không có source TS, không có devDependencies) và **an
-> toàn** hơn (ít thứ để tấn công, chạy bằng user `node` không phải root). Skill
-> `/nta-docker-gen` sinh Dockerfile này, `/nta-devops-security` quét image.
+> toàn** hơn (ít thứ để tấn công, chạy bằng user `node` không phải root).
 
 ## Graceful shutdown & health check
 
@@ -147,6 +140,5 @@ app.get("/health", (req, res) => res.json({ status: "ok" }));
 Hiệu năng Node xoay quanh **đừng chặn event loop** (đo lag, đẩy CPU nặng ra ngoài) và scale
 theo core (PM2/replica). Bảo mật là **đừng tự phá** cái Node/framework đang bảo vệ: helmet,
 rate limit, CORS chặt, ẩn lỗi nội bộ, `npm audit`. Deploy bằng **Docker multi-stage** (image
-nhỏ, không root) với **graceful shutdown** và **health check**. Chạy `/nta-security-audit`
-và `/nta-perf-audit` trước khi lên production.
+nhỏ, không root) với **graceful shutdown** và **health check**.
 </content>

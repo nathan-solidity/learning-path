@@ -9,9 +9,6 @@ checklist:
   - "Test được điều hướng bằng bàn phím và thứ tự focus hợp lý"
   - "Kiểm tương phản màu, text thay thế cho ảnh, và nhãn cho form"
   - "Kết hợp công cụ tự động (axe/Lighthouse) với kiểm tra tay và screen reader"
-related:
-  - "skill:nta-frontend-checklist"
-  - "skill:nta-frontend-review"
 ---
 
 ## Phần mềm dùng được cho tất cả mọi người

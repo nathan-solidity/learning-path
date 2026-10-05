@@ -11,7 +11,6 @@ checklist:
   - "Viết comment và docstring đúng chỗ"
 related:
   - "glossary:repl"
-  - "skill:nta-explain"
 ---
 
 ## Vì sao bắt đầu từ đây

@@ -12,9 +12,6 @@ checklist:
   - "Dùng Spring Data JPA: Entity, Repository, quan hệ @OneToMany/@ManyToOne, @Transactional"
   - "Viết unit test (JUnit 5 + Mockito) và test API bằng @WebMvcTest + MockMvc"
   - "Hoàn thành To-do API: CRUD + validation + xử lý lỗi + test"
-related:
-  - "skill:nta-code-review"
-  - "skill:nta-test-gen"
 ---
 
 ## Tạo project & cấu trúc

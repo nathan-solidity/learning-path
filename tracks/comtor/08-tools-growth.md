@@ -9,8 +9,6 @@ checklist:
   - "Nhận ra các lỗi máy dịch hay mắc (thuật ngữ, ngữ cảnh, phủ định, chủ ngữ ẩn)"
   - "Có kế hoạch tự nâng trình tiếng Nhật (JLPT, đọc tài liệu IT thật)"
   - "Xây được thói quen tự rà lỗi và học từ phản hồi để giỏi lên theo thời gian"
-related:
-  - "skill:nta-knowledge"
 ---
 
 ## Công cụ giúp Comtor nhanh hơn, không thay thế phán xét

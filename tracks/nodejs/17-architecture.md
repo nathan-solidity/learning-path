@@ -11,8 +11,6 @@ checklist:
   - "Tổ chức project theo feature (module) thay vì theo loại file"
   - "Nhận biết được các code smell thường gặp và cách tách"
 related:
-  - "skill:nta-refactor"
-  - "skill:nta-code-review"
   - "glossary:clean-architecture"
 ---
 
@@ -114,8 +112,7 @@ src/users/  ...
 | App lớn, nhiều team, logic phức tạp | Clean/Hexagonal, tách domain |
 
 > Clean Architecture, DDD, CQRS... mạnh nhưng **đắt**. Áp cho CRUD nhỏ là tự làm khổ mình
-> (nhiều lớp abstraction cho ít lợi ích). Bắt đầu đơn giản, tách khi thấy đau thật sự. Skill
-> `/nta-refactor` giúp tách dần khi code phình.
+> (nhiều lớp abstraction cho ít lợi ích). Bắt đầu đơn giản, tách khi thấy đau thật sự.
 
 ## Cạm bẫy hay gặp
 

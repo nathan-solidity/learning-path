@@ -11,8 +11,6 @@ checklist:
   - "Tránh bẫy mutable default argument"
 related:
   - "glossary:scope"
-  - "skill:nta-code-review"
-  - "skill:nta-refactor"
 ---
 
 ## Vì sao quan trọng

@@ -9,8 +9,6 @@ checklist:
   - "Định vị được QA tham gia ở những giai đoạn nào của vòng đời phần mềm (SDLC)"
   - "Hiểu vì sao chi phí sửa lỗi tăng dần khi phát hiện càng muộn"
   - "Nắm các thuật ngữ nền tảng qua bảng glossary (test case, bug, regression, SDLC...)"
-related:
-  - "skill:nta-test-case"
 ---
 
 ## Bắt đầu từ đâu?

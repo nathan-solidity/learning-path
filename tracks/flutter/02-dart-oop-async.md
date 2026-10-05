@@ -9,9 +9,6 @@ checklist:
   - "Giải thích `Future`, `async`/`await` và bắt lỗi bằng try/catch"
   - "Phân biệt `Future` (một giá trị) và `Stream` (chuỗi giá trị theo thời gian)"
   - "Dùng `enum` (kể cả enhanced enum) và `sealed class`/pattern matching cơ bản"
-related:
-  - "skill:nta-code-review"
-  - "skill:nta-refactor"
 ---
 
 ## Class & constructor

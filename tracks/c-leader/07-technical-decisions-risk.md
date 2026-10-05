@@ -9,10 +9,6 @@ checklist:
   - "Nhận diện và theo dõi rủi ro kỹ thuật (nợ kỹ thuật, phụ thuộc, điểm mù kiến thức)"
   - "Cân bằng giải pháp 'đủ tốt để ship' với giải pháp 'đúng chuẩn' theo bối cảnh"
   - "Biết khi nào quyết nhanh, khi nào cần thử nghiệm (spike) trước khi cam kết"
-related:
-  - "skill:nta-risk-assessment"
-  - "skill:nta-consistency"
-  - "skill:nta-code-review"
 ---
 
 ## Lead là người chốt khi team không tự thống nhất được

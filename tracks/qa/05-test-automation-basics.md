@@ -10,9 +10,6 @@ checklist:
   - "Hiểu vai trò E2E test và một luồng Playwright điển hình (navigate → action → assert)"
   - "Biết cách tích hợp test vào CI để chạy tự động mỗi khi push code"
   - "Nhận diện nguyên nhân flaky test và cách giảm thiểu"
-related:
-  - "skill:nta-postman-gen"
-  - "skill:nta-test-run"
 ---
 
 ## Khi nào nên automate?
@@ -70,8 +67,6 @@ pm.test("có message lỗi", () => {
   pm.expect(pm.response.json().error).to.eql("Invalid credentials");
 });
 ```
-
-`/nta-postman-gen` sinh sẵn Postman/Bruno collection từ API spec để bạn thêm assertion.
 
 ## E2E với Playwright
 

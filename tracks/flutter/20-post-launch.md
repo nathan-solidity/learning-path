@@ -9,10 +9,6 @@ checklist:
   - "Phát hành bản vá: staged rollout, phased release, và khi nào cần hotfix"
   - "Cân nhắc cập nhật động (feature flag, remote config) và giới hạn của nó"
   - "Hoàn thành dự án tổng kết: một app đã lên cả App Store & Google Play"
-related:
-  - "skill:nta-incident"
-  - "skill:nta-monitor-review"
-  - "skill:nta-release-note"
 ---
 
 ## Vòng đời không kết thúc ở "đã publish"
@@ -63,8 +59,8 @@ Quy trình cập nhật lặp lại bài 16–18 với **build number mới**, c
 - **Staged rollout** (Android) / **phased release** (iOS): tăng dần % người nhận. Crash tăng
   → **halt/pause** ngay, chỉ ảnh hưởng nhóm nhỏ.
 - **Hotfix**: lỗi nghiêm trọng thì build bản vá tối thiểu, ưu tiên review (iOS có
-  **expedited review** khi thật khẩn). Dùng `/nta-incident` để điều phối.
-- Viết **release note** rõ ràng mỗi bản — tự động hóa bằng `/nta-release-note`.
+  **expedited review** khi thật khẩn).
+- Viết **release note** rõ ràng mỗi bản.
 
 ## Cập nhật động — và giới hạn
 

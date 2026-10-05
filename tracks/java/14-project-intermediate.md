@@ -10,9 +10,6 @@ checklist:
   - "Tổ chức code layered + map DTO, không để entity lọt ra API"
   - "Chạy tác vụ nền (email/notification) và job dọn dữ liệu định kỳ đúng cách"
   - "Đạt test coverage tầng service >= 70% với test có ý nghĩa"
-related:
-  - "skill:nta-test-gen"
-  - "skill:nta-code-review"
 ---
 
 ## Mục tiêu

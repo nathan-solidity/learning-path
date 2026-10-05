@@ -10,8 +10,6 @@ checklist:
   - "Tách logic dùng chung ra routing concern và controller concern"
   - "Nhận ra fat controller và biết ít nhất 2 cách làm mỏng nó"
 related:
-  - "skill:nta-refactor"
-  - "skill:nta-code-review"
   - "glossary:rest"
 ---
 
@@ -182,8 +180,6 @@ def create
   end
 end
 ```
-
-Skill `/nta-refactor` giúp phân tích code smell và lập kế hoạch tách từng bước.
 
 ## Cạm bẫy hay gặp
 

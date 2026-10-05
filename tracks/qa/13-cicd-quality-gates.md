@@ -9,9 +9,6 @@ checklist:
   - "Đặt gate hợp lý: test đỏ chặn merge, coverage tối thiểu, không lỗi nghiêm trọng mới"
   - "Phân biệt shift-left (test sớm) và test ở các tầng khác nhau của pipeline"
   - "Xử lý flaky test trong CI để gate đáng tin, không bị bỏ qua"
-related:
-  - "skill:nta-test-run"
-  - "skill:nta-deploy-checklist"
 ---
 
 ## QA không còn chỉ là "khâu cuối"

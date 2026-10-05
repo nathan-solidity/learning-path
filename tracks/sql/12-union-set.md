@@ -11,7 +11,6 @@ checklist:
   - "Chọn đúng giữa UNION và OR/JOIN cho từng tình huống"
 related:
   - "glossary:db"
-  - "skill:nta-db-review"
 ---
 
 ## Vì sao quan trọng

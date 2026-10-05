@@ -13,7 +13,6 @@ checklist:
 related:
   - "glossary:api"
   - "glossary:dependency-injection"
-  - "skill:nta-api-design-review"
 ---
 
 ## Vì sao quan trọng
@@ -211,5 +210,4 @@ FastAPI biến **type hint** thành validation và tài liệu tự động. Tá
 **response_model** để không lộ dữ liệu nhạy cảm. Dùng `async def` **chỉ khi** có I/O async,
 còn lại để `def` thường cho FastAPI tự đẩy sang threadpool. Báo lỗi bằng `raise
 HTTPException` với đúng status code. `Depends` là dependency injection — nền tảng cho DB
-session và xác thực ở các bài sau. Mở `/docs` để test ngay. Chạy `/nta-api-design-review`
-để soát thiết kế API.
+session và xác thực ở các bài sau. Mở `/docs` để test ngay.

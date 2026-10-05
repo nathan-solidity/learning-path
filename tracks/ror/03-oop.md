@@ -10,9 +10,6 @@ checklist:
   - "Viết một module và mixin vào class bằng `include`"
   - "Giải thích được include vs extend khác nhau chỗ nào"
   - "Hiểu duck typing và vì sao Ruby không cần khai báo interface"
-related:
-  - "skill:nta-refactor"
-  - "skill:nta-code-review"
 ---
 
 ## Vì sao OOP quan trọng với Rails

@@ -10,9 +10,6 @@ checklist:
   - "Viết được if/unless/case đúng idiom, không lồng if thừa"
   - "Duyệt Array/Hash bằng `each` thay vì `for`, hiểu vì sao"
   - "Đọc được một Hash lồng nhau (nested hash) như params trong Rails"
-related:
-  - "skill:nta-code-review"
-  - "skill:nta-refactor"
 ---
 
 ## Vì sao nắm chắc kiểu dữ liệu trước

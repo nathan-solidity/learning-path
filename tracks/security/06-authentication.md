@@ -11,7 +11,6 @@ checklist:
   - "Thông báo lỗi đăng nhập không tiết lộ user có tồn tại hay không"
 related:
   - "glossary:dev"
-  - "skill:nta-security-audit"
 ---
 
 ## Vì sao quan trọng
@@ -95,4 +94,4 @@ chiều). **Không tự chế auth/crypto** — dùng thư viện đã kiểm ch
 **rate limit / khóa tạm / CAPTCHA / MFA**. Session cookie đặt **HttpOnly + Secure +
 SameSite**, hết hạn hợp lý, hủy khi logout. Thông báo lỗi login **không tiết lộ** user tồn
 tại hay không. Bài tiếp theo: sau khi biết "bạn là ai", kiểm "bạn được làm gì" (access
-control). Dùng `/nta-security-audit` để rà.
+control).

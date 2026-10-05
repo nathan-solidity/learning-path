@@ -11,8 +11,6 @@ checklist:
 related:
   - "glossary:brd"
   - "playbook:ba"
-  - "skill:nta-clarify"
-  - "skill:nta-stakeholder-sim"
 ---
 
 ## Elicitation là gì
@@ -45,8 +43,3 @@ nhận. Đây là bước hay bị bỏ, và là nguồn số 1 của "code xong
 
 > Với khách Nhật qua BrSE: khoảng cách ngôn ngữ + tam sao thất bản khiến bước xác nhận
 > bằng văn bản (song ngữ nếu cần) càng quan trọng. Xem track/playbook về Q&A với BrSE.
-
-## Công cụ hỗ trợ
-
-- `/nta-clarify` — làm rõ yêu cầu, scan điểm chưa rõ trước khi bắt tay làm.
-- `/nta-stakeholder-sim` — tập dượt phỏng vấn với "khách hàng ảo" trước buổi họp thật.

@@ -9,9 +9,6 @@ checklist:
   - "Hiểu khác biệt giữa REST và GraphQL, biết khi nào chọn cái nào"
   - "Viết được một query và một mutation cơ bản với graphql-ruby"
   - "Bảo vệ API bằng JWT; hiểu OAuth2 dùng khi nào"
-related:
-  - "skill:nta-api-design-review"
-  - "skill:nta-doc-gen"
 ---
 
 ## REST API trong Rails
@@ -156,6 +153,3 @@ payload = JWT.decode(request.headers["Authorization"].split.last, Rails.applicat
 - GraphQL query lồng nhau gây **N+1** → dùng `graphql-batch` hoặc dataloader.
 - Quên set `exp` cho JWT → token sống mãi, rủi ro bảo mật.
 - Không versioning → sửa response là vỡ mọi client đang chạy.
-
-Dùng `/nta-api-design-review` để soi convention/naming/error-format và `/nta-doc-gen` để
-sinh tài liệu API từ code.

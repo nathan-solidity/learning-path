@@ -12,8 +12,6 @@ checklist:
   - "Quyết định được khi nào self-host rẻ hơn API và ngược lại, dựa trên khối lượng"
 related:
   - "glossary:llm"
-  - "skill:nta-infra-gen"
-  - "skill:nta-scale-check"
 ---
 
 ## Vì sao quan trọng
@@ -84,9 +82,6 @@ Hướng thực dụng:
 - **Đặt trần concurrency mỗi instance** dựa trên VRAM cho KV cache (bài 29), để một instance
   không nhận quá tải rồi OOM.
 - **Provision trước cho đỉnh dự đoán được** (giờ cao điểm) thay vì phản ứng sau.
-
-> Chẩn đoán khi nào **thật sự cần** scale (và khi nào chưa cần, tránh over-engineer) là việc
-> của `/nta-scale-check`. Dựng hạ tầng GPU + autoscaling + monitoring bằng `/nta-infra-gen`.
 
 ## Self-host vs API: quyết định bằng con số
 

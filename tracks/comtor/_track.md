@@ -44,7 +44,3 @@ khi bạn tự tin đã nắm. Tiến độ tính theo số item đã tick.
 Comtor **không phải** người quyết định nội dung. Khi câu gốc mơ hồ hoặc thiếu thông tin,
 việc đúng là **hỏi lại** — không tự đoán rồi dịch như thể đó là ý của người nói. Cả lộ trình
 này lặp lại nguyên tắc đó: dịch đúng những gì có, đánh dấu rõ những gì chưa chắc.
-
-Bài học liên kết với các skill hỗ trợ sẵn có: `/nta-translate` (dịch giữ định dạng),
-`/nta-qa-sheet` (quản lý Q&A song ngữ), `/nta-meeting-notes` (ghi chú họp + action item),
-`/nta-knowledge` (lưu glossary & bài học cá nhân).

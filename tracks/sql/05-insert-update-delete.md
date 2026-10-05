@@ -11,7 +11,6 @@ checklist:
   - "Dùng RETURNING (PostgreSQL) để lấy lại hàng vừa thay đổi"
 related:
   - "glossary:db"
-  - "skill:nta-db-seed"
 ---
 
 ## Vì sao quan trọng

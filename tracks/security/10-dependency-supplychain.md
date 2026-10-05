@@ -11,7 +11,6 @@ checklist:
   - "Kiểm tra package trước khi thêm; giảm dependency thừa"
 related:
   - "glossary:dev"
-  - "skill:nta-dep-audit"
 ---
 
 ## Vì sao quan trọng
@@ -80,4 +79,4 @@ Thư viện bên thứ ba có lỗ hổng thì **app bạn có lỗ hổng** (OW
 Components). Phòng thủ: **quét CVE định kỳ và trong CI** (npm audit, pip-audit, Dependabot),
 dùng **lockfile + pin version**, **cập nhật có kiểm soát**, và **kiểm package trước khi
 thêm** (coi chừng typosquatting/supply-chain). Giảm dependency thừa để thu nhỏ bề mặt tấn
-công. Dùng `/nta-dep-audit` để rà CVE và package lỗi thời.
+công.

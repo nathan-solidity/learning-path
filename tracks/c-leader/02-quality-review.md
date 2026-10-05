@@ -9,10 +9,6 @@ checklist:
   - "Viết được feedback mang tính xây dựng, gắn lý do thay vì mệnh lệnh"
   - "Dùng checklist review cho spec, code và test thay vì review theo cảm tính"
   - "Cân bằng được tốc độ và chất lượng: biết chỗ nào chặt, chỗ nào cho qua"
-related:
-  - "skill:nta-auto-review"
-  - "skill:nta-code-review"
-  - "skill:nta-consistency"
 ---
 
 ## Review của lead khác reviewer thường thế nào
@@ -45,7 +41,7 @@ Lead không đủ giờ soi mọi dòng của mọi PR. Phân bổ sự chú ý 
 | Code hạ tầng dùng chung | Cao — ảnh hưởng lan rộng |
 | CRUD đơn giản, đã có pattern | Thấp — lướt nhanh, tin convention |
 
-Dùng `/nta-auto-review` hoặc `/nta-code-review` để quét lớp đầu (bug, security, style),
+Dùng công cụ review tự động để quét lớp đầu (bug, security, style),
 lead dồn thời gian vào phần rủi ro cao mà máy khó bắt: đúng nghiệp vụ, đúng kiến trúc.
 
 ## Checklist review nhanh
@@ -76,7 +72,7 @@ Nguyên tắc: **khen cụ thể, chê cụ thể**. Phân biệt "must fix" (ch
 Review quá chặt mọi thứ → nghẽn tiến độ, team ức chế. Cho qua hết → nợ kỹ thuật chồng.
 Nguyên tắc: **chặt ở vùng rủi ro cao, nới ở vùng an toàn**. Cosmetic thì gợi ý chứ không
 chặn merge. Nếu cùng lỗi lặp nhiều lần → đừng review lại từng cái, hãy chuẩn hóa thành
-lint/convention/checklist (dùng `/nta-consistency` để phát hiện lỗi lặp toàn codebase).
+lint/convention/checklist.
 
 ## Cạm bẫy hay gặp
 
@@ -84,7 +80,7 @@ lint/convention/checklist (dùng `/nta-consistency` để phát hiện lỗi l�
 - **Review theo cảm tính** thay vì checklist → bỏ sót edge case, mỗi lần một kiểu.
 - **Feedback dạng mệnh lệnh** không lý do → member làm cho xong, không học được.
 - **Chặn merge vì nit** → nghẽn tiến độ, mất thiện chí.
-- **Tin máy 100%** → `/nta-code-review` bắt bug kỹ thuật nhưng không hiểu nghiệp vụ; phần
+- **Tin máy 100%** → công cụ review tự động bắt bug kỹ thuật nhưng không hiểu nghiệp vụ; phần
   đúng/sai nghiệp vụ vẫn cần lead đọc.
 
 ## Ghi nhớ

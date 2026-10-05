@@ -11,7 +11,6 @@ checklist:
   - "Ghép được một app CRUD hoàn chỉnh (Blog hoặc To-do) chạy từ `rails new` đến trình duyệt"
 related:
   - "glossary:mvc"
-  - "skill:nta-code-review"
 ---
 
 ## ERB — nhúng Ruby vào HTML

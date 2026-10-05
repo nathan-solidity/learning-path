@@ -9,9 +9,6 @@ checklist:
   - "Chọn đúng giải pháp DB cục bộ (sqflite/Drift/Isar/Hive) theo nhu cầu"
   - "Thiết kế cache offline: đọc cache trước, đồng bộ mạng sau"
   - "Biết KHÔNG lưu gì vào SharedPreferences (dữ liệu nhạy cảm, khối lượng lớn)"
-related:
-  - "skill:nta-code-review"
-  - "skill:nta-security-audit"
 ---
 
 ## Chọn công cụ theo nhu cầu

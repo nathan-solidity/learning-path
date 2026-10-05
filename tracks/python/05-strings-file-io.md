@@ -11,7 +11,6 @@ checklist:
   - "Hiểu encoding (utf-8) khi đọc/ghi file có tiếng Việt"
 related:
   - "glossary:context-manager"
-  - "skill:nta-code-review"
 ---
 
 ## Vì sao quan trọng

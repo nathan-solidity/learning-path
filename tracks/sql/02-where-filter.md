@@ -11,7 +11,6 @@ checklist:
   - "Lọc giá trị NULL đúng cách bằng IS NULL / IS NOT NULL"
 related:
   - "glossary:db"
-  - "skill:nta-data-verify"
 ---
 
 ## Vì sao quan trọng

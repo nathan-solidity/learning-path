@@ -9,10 +9,6 @@ checklist:
   - "So sánh lựa chọn: GitHub Actions, Codemagic, fastlane"
   - "Tự động upload lên TestFlight & Google Play (track internal)"
   - "Quản lý keystore/certificate trong CI không lộ (base64 secret, match)"
-related:
-  - "skill:nta-cicd-gen"
-  - "skill:nta-devops-security"
-  - "skill:nta-deploy-checklist"
 ---
 
 ## Vì sao cần CI/CD cho mobile
@@ -112,7 +108,6 @@ cả team và CI dùng chung khóa ký, không phải chia sẻ file `.p12` th�
 - Encode file nhị phân sang **base64**, lưu làm **secret** của CI, decode lúc chạy (như trên).
 - Giới hạn phạm vi service account/API key đúng mức cần.
 - Dọn file khóa sau khi build; không in secret ra log.
-- Rà soát pipeline bằng `/nta-devops-security` để bắt secret lộ / cấu hình yếu.
 
 ## Cạm bẫy hay gặp
 
@@ -126,4 +121,4 @@ cả team và CI dùng chung khóa ký, không phải chia sẻ file `.p12` th�
 CI/CD mobile: **CI** (analyze + test mỗi PR) là bắt buộc; **CD** tự động build ký và đẩy lên
 **TestFlight**/**Play internal**. iOS cần **macOS runner** + **fastlane match** để quản khóa
 ký; Android dùng **service account** upload Play. Nguyên tắc xuyên suốt: **secret qua CI
-secret + base64**, không bao giờ commit hay log. Sinh nhanh pipeline bằng `/nta-cicd-gen`.
+secret + base64**, không bao giờ commit hay log.

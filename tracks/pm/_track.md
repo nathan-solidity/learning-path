@@ -45,8 +45,3 @@ tick khi bạn tự tin đã nắm. Tiến độ tính theo số item đã tick.
 | Nâng cao | 14. Mô hình hợp đồng offshore (ラボ/受託) | Loại hợp đồng quyết định ai chịu rủi ro và cách quản; né 偽装請負; định nghĩa 検収. |
 | Nâng cao | 15. Làm việc với khách Nhật & BrSE nâng cao | Văn hóa (nemawashi/ringi/honne), Q&A truy vết, trình bày tin xấu kiểu Nhật. |
 | Nâng cao | 16. Postmortem & tổ chức học hỏi | Blameless, 5 Whys, action item có owner — kaizen làm team giỏi lên theo thời gian. |
-
-Nội dung liên kết với các skill PM sẵn có (`/nta-wbs`, `/nta-effort-estimate`,
-`/nta-sprint-report`, `/nta-risk-assessment`, `/nta-meeting-notes`, `/nta-deploy-checklist`,
-`/nta-spec-diff`, `/nta-incident`, `/nta-checklist`, `/nta-code-review`, `/nta-spec-write`)
-— khi bài học nhắc tới một hoạt động, bạn có thể gọi ngay skill tương ứng để làm thật.

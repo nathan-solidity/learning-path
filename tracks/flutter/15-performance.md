@@ -9,9 +9,6 @@ checklist:
   - "Tối ưu danh sách dài và ảnh (cache, resize, lazy)"
   - "Hiểu build/layout/paint và tránh công việc nặng trong `build`"
   - "Đo kích thước app và giảm bằng `--split-per-abi`/tree-shaking"
-related:
-  - "skill:nta-perf-audit"
-  - "skill:nta-code-review"
 ---
 
 ## Đo trước, tối ưu sau

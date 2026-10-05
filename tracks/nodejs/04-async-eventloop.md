@@ -12,8 +12,6 @@ checklist:
   - "Hiểu thứ tự chạy: đồng bộ → microtask (Promise) → macrotask (setTimeout)"
 related:
   - "glossary:event-loop"
-  - "skill:nta-perf-audit"
-  - "skill:nta-code-review"
 ---
 
 ## Vì sao đây là bài quan trọng nhất

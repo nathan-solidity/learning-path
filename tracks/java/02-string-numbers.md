@@ -9,9 +9,6 @@ checklist:
   - "Dùng được text block (\"\"\"...\"\"\") cho chuỗi nhiều dòng"
   - "Format chuỗi bằng `String.format` / `formatted` thay vì nối chuỗi lộn xộn"
   - "Hiểu ép kiểu số (casting) và tránh mất dữ liệu khi thu hẹp kiểu"
-related:
-  - "skill:nta-code-review"
-  - "skill:nta-refactor"
 ---
 
 ## String là immutable

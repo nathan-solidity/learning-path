@@ -12,8 +12,6 @@ checklist:
 related:
   - "glossary:llm"
   - "glossary:token"
-  - "skill:nta-monitor-review"
-  - "skill:nta-incident"
 ---
 
 ## Vì sao quan trọng
@@ -72,7 +70,6 @@ def ask_logged(question: str, request_id: str | None = None) -> str:
 
 > Đừng log nguyên văn prompt/response nếu chứa dữ liệu nhạy cảm (PII, thông tin khách hàng).
 > Log token và metadata thì luôn an toàn; nội dung thì cân nhắc mask hoặc chỉ log khi debug.
-> Dùng `/nta-monitor-review` để soát xem còn thiếu metric/alert quan trọng nào chưa track.
 
 ## Tracing: nhìn xuyên một chuỗi nhiều bước
 
@@ -166,7 +163,7 @@ def ask_resilient(question: str) -> str:
 ```
 
 Khi mọi lớp trên vẫn không cứu được và sự cố lan rộng, xử lý theo quy trình incident có kỷ
-luật — dùng `/nta-incident` để ghi timeout timeline, cô lập nguyên nhân và viết post-mortem.
+luật.
 
 ## Cạm bẫy hay gặp
 

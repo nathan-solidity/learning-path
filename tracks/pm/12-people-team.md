@@ -9,9 +9,6 @@ checklist:
   - "Chạy được một buổi 1-on-1 hiệu quả (không phải họp báo cáo tiến độ)"
   - "Hiểu động lực nội tại vs ngoại tại và cách tạo môi trường tạo động lực"
   - "Nhận diện dấu hiệu burnout và biết can thiệp sớm"
-related:
-  - "skill:nta-meeting-notes"
-  - "skill:nta-sprint-report"
 ---
 
 ## Dự án chạy bằng con người, không bằng Gantt chart

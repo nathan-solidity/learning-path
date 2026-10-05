@@ -10,7 +10,6 @@ checklist:
   - "Tra cứu thuật ngữ theo đúng ngữ cảnh thay vì dịch máy móc"
   - "Biết ghi lại thuật ngữ mới phát sinh trong họp/chat vào glossary"
 related:
-  - "skill:nta-translate"
   - "glossary:comtor"
 ---
 

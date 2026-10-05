@@ -58,10 +58,48 @@ quan hiện thành nút bên dưới câu trả lời — bấm để nhảy t�
 Lịch sử hỏi-đáp lưu ở `localStorage` (theo từng track, tối đa 50 câu gần nhất), không lưu
 server-side.
 
+### Hướng dẫn cho người dùng: dùng Gemini key riêng
+
+#### Vì sao mỗi người nên dùng key riêng?
+
+- **Key chung = quota chung.** Gemini API giới hạn số request/phút và /ngày theo từng key.
+  Khi nhiều người cùng hỏi bằng một key, quota hết rất nhanh → câu trả lời **rất chậm** hoặc
+  báo **lỗi** (vượt giới hạn request), ảnh hưởng tới tất cả mọi người.
+- **Key riêng = quota riêng.** Bạn có hạn mức của riêng mình, không bị người khác làm chậm.
+- **Miễn phí.** Tạo key ở gói miễn phí không cần thẻ thanh toán.
+- **Bạn tự kiểm soát.** Có thể xóa hoặc thu hồi key bất cứ lúc nào (xem bên dưới).
+
+#### Tạo key (khoảng 1 phút)
+
+1. Mở [aistudio.google.com/apikey](https://aistudio.google.com/apikey), đăng nhập bằng
+   tài khoản Google.
+2. Bấm **Create API key**, chọn (hoặc tạo) một Google Cloud project.
+3. Copy key vừa tạo (dạng `AIza...`).
+4. Trên web Learning Path: bấm **💬 Hỏi thêm** → nút **🔑** → dán key vào ô → bấm **Lưu**.
+   Trạng thái chuyển sang đã có key là dùng được.
+
+Lưu ý:
+- Key được mã hóa và **chỉ lưu trên trình duyệt bạn đang dùng**. Đổi máy/trình duyệt thì
+  phải nhập lại. Server không lưu, không ghi log key.
+- Không chia sẻ key cho người khác, không dán key vào chat/tài liệu.
+- Gói miễn phí: Google có thể dùng dữ liệu bạn gửi để cải thiện sản phẩm (xem
+  [điều khoản Gemini API](https://ai.google.dev/gemini-api/terms)) — **không hỏi nội dung
+  bí mật/nội bộ của dự án**.
+
+#### Xóa / thu hồi key
+
+| Muốn | Cách làm | Kết quả |
+|---|---|---|
+| Xóa key khỏi trình duyệt này | Panel **🔑** → bấm **Xóa key khỏi trình duyệt này** | Web không còn dùng key; key **vẫn còn hiệu lực** phía Google |
+| Thu hồi hẳn key | Mở [aistudio.google.com/apikey](https://aistudio.google.com/apikey) → bấm biểu tượng thùng rác cạnh key | Key ngừng hoạt động ở mọi nơi |
+| Nghi key bị lộ | Thu hồi ngay (như trên) → tạo key mới → nhập lại vào panel **🔑** | Key cũ vô hiệu, dùng key mới |
+
 ### Key của người dùng (BYOK)
 
-Mỗi người dùng tự nhập Gemini API key của mình qua nút **🔑** trong panel — không dùng
-chung quota của người deploy. Panel có hướng dẫn tạo key và cách xóa/thu hồi.
+Mặc định chat dùng **key chung** (`GEMINI_API_KEY` của server). Khi người dùng chưa có key
+riêng, panel hiện gợi ý "Bạn có muốn tạo key riêng để câu trả lời nhanh hơn không?" (bấm
+**Để sau** thì ẩn trong phiên hiện tại; gặp lỗi khi dùng key chung thì gợi ý hiện lại). Key
+riêng nhập qua nút **🔑** — panel có hướng dẫn tạo key và cách xóa/thu hồi.
 
 - Key mã hóa AES-GCM (WebCrypto), ciphertext ở `localStorage` (`learning-path-gemini-key-v1`),
   khóa giải mã là `CryptoKey` non-extractable trong IndexedDB (`learning-path-crypto`).
@@ -70,14 +108,15 @@ chung quota của người deploy. Panel có hướng dẫn tạo key và cách 
 - Mỗi lần hỏi, key gửi qua header `X-Gemini-Key`; server tạo client riêng cho request, không
   lưu, không log. Export tiến độ không chứa key.
 - Cần HTTPS hoặc `localhost` (WebCrypto chỉ chạy trong secure context).
-- Bản deploy (không phải localhost) bắt buộc có key người dùng. Chạy local thì được phép
-  fallback về `GEMINI_API_KEY` của server (bên dưới).
+- Không có key riêng → server dùng `GEMINI_API_KEY` (bên dưới). Không đặt biến này thì người
+  dùng bắt buộc phải nhập key riêng mới hỏi được.
 
-### Cấu hình key server (chỉ chạy local)
+### Cấu hình key chung của server
 
 Copy `.env.example` thành `.env` trong `tools/learning-path/`, điền `GEMINI_API_KEY` (lấy
-từ [aistudio.google.com/apikey](https://aistudio.google.com/apikey)). Khi deploy public
-**không** đặt biến này — tránh người khác dùng quota của bạn.
+từ [aistudio.google.com/apikey](https://aistudio.google.com/apikey)). Khi deploy, đặt biến
+này ở Environment của Render. Lưu ý: mọi người dùng chưa có key riêng đều dùng quota của key
+này.
 
 ```bash
 cp .env.example .env
@@ -100,7 +139,7 @@ Cấu hình trên dashboard Render → **New → Web Service** → chọn repo:
 | Build Command | `pip install -r requirements.txt` |
 | Start Command | `gunicorn server:app --bind 0.0.0.0:$PORT --workers 2 --threads 4 --timeout 120` |
 | Instance Type | Free |
-| Environment | `PYTHON_VERSION` = `3.12.13` (bản đang dùng local). **Không** đặt `GEMINI_API_KEY` |
+| Environment | `PYTHON_VERSION` = `3.12.13` (bản đang dùng local); `GEMINI_API_KEY` = key chung |
 
 - `--timeout 120`: gửi cả nội dung track làm context nên Gemini có thể trả lời > 30s (mặc
   định của gunicorn).

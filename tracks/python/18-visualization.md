@@ -12,7 +12,6 @@ checklist:
   - "Nhận biết và tránh biểu đồ gây hiểu sai (trục y không từ 0, pie quá nhiều lát)"
 related:
   - "glossary:dataframe"
-  - "skill:nta-perf-audit"
 ---
 
 ## Vì sao quan trọng

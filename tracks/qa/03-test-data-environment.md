@@ -9,9 +9,6 @@ checklist:
   - "Xử lý đúng data nhạy cảm (PII): masking/anonymize, không copy prod thô về test"
   - "Phân biệt được môi trường dev, test, staging, production và mục đích mỗi cái"
   - "Đảm bảo test chạy lại được: data reset về trạng thái sạch, không phụ thuộc lần chạy trước"
-related:
-  - "skill:nta-test-data"
-  - "skill:nta-db-seed"
 ---
 
 ## Test data quyết định chất lượng test
@@ -41,8 +38,7 @@ kế ở bài 2 (equivalence + boundary).
 | **Công cụ sinh giả** (Faker) | Cần khối lượng lớn, đa dạng | Nhanh, thực tế; cần kiểm soát để reproduce |
 
 Với data nhiều bảng có quan hệ (user → order → order_item), viết **SQL seed** theo đúng thứ
-tự khóa ngoại và bọc trong transaction để dễ rollback. `/nta-test-data` và `/nta-db-seed`
-sinh được các script này consistent với ràng buộc quan hệ.
+tự khóa ngoại và bọc trong transaction để dễ rollback.
 
 ## Data nhạy cảm (PII) — cực kỳ quan trọng
 

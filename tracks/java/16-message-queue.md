@@ -10,9 +10,6 @@ checklist:
   - "Áp dụng Outbox pattern để đồng bộ DB và message an toàn"
   - "Thiết kế saga cho transaction phân tán và eventual consistency"
   - "Đảm bảo consumer idempotent và giữ thứ tự khi cần"
-related:
-  - "skill:nta-diagram-gen"
-  - "skill:nta-code-review"
 ---
 
 ## Vì sao cần message queue

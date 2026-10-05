@@ -72,6 +72,4 @@ trước khi lên production.
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/) — chuẩn tham chiếu chính.
 - [OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/) — hướng dẫn phòng thủ chi tiết theo từng chủ đề.
 - [W3Schools Cybersecurity](https://www.w3schools.com/cybersecurity/) — nền tảng khái niệm.
-- Skill dev liên quan: `/nta-security-audit` (rà OWASP Top 10), `/nta-code-review`,
-  `/nta-dep-audit` (CVE dependency), `/nta-env-gen` (phát hiện secret bị commit). Gặp thuật
-  ngữ lạ mở `term-glossary`.
+- Gặp thuật ngữ lạ mở `term-glossary`.

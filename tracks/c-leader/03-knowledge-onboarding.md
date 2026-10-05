@@ -9,9 +9,6 @@ checklist:
   - "Xây được cấu trúc knowledge base tối thiểu cho một dự án"
   - "Lập được checklist onboarding rút thời gian member mới bắt nhịp"
   - "Chuẩn hóa được một quy trình lặp lại thành tài liệu dùng chung"
-related:
-  - "skill:nta-knowledge"
-  - "skill:nta-consistency"
 ---
 
 ## Vì sao knowledge hay thất thoát
@@ -39,8 +36,7 @@ Triệu chứng dễ thấy:
 | **Glossary** | Lâu dài | Thuật ngữ nghiệp vụ, viết tắt của khách | "kanri = quản lý; TF = 取引先 = đối tác" |
 
 HANDOFF chống mất context giữa các phiên/người. MEMORY chống "hồi sinh quyết định đã chốt".
-Glossary chống hiểu sai thuật ngữ khách Nhật. Dùng `/nta-knowledge` để thêm/tìm/thăng cấp
-knowledge từ local (cá nhân) lên shared (cả team).
+Glossary chống hiểu sai thuật ngữ khách Nhật.
 
 ## Knowledge base tối thiểu cho một dự án
 
@@ -80,7 +76,7 @@ Checklist mẫu cho ngày đầu:
 Khi một việc được làm **lần thứ ba** theo cùng cách, đó là tín hiệu nên chuẩn hóa thành
 tài liệu/checklist: quy trình release, quy trình xử lý bug từ khách, cách viết commit
 message, cách setup CI. Chuẩn hóa giúp việc không phụ thuộc trí nhớ và ai cũng làm giống
-nhau. Dùng `/nta-consistency` để phát hiện chỗ team đang làm mỗi người một kiểu.
+nhau.
 
 ## Cạm bẫy hay gặp
 

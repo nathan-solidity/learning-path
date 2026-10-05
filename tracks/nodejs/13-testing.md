@@ -11,8 +11,6 @@ checklist:
   - "Hiểu tháp test: nhiều unit (nhanh), ít e2e (chậm)"
   - "Chạy test với coverage và đọc được báo cáo coverage"
 related:
-  - "skill:nta-test-gen"
-  - "skill:nta-code-review"
   - "glossary:unit-test"
 ---
 
@@ -132,8 +130,7 @@ npx jest --coverage      # sinh báo cáo % dòng/nhánh được test chạy qu
 
 Coverage cao **không** đảm bảo không bug, nhưng coverage thấp (< 50% ở logic quan trọng) là
 dấu hiệu thiếu lưới an toàn. Đừng chạy theo 100% một cách máy móc — ưu tiên phủ logic
-nghiệp vụ và các nhánh lỗi. Skill `/nta-test-gen` sinh test scaffold, `/nta-code-review`
-rà coverage.
+nghiệp vụ và các nhánh lỗi.
 
 ## Cạm bẫy hay gặp
 

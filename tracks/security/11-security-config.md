@@ -11,7 +11,6 @@ checklist:
   - "Không trả lỗi chi tiết ra client; mặc định an toàn, prod khác dev"
 related:
   - "glossary:dev"
-  - "skill:nta-devops-security"
 ---
 
 ## Vì sao quan trọng
@@ -94,4 +93,4 @@ lỗ hổng khác.
 trên prod**, đổi **default credential**, **tắt dịch vụ/cổng thừa**, cấu hình **CORS bằng
 allowlist** (không `*` với credential), thêm **security header** (CSP, HSTS, nosniff,
 X-Frame-Options — dùng helmet), và **không lộ lỗi chi tiết** ra client. Nguyên tắc: **mặc
-định an toàn, prod tách khỏi dev**. Dùng `/nta-devops-security` để quét cấu hình.
+định an toàn, prod tách khỏi dev**.

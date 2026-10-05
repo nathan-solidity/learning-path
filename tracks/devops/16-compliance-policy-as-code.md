@@ -9,9 +9,6 @@ checklist:
   - "Hiểu audit trail và vì sao GitOps + IaC khiến 'ai đổi gì, khi nào' luôn truy được"
   - "Kể ví dụ policy hay gặp: cấm image latest, bắt buộc resource limit, chặn bucket public"
   - "Nhận ra khi nào compliance là bắt buộc (regulated) và khi nào nhẹ tay để không cản team"
-related:
-  - "skill:nta-devops-security"
-  - "skill:nta-checklist"
 ---
 
 ## Governance mà không thành nút thắt

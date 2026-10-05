@@ -11,7 +11,6 @@ checklist:
   - "Hiểu truthy/falsy trong Python (0, '', [], None đều là falsy)"
 related:
   - "glossary:comprehension"
-  - "skill:nta-refactor"
 ---
 
 ## Vì sao quan trọng

@@ -9,9 +9,6 @@ checklist:
   - "Đọc hiểu security group / firewall rule và áp dụng least-privilege cho network"
   - "Hiểu IAM: user vs role vs policy, và vì sao dùng role thay cho access key cắm cứng"
   - "Kể được đường đi đầy đủ của một HTTPS request từ trình duyệt tới container"
-related:
-  - "skill:nta-infra-gen"
-  - "skill:nta-devops-review"
 ---
 
 ## Vì sao DevOps phải hiểu networking cloud

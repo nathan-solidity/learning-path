@@ -9,7 +9,6 @@ checklist:
   - "Đọc hiểu được sequence diagram mô tả luồng gọi API"
   - "Biết công cụ để vẽ nhanh và xuất ra định dạng chia sẻ được"
 related:
-  - "skill:nta-diagram-gen"
   - "glossary:srs"
   - "playbook:ba"
 ---
@@ -52,11 +51,8 @@ nhận với dev rằng mình hiểu đúng luồng, và để lộ ra các bư�
 ## Công cụ vẽ
 
 - **draw.io / diagrams.net**: miễn phí, mạnh, xuất PNG/SVG/PDF. Chuẩn công nghiệp cho BA.
-- **Skill `/nta-diagram-gen`**: sinh diagram từ **mô tả text** hoặc từ codebase — flowchart,
-  sequence, ERD (từ SQL schema), architecture. Xuất `.drawio` + render PNG/SVG. Nhanh khi
-  bạn đã biết muốn vẽ gì nhưng ngại kéo thả.
 
-> Mẹo: vẽ bản nháp nhanh bằng text/`/nta-diagram-gen`, rồi mở file `.drawio` chỉnh tay cho
+> Mẹo: vẽ bản nháp nhanh trước, rồi mở file `.drawio` chỉnh tay cho
 > đẹp trước khi gửi khách.
 
 ## Nguyên tắc diagram tốt

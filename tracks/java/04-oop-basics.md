@@ -9,9 +9,6 @@ checklist:
   - "Giải thích 4 access modifier: private, (package), protected, public"
   - "Dùng inheritance với extends/super/override và từ khóa final đúng lúc"
   - "Nhận ra khi nào nên kế thừa và khi nào nên dùng composition thay thế"
-related:
-  - "skill:nta-code-review"
-  - "skill:nta-refactor"
 ---
 
 ## Class & object

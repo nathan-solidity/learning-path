@@ -11,7 +11,6 @@ checklist:
   - "Vẽ lại được luồng một request đi qua Rails: routes → controller → model → view"
 related:
   - "glossary:mvc"
-  - "skill:nta-refactor"
 ---
 
 ## Vì sao cần quản lý version Ruby

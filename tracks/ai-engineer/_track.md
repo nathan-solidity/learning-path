@@ -115,6 +115,4 @@ MLOps).
   [Hugging Face](https://huggingface.co/docs).
 - Mỗi bài có ví dụ code chạy được — gõ lại và chạy thử, đừng chỉ đọc.
 
-Nội dung liên kết với `term-glossary` (tra thuật ngữ AI) và các skill dev
-(`/nta-security-audit`, `/nta-docker-gen`...). Gặp thuật ngữ lạ thì mở glossary; muốn tự
-động hóa review/bảo mật thì dùng skill tương ứng.
+Nội dung liên kết với `term-glossary` (tra thuật ngữ AI). Gặp thuật ngữ lạ thì mở glossary.

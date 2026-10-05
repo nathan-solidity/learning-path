@@ -9,9 +9,6 @@ checklist:
   - "Giải thích được autoboxing/unboxing và cạm bẫy so sánh Integer bằng `==`"
   - "Dùng `var` đúng chỗ (biến local) và biết khi nào KHÔNG nên dùng"
   - "Chọn đúng kiểu số theo nhu cầu: int/long cho số nguyên, BigDecimal cho tiền"
-related:
-  - "skill:nta-code-review"
-  - "skill:nta-refactor"
 ---
 
 ## Cấu trúc một file Java

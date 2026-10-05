@@ -11,7 +11,6 @@ checklist:
   - "Hiểu vì sao validation & encoding là hai lớp phòng thủ khác nhau, cần cả hai"
 related:
   - "glossary:dev"
-  - "skill:nta-code-review"
 ---
 
 ## Vì sao quan trọng

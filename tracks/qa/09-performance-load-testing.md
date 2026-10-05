@@ -9,9 +9,6 @@ checklist:
   - "Hiểu vì sao dùng percentile (p95/p99) thay vì trung bình khi đánh giá độ nhanh"
   - "Thiết kế một kịch bản load test bám hành vi người dùng thật, không bắn phẳng"
   - "Đọc kết quả để tìm điểm gãy (breaking point) và nghi phạm bottleneck"
-related:
-  - "skill:nta-load-test-plan"
-  - "skill:nta-load-test-run"
 ---
 
 ## Đúng với 1 người, sập với 1000 người
@@ -87,12 +84,6 @@ Mục tiêu không phải "chạy cho có số" mà tìm **breaking point** và 
 - CPU/RAM/DB connection cắm trần khi gãy → chỉ ra **bottleneck** (thường là DB, connection pool,
   hay một service chậm) — nối với bài Database ops & cost/scaling bên DevOps.
 
-## Công cụ
-
-`/nta-load-test-plan` lập kế hoạch load test và sinh script (k6/JMeter/Locust) từ spec;
-`/nta-load-test-run` chạy script k6, validate và sinh báo cáo. Bạn tập trung vào **thiết kế
-kịch bản đúng** và **đọc kết quả** — hai phần máy không làm thay được.
-
 ## Cạm bẫy hay gặp
 
 - **Đánh giá bằng trung bình** → giấu mất cái đuôi p99, nơi user thật khổ nhất.
@@ -107,5 +98,4 @@ kịch bản đúng** và **đọc kết quả** — hai phần máy không làm
 Bốn loại: **load** (tải dự kiến), **stress** (tìm điểm gãy), **spike** (tăng đột ngột), **soak**
 (rò rỉ theo thời gian). Đánh giá độ nhanh bằng **percentile p95/p99**, không bao giờ bằng trung
 bình — cái đuôi mới là nơi khách đau. Kịch bản phải **giống hành vi thật**: có think time,
-ramp-up, data đa dạng. Đọc kết quả để tìm **breaking point** và **bottleneck**. Dùng
-`/nta-load-test-plan` + `/nta-load-test-run` để sinh và chạy script.
+ramp-up, data đa dạng. Đọc kết quả để tìm **breaking point** và **bottleneck**.

@@ -9,8 +9,6 @@ checklist:
   - "Tự đặt được bộ câu hỏi để phát hiện edge case và yêu cầu ẩn"
   - "Nhận ra được khi một yêu cầu mâu thuẫn với yêu cầu khác"
 related:
-  - "skill:nta-clarify"
-  - "skill:nta-spec-review"
   - "playbook:ba"
 ---
 
@@ -49,6 +47,3 @@ BA phải **nêu ra và đề nghị stakeholder quyết**, không tự chọn m
 
 > Không suy đoán khi spec chưa rõ. Điểm chưa xác nhận được → ghi rõ "chưa xác nhận" và
 > tạo câu hỏi để verify với khách/BrSE. Xem playbook BA "speculating-instead-of-confirming".
-
-Công cụ: `/nta-clarify` (scan điểm chưa rõ + impact), `/nta-spec-review` (soi completeness,
-mâu thuẫn, edge case thiếu).

@@ -9,9 +9,6 @@ checklist:
   - "Phân biệt `Provider`, `StateProvider`, `NotifierProvider`, `FutureProvider`"
   - "Dùng `ref.watch` (lắng nghe, rebuild) vs `ref.read` (đọc 1 lần, trong callback)"
   - "Tổ chức state một màn hình bằng `Notifier`/`AsyncNotifier`"
-related:
-  - "skill:nta-code-review"
-  - "skill:nta-refactor"
 ---
 
 ## Vì sao cần Riverpod

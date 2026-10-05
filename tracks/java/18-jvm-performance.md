@@ -10,9 +10,6 @@ checklist:
   - "Dùng profiler xác định hot path thay vì đoán"
   - "Chạy load test và đọc p95/p99, không chỉ nhìn trung bình"
   - "Tối ưu đúng chỗ: query, cache, pool, payload, N+1, pagination"
-related:
-  - "skill:nta-perf-audit"
-  - "skill:nta-load-test-plan"
 ---
 
 ## Nguyên tắc số 1: đo trước khi tối ưu

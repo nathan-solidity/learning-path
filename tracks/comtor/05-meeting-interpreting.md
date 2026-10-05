@@ -9,9 +9,6 @@ checklist:
   - "Xử lý được khi không nghe rõ hoặc không hiểu — hỏi lại thay vì đoán bừa"
   - "Giữ vai trung lập: dịch đúng ý, không tự thêm ý kiến hay lọc bớt"
   - "Chuẩn bị trước thuật ngữ & bối cảnh cuộc họp để dịch trôi hơn"
-related:
-  - "skill:nta-meeting-notes"
-  - "skill:nta-qa-sheet"
 ---
 
 ## Thông dịch họp khác hẳn dịch tài liệu

@@ -9,9 +9,6 @@ checklist:
   - "Giải thích polymorphism, upcasting/downcasting và instanceof pattern matching"
   - "Override đúng equals() & hashCode() và hiểu vì sao phải đi cặp"
   - "Chọn đúng giữa enum, record, sealed class cho từng nhu cầu"
-related:
-  - "skill:nta-code-review"
-  - "skill:nta-refactor"
 ---
 
 ## Abstract class vs Interface

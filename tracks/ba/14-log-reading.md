@@ -10,8 +10,6 @@ checklist:
   - "Biết cung cấp thông tin gì cho dev để tái hiện bug (không chỉ nói 'nó lỗi')"
 related:
   - "glossary:observability"
-  - "skill:nta-bug-report"
-  - "skill:nta-debug"
   - "playbook:qa"
 ---
 
@@ -67,5 +65,4 @@ Log thật có hàng nghìn dòng. Cách khoanh vùng:
 > Càng đủ thông tin, dev càng tái hiện nhanh. Thiếu thông tin = vòng "cho anh xin thêm..."
 > kéo dài nhiều ngày.
 
-Công cụ: `/nta-bug-report` (viết bug report chuẩn Backlog), `/nta-debug` (phân tích lỗi
-tương tác). Xem thêm playbook QA về cách ghi nhận sự cố.
+Xem thêm playbook QA về cách ghi nhận sự cố.

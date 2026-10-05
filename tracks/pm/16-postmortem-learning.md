@@ -9,10 +9,6 @@ checklist:
   - "Viết được một postmortem blameless có action item cụ thể, có người phụ trách"
   - "Biến lesson learned thành thay đổi quy trình thật, không để thành tài liệu chết"
   - "Xây được vòng cải tiến liên tục (kaizen) cho team"
-related:
-  - "skill:nta-incident"
-  - "skill:nta-meeting-notes"
-  - "skill:nta-sprint-report"
 ---
 
 ## Học từ dự án là thứ phân biệt team giỏi lên theo thời gian

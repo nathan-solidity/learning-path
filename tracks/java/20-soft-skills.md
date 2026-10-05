@@ -9,9 +9,6 @@ checklist:
   - "Estimate & chia task và báo cáo tiến độ minh bạch"
   - "Điều tra sự cố production có phương pháp: reproduce → root cause → fix → post-mortem"
   - "Onboarding, mentor và review cho junior một cách xây dựng"
-related:
-  - "skill:nta-code-review"
-  - "skill:nta-debug"
 ---
 
 ## Vì sao kỹ năng "mềm" quyết định level

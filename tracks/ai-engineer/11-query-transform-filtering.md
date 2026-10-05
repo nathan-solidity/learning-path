@@ -11,7 +11,6 @@ checklist:
   - "Định tuyến (routing) được câu hỏi tới đúng nguồn/collection phù hợp"
 related:
   - "glossary:rag"
-  - "skill:nta-security-audit"
 ---
 
 ## Vì sao quan trọng
@@ -150,7 +149,7 @@ def search_scoped(query: str, department: str, allowed_levels: list[str], top_k:
 
 > **Lọc quyền là vấn đề bảo mật, không phải tối ưu.** Nếu để user hỏi ra chunk của phòng/người
 > khác là **rò rỉ dữ liệu**. Luôn lọc `access_level` theo quyền *thực* của user, tính ở
-> server — đừng tin client. Chạy `/nta-security-audit` để soát đường rò rỉ này.
+> server — đừng tin client.
 
 ## Routing — định tuyến tới đúng nguồn
 

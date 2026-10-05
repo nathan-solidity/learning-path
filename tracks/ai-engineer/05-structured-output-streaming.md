@@ -13,7 +13,6 @@ checklist:
 related:
   - "glossary:structured-output"
   - "glossary:json"
-  - "skill:nta-security-audit"
 ---
 
 ## Vì sao quan trọng
@@ -83,7 +82,7 @@ assert data.label in {"positive", "negative", "neutral"}   # enum hợp lệ
 assert 0.0 <= data.score <= 1.0                             # trong khoảng
 ```
 
-> Đây chính là điểm `/nta-security-audit` hay bắt lỗi: code tin thẳng output LLM rồi đưa vào
+> Lỗi hay gặp: code tin thẳng output LLM rồi đưa vào
 > SQL/HTML/lệnh hệ thống. Xử lý output LLM như xử lý input người dùng — sanitize + validate.
 
 ## Xử lý khi model trả sai format

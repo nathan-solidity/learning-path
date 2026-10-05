@@ -10,7 +10,6 @@ checklist:
   - "Biết cherry-pick để lấy một commit cụ thể sang branch khác"
 related:
   - "glossary:merge"
-  - "skill:nta-git-workflow"
 ---
 
 ## Ba cách đưa code từ branch này sang branch khác

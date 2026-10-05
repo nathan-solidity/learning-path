@@ -9,8 +9,6 @@ checklist:
   - "Kể được 7 nguyên tắc testing và cho ví dụ cho ít nhất 3 nguyên tắc"
   - "Nhận ra 'test pass' không chứng minh 'hết lỗi'"
   - "Hiểu vì sao test sớm và đúng-yêu-cầu quan trọng hơn chỉ 'không có bug'"
-related:
-  - "skill:nta-test-case"
 ---
 
 ## Mindset "phá để bảo vệ"

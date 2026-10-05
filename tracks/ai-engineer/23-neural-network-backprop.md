@@ -13,7 +13,6 @@ checklist:
 related:
   - "glossary:neural-network"
   - "glossary:machine-learning"
-  - "skill:nta-explain"
 ---
 
 ## Vì sao quan trọng

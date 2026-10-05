@@ -13,7 +13,6 @@ checklist:
 related:
   - "glossary:llm"
   - "glossary:prompt"
-  - "skill:nta-security-audit"
 ---
 
 ## Vì sao quan trọng
@@ -120,8 +119,7 @@ client = Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 ```
 
 > Key bị lộ = người khác tiêu tiền của bạn. Giữ key trong `.env` (thêm vào `.gitignore`),
-> nạp bằng `python-dotenv` ở dev, dùng secret manager của cloud khi lên production. Chạy
-> `/nta-security-audit` để chắc key không lọt vào source/log.
+> nạp bằng `python-dotenv` ở dev, dùng secret manager của cloud khi lên production.
 
 ## Xử lý lỗi, rate limit & retry
 
@@ -168,5 +166,4 @@ Gọi LLM là gửi **messages** (system/user/assistant) qua **SDK** và nhận 
 thoại thì nối lại lịch sử vì model **stateless**. Đặt luật ở **system**, viết **prompt rõ
 ràng** (vai trò + format + tách dữ liệu khỏi lệnh), chọn **temperature 0** cho việc cần tất
 định. Luôn **đọc key từ biến môi trường** — không hard-code. Bọc lời gọi bằng **retry có
-backoff** cho rate limit/lỗi server, không retry lỗi 4xx. Chạy `/nta-security-audit` để
-kiểm tra rò rỉ key.
+backoff** cho rate limit/lỗi server, không retry lỗi 4xx.

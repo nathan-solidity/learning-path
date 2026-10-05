@@ -11,7 +11,6 @@ checklist:
   - "Chạy được câu SELECT đầu tiên trên một CSDL thật (SQLite/Postgres/MySQL)"
 related:
   - "glossary:db"
-  - "skill:nta-db-review"
 ---
 
 ## SQL & CSDL quan hệ là gì

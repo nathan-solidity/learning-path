@@ -14,7 +14,6 @@ related:
   - "glossary:fine-tuning"
   - "glossary:lora"
   - "glossary:rag"
-  - "skill:nta-code-review"
 ---
 
 ## Vì sao quan trọng
@@ -120,7 +119,7 @@ Nguyên tắc quan trọng:
 - **Tách train/validation** để đo overfit (bài 24).
 
 > Trước khi fine-tune, review dataset như review code — một nhãn sai lẫn vào sẽ được model
-> "học thuộc". Có thể dùng `/nta-code-review` để soát script chuẩn bị dữ liệu và pipeline train.
+> "học thuộc".
 
 ## Pattern dùng Hugging Face (không phải để nhớ signature)
 

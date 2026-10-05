@@ -11,7 +11,6 @@ checklist:
   - "Không log secret ra console/file/log tập trung"
 related:
   - "glossary:dev"
-  - "skill:nta-env-gen"
 ---
 
 ## Vì sao quan trọng
@@ -85,5 +84,4 @@ nhạy cảm).
 
 **Không hard-code secret** — tách ra khỏi code, đọc từ **biến môi trường** hoặc **secret
 manager**. `.env` vào `.gitignore`, `.env.example` chỉ chứa **tên** biến. Secret **đã commit
-lên git thì phải ROTATE** — xoá dòng không đủ vì history vẫn còn. Không log secret. Dùng
-`/nta-env-gen` để sinh `.env.example` và phát hiện secret bị commit.
+lên git thì phải ROTATE** — xoá dòng không đủ vì history vẫn còn. Không log secret.

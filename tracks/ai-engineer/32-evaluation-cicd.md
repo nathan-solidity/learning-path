@@ -13,8 +13,6 @@ checklist:
 related:
   - "glossary:llm"
   - "glossary:rag"
-  - "skill:nta-cicd-gen"
-  - "skill:nta-deploy-checklist"
 ---
 
 ## Vì sao quan trọng
@@ -138,9 +136,6 @@ jobs:
         # Script gọi check_regression(); exit code != 0 khi tụt điểm → CI fail → chặn deploy
         run: python -m eval.gate
 ```
-
-> Dùng `/nta-cicd-gen` để sinh khung pipeline này cho stack của bạn, và `/nta-deploy-checklist`
-> để chốt tiêu chí go/no-go trước khi lên prod. Eval gate chỉ là *một* mục trong checklist đó.
 
 **Lưu ý eval LLM khác test phần mềm thường**: output không tất định và eval gọi API tốn tiền/
 thời gian. Nên: chạy eval **đủ lớn để có ý nghĩa thống kê** nhưng cache/giới hạn để CI không

@@ -10,7 +10,6 @@ checklist:
   - "Phân biệt origin và upstream trong mô hình fork"
 related:
   - "glossary:pull-request"
-  - "skill:nta-git-workflow"
 ---
 
 ## Remote là gì?
@@ -97,5 +96,3 @@ bạn) → mở PR về repo gốc → cả nhóm review → chủ repo merge.
 | Projects | Bảng Kanban quản lý công việc |
 | Actions (CI/CD) | Tự động build, test, deploy |
 | Fork | Sao chép repo về tài khoản của bạn |
-
-> Skill `/nta-git-workflow mr` sinh mô tả Pull Request/Merge Request chuẩn từ diff của branch.

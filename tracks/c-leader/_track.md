@@ -43,8 +43,3 @@ khi bạn tự tin đã áp dụng được trong công việc thật, không ch
 mà là **làm cho cả team giỏi hơn và đầu ra ổn định hơn**. Nhiều kỹ năng ở đây là kỹ năng
 đòn bẩy (leverage): một quyết định review đúng, một trang knowledge chuẩn, hay một câu
 giải thích trade-off rõ ràng cho khách có thể tiết kiệm cho cả team hàng chục giờ.
-
-Nội dung liên kết với các skill sẵn có (`/nta-auto-review`, `/nta-knowledge`,
-`/nta-orchestrate`, `/nta-code-review`, `/nta-consistency`, `/nta-wbs`, `/nta-sprint-report`,
-`/nta-risk-assessment`, `/nta-incident`, `/nta-meeting-notes`) — gặp lúc cần công cụ hỗ trợ
-thì mở skill tương ứng.

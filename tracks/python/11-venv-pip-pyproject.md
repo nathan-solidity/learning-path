@@ -11,7 +11,6 @@ checklist:
   - "Phân biệt dependency chạy (runtime) với dependency phát triển (dev)"
 related:
   - "glossary:virtual-environment"
-  - "skill:nta-dep-audit"
 ---
 
 ## Vì sao đây là bước phân biệt dev chuyên nghiệp

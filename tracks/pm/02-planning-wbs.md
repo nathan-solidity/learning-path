@@ -9,9 +9,6 @@ checklist:
   - "Vẽ được dependency giữa task (finish-to-start) và nhận ra critical path"
   - "Tính được thời lượng dự án tối thiểu dựa trên critical path"
   - "Cộng được buffer rủi ro hợp lý thay vì cam kết theo ước lượng lạc quan nhất"
-related:
-  - "skill:nta-wbs"
-  - "skill:nta-effort-estimate"
 ---
 
 ## WBS là gì

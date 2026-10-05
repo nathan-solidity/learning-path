@@ -11,7 +11,6 @@ checklist:
   - "Mã hóa dữ liệu nhạy cảm khi truyền (in transit) và khi lưu (at rest)"
 related:
   - "glossary:dev"
-  - "skill:nta-security-audit"
 ---
 
 ## Vì sao quan trọng
@@ -94,5 +93,4 @@ Quy tắc vàng: **không tự viết thuật toán mã hóa**. Mật mã tự c
 **Cryptographic Failures** = dữ liệu nhạy cảm bị lộ do không/mã hóa sai. Nhớ: **encoding
 không phải bảo mật**; **hashing** một chiều (mật khẩu), **encryption** cần khóa (TLS/AES).
 **HTTPS bắt buộc** cho mọi trang + **HSTS**. **Đừng tự chế mật mã** — dùng thư viện chuẩn;
-tránh **MD5/SHA1/DES**. Mã hóa cả **in transit** (TLS) lẫn **at rest**. Dùng
-`/nta-security-audit` để rà điểm truyền/lưu dữ liệu nhạy cảm không mã hóa.
+tránh **MD5/SHA1/DES**. Mã hóa cả **in transit** (TLS) lẫn **at rest**.

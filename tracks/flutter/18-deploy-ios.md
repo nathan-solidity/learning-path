@@ -9,10 +9,6 @@ checklist:
   - "Build IPA release bằng `flutter build ipa` (cần macOS + Xcode)"
   - "Tạo app trên App Store Connect, upload bằng Xcode/Transporter"
   - "Phát hành qua TestFlight rồi submit review; xử lý lý do bị từ chối thường gặp"
-related:
-  - "skill:nta-deploy-checklist"
-  - "skill:nta-checklist"
-  - "skill:nta-security-audit"
 ---
 
 ## Điều kiện (khác Android)
@@ -122,4 +118,4 @@ Sau khi được duyệt, chọn phát hành **thủ công** hoặc **tự độ
 Luồng iOS **cần macOS + Xcode**: **signing (automatic) → `flutter build ipa` → App Store
 Connect (app + App Privacy) → upload → TestFlight → Submit for Review**. iOS review **nghiêm
 hơn** Android — nắm trước các lý do bị từ chối (quyền, icon alpha, Sign in with Apple, tài
-khoản demo). Luôn **tăng build number**. Dùng `/nta-deploy-checklist` để rà soát.
+khoản demo). Luôn **tăng build number**.

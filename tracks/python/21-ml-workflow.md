@@ -12,8 +12,6 @@ checklist:
   - "Lưu và load lại model đã train bằng joblib để dùng ở production"
 related:
   - "glossary:overfitting"
-  - "skill:nta-code-review"
-  - "skill:nta-perf-audit"
 ---
 
 ## Vì sao quan trọng

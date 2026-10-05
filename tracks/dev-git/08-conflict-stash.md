@@ -10,7 +10,6 @@ checklist:
   - "Dùng git stash để cất tạm thay đổi khi cần chuyển branch gấp"
 related:
   - "glossary:merge-conflict"
-  - "skill:nta-git-workflow"
 ---
 
 ## Merge conflict là gì?

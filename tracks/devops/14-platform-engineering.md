@@ -9,9 +9,6 @@ checklist:
   - "Phân biệt paved road (đường có sẵn, khuyến khích) với việc bắt buộc cứng nhắc"
   - "Nhận ra dấu hiệu cần platform team và khi nào CHƯA cần (team nhỏ)"
   - "Giải thích cognitive load và vì sao mục tiêu là giảm gánh nặng cho dev, không phải thêm cổng kiểm soát"
-related:
-  - "skill:nta-project-init"
-  - "skill:nta-cicd-gen"
 ---
 
 ## Từ "DevOps làm hộ" sang "DevOps làm nền tảng"

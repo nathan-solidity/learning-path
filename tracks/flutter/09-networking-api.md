@@ -9,9 +9,6 @@ checklist:
   - "Hiển thị trạng thái loading/data/error bằng `AsyncValue` của Riverpod"
   - "Tổ chức tầng gọi mạng qua lớp Repository, tách khỏi UI"
   - "Xử lý lỗi mạng (timeout, 4xx/5xx) và hiển thị thân thiện"
-related:
-  - "skill:nta-code-review"
-  - "skill:nta-api-design-review"
 ---
 
 ## Chọn client: http hay Dio

@@ -11,7 +11,6 @@ checklist:
   - "Hiểu khác biệt access token và refresh token, vì sao cần cả hai"
   - "Biết các rủi ro lưu token (localStorage vs httpOnly cookie) và chống XSS/CSRF"
 related:
-  - "skill:nta-security-audit"
   - "glossary:jwt"
   - "glossary:authentication"
 ---
@@ -125,5 +124,4 @@ access token mới:
 Băm mật khẩu bằng bcrypt (một chiều, chậm có chủ đích). JWT được **ký, không mã hóa** —
 đừng nhét bí mật vào. Tách rõ **xác thực** (bạn là ai) và **phân quyền** (được làm gì) bằng
 hai middleware. Access token ngắn hạn + refresh token dài hạn. Hiểu đánh đổi khi lưu token.
-Chạy `/nta-security-audit` để soát lỗ hổng auth.
 </content>

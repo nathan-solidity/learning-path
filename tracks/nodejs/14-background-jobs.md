@@ -12,7 +12,6 @@ checklist:
   - "Hiểu vì sao truyền id thay vì cả object vào job"
 related:
   - "glossary:message-queue"
-  - "skill:nta-perf-audit"
 ---
 
 ## Vì sao cần job nền

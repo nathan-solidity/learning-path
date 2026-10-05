@@ -11,8 +11,6 @@ checklist:
   - "Hiểu test pyramid và đo coverage"
 related:
   - "glossary:unit-test"
-  - "skill:nta-test-gen"
-  - "skill:nta-test-run"
 ---
 
 ## Vì sao quan trọng

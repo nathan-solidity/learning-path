@@ -9,9 +9,6 @@ checklist:
   - "Nhận ra dấu hiệu một task bị kẹt trước khi nó thành trễ deadline"
   - "Chạy được daily/standup ngắn gọn, tập trung vào vật cản chứ không phải báo cáo"
   - "Cân bằng tải giữa các member, tránh dồn hết việc khó cho một người"
-related:
-  - "skill:nta-wbs"
-  - "skill:nta-sprint-report"
 ---
 
 ## Phân công đúng là đòn bẩy lớn nhất của lead

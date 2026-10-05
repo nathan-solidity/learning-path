@@ -10,7 +10,6 @@ checklist:
   - "Hiểu vì sao không được commit secret (.env, key) lên repo"
 related:
   - "glossary:gitignore"
-  - "skill:nta-env-gen"
 ---
 
 ## 4 trạng thái của file trong Git
@@ -71,5 +70,3 @@ Git sẽ bỏ qua các file khớp pattern — chúng không hiện trong `git s
 
 Cách đúng: đưa `.env` vào `.gitignore` ngay từ đầu, commit một file mẫu `.env.example`
 (không có giá trị thật) để đồng đội biết cần biến gì.
-
-> Muốn sinh `.env.example` từ codebase và phát hiện secret lỡ commit: dùng skill `/nta-env-gen`.

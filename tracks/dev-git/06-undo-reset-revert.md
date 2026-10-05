@@ -10,7 +10,6 @@ checklist:
   - "Khôi phục được commit lỡ xóa bằng git reflog"
 related:
   - "glossary:reset"
-  - "skill:nta-git-workflow"
 ---
 
 ## Hoàn tác thay đổi CHƯA commit

@@ -10,9 +10,6 @@ checklist:
   - "Cài JWT access + refresh token: ký, xác thực, lưu ở đâu"
   - "Phân quyền theo role (@PreAuthorize) và theo bản ghi (ownership)"
   - "Nhận diện và phòng OWASP Top 10 phổ biến trong Spring (SQLi, XSS, IDOR, mass assignment)"
-related:
-  - "skill:nta-security-audit"
-  - "skill:nta-code-review"
 ---
 
 ## Filter chain hoạt động thế nào

@@ -11,7 +11,6 @@ checklist:
   - "Áp dụng lớp bổ sung: Content-Security-Policy và HttpOnly cookie"
 related:
   - "glossary:dev"
-  - "skill:nta-frontend-review"
 ---
 
 ## Vì sao quan trọng
@@ -91,4 +90,3 @@ el.innerHTML = DOMPurify.sanitize(userHtml);
 DOM). Phòng thủ số 1: **output encoding theo ngữ cảnh** — ưu tiên `textContent`, để template
 tự escape, **tránh** `innerHTML`/`v-html`/`dangerouslySetInnerHTML`; nếu buộc phải render
 HTML người dùng thì **sanitize (DOMPurify)**. Lớp bổ sung: **CSP** và **HttpOnly cookie**.
-Dùng `/nta-frontend-review` để soi.

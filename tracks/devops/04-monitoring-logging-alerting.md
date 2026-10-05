@@ -9,9 +9,6 @@ checklist:
   - "Giải thích được logging tập trung (ELK/Loki) giải quyết vấn đề gì so với log rải rác"
   - "Định nghĩa được SLI, SLO và error budget cho một service"
   - "Đặt alert dựa trên triệu chứng người dùng cảm nhận, tránh alert fatigue"
-related:
-  - "skill:nta-monitor-review"
-  - "skill:nta-incident"
 ---
 
 ## 3 pillars of observability

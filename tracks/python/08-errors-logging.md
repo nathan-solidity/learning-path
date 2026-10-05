@@ -11,8 +11,6 @@ checklist:
   - "Dùng module logging thay cho print để ghi log"
 related:
   - "glossary:exception"
-  - "skill:nta-debug"
-  - "skill:nta-code-review"
 ---
 
 ## Vì sao quan trọng

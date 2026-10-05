@@ -9,9 +9,6 @@ checklist:
   - "Tự định nghĩa exception và quyết định throw/log ở tầng nào"
   - "Dùng Optional đúng cách, tránh Optional.get() bừa bãi"
   - "Đọc/ghi file text và CSV bằng java.nio.file (Path, Files)"
-related:
-  - "skill:nta-debug"
-  - "skill:nta-code-review"
 ---
 
 ## Checked vs Unchecked exception

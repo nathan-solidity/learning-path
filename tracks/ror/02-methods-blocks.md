@@ -10,9 +10,6 @@ checklist:
   - "Phân biệt được `do...end` và `{}` — khi nào dùng cái nào"
   - "Nêu đúng 2 khác biệt Proc vs Lambda (return và arity)"
   - "Đọc được một block trong code Rails (vd `respond_to`, `each`) và hiểu nó làm gì"
-related:
-  - "skill:nta-refactor"
-  - "skill:nta-code-review"
 ---
 
 ## Vì sao đây là bài cốt lõi

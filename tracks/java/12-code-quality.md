@@ -10,9 +10,6 @@ checklist:
   - "Map entity↔DTO bằng MapStruct hoặc mapper thủ công, tránh entity lọt ra API"
   - "Thiết lập mã lỗi nghiệp vụ thống nhất và checklist review code"
   - "Đo chất lượng bằng Checkstyle/Spotless, SonarQube, JaCoCo coverage"
-related:
-  - "skill:nta-refactor"
-  - "skill:nta-code-review"
 ---
 
 ## Layered architecture

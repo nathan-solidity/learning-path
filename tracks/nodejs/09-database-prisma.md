@@ -12,8 +12,6 @@ checklist:
   - "Dùng transaction cho thao tác cần toàn vẹn (all-or-nothing)"
 related:
   - "glossary:orm"
-  - "skill:nta-db-review"
-  - "skill:nta-perf-audit"
 ---
 
 ## Vì sao dùng ORM
@@ -99,7 +97,7 @@ const posts = await prisma.post.findMany({
 ```
 
 > N+1 (1 query gốc + N query con) là thủ phạm chậm phổ biến nhất. Prisma `include`/`select`
-> gộp lại. Skill `/nta-perf-audit` phát hiện N+1 tự động.
+> gộp lại.
 
 ## Lọc, sắp xếp, phân trang
 

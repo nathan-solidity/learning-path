@@ -9,10 +9,6 @@ checklist:
   - "Đọc được giao tiếp gián tiếp (high-context) và quản lý kỳ vọng ngầm"
   - "Xử lý được câu hỏi/xác nhận (Q&A) qua BrSE một cách truy vết được"
   - "Biết cách trình bày tin xấu và đề xuất giải pháp theo phong cách Nhật"
-related:
-  - "skill:nta-meeting-notes"
-  - "skill:nta-spec-write"
-  - "skill:nta-risk-assessment"
 ---
 
 ## Vì sao mảng này xứng đáng một bài riêng ở cấp cao

@@ -13,7 +13,6 @@ related:
   - "glossary:us"
   - "glossary:ac"
   - "playbook:ba"
-  - "skill:nta-spec-write"
 ---
 
 ## User Story
@@ -71,5 +70,3 @@ Then   vẫn hiển thị cùng thông báo (không tiết lộ email tồn tạ
 Nếu story chứa chữ "và/hoặc" nhiều, hoặc estimate quá lớn (không xong trong 1 sprint),
 hoặc trộn nhiều vai trò — tách nhỏ. Ví dụ "Quản lý người dùng" → tách thành thêm/sửa/xóa/
 phân quyền, mỗi cái 1 story.
-
-Công cụ: `/nta-spec-write` giúp soạn spec/story theo template chuẩn.

@@ -10,8 +10,6 @@ checklist:
   - "Viết được một Stimulus controller đơn giản gắn vào DOM"
   - "Style form/nút bằng TailwindCSS hoặc Bootstrap và hiện flash message"
 related:
-  - "skill:nta-frontend-review"
-  - "skill:nta-code-review"
   - "glossary:api"
 ---
 
@@ -162,4 +160,4 @@ Hiệu ứng động đơn giản dùng luôn class Tailwind (`transition`, `ani
 
 Rails 7 khuyến khích "server render HTML, thêm ít JS" — trước khi kéo React vào, thử
 Hotwire; đa số nhu cầu (inline edit, realtime list, toggle) làm được mà giữ code trong
-Rails. Skill `/nta-frontend-review` rà a11y, performance và style cho phần view.
+Rails.

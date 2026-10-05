@@ -8,10 +8,9 @@ checklist:
   - "Đưa security vào code review (có checklist), không để cuối dự án"
   - "Tự động hóa: SAST/DAST, dependency scan, secret scan trong CI/CD"
   - "Log sự kiện bảo mật (login fail, access denied) nhưng KHÔNG log secret/PII"
-  - "Cập nhật kiến thức bảo mật (OWASP Top 10) và dùng skill hỗ trợ"
+  - "Cập nhật kiến thức bảo mật (OWASP Top 10)"
 related:
   - "glossary:dev"
-  - "skill:nta-checklist"
 ---
 
 ## Vì sao quan trọng
@@ -69,17 +68,10 @@ hiện** được tấn công. Log các **sự kiện bảo mật**:
 > **Nhưng KHÔNG log**: mật khẩu, token, số thẻ, PII. Log là nơi rò rỉ dữ liệu phổ biến —
 > log an toàn cũng quan trọng như log đầy đủ.
 
-## Cập nhật kiến thức & dùng công cụ hỗ trợ
+## Cập nhật kiến thức
 
 Lỗ hổng và kỹ thuật tấn công thay đổi liên tục. Theo dõi **OWASP Top 10** (cập nhật vài năm
-một lần), đọc các vụ sự cố thực tế. Trong bộ skill này, dùng:
-
-- `/nta-security-audit` — rà OWASP Top 10 trên code.
-- `/nta-code-review` — review tổng hợp gồm cả bảo mật.
-- `/nta-dep-audit` — CVE và package lỗi thời.
-- `/nta-env-gen` — phát hiện secret bị commit.
-- `/nta-devops-security` — quét cấu hình/hạ tầng.
-- `/nta-checklist` — checklist pre-commit / pre-release có mục bảo mật.
+một lần), đọc các vụ sự cố thực tế.
 
 ## Tổng kết lộ trình — các lớp phòng thủ
 
@@ -100,6 +92,5 @@ Không lớp nào đủ một mình — mạnh nằm ở **có đủ mọi lớp
 Bảo mật là **quy trình xuyên suốt**, không phải bước cuối. Áp dụng: **threat modeling nhẹ**
 khi thiết kế, **security trong code review** (có checklist), **tự động hóa** trong CI/CD
 (SAST/DAST, dependency scan, secret scan) với build fail khi lỗi nghiêm trọng, và **logging
-sự kiện bảo mật** (nhưng **không log secret/PII**). Cập nhật theo **OWASP Top 10** và dùng
-các skill hỗ trợ. Bảo mật vững = **đủ nhiều lớp**, không phải một kỹ thuật đơn lẻ. Dùng
-`/nta-checklist` để chạy checklist bảo mật trước commit/release.
+sự kiện bảo mật** (nhưng **không log secret/PII**). Cập nhật theo **OWASP Top 10**.
+Bảo mật vững = **đủ nhiều lớp**, không phải một kỹ thuật đơn lẻ.

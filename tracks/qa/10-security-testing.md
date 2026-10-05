@@ -9,9 +9,6 @@ checklist:
   - "Test được vượt quyền (IDOR) và các lỗi kiểm soát truy cập cơ bản"
   - "Kiểm input validation: SQL injection, XSS đơn giản qua ô nhập"
   - "Biết khi nào cần chuyển cho chuyên gia bảo mật/pentest thay vì tự làm"
-related:
-  - "skill:nta-security-audit"
-  - "skill:nta-devops-security"
 ---
 
 ## QA là tuyến phòng thủ bảo mật đầu tiên
@@ -93,5 +90,4 @@ crash 500 lộ stack trace, hay lưu nguyên payload rồi bung ra ở màn hìn
 QA là **tuyến phòng thủ bảo mật đầu tiên** — bắt các lỗ hổng **phổ biến**: vượt quyền (IDOR),
 injection, XSS, lộ dữ liệu, auth yếu. Test IDOR bằng cách **đổi ID** trên URL/API; test injection/
 XSS bằng **input độc hại** ở cả nơi nhập lẫn nơi hiển thị lại. Nhưng biết **giới hạn**: lỗ hổng
-sâu, hệ thống nhạy cảm thì chuyển cho **pentester** — QA không thay thế chuyên gia bảo mật. Dùng
-`/nta-security-audit` để soi theo OWASP.
+sâu, hệ thống nhạy cảm thì chuyển cho **pentester** — QA không thay thế chuyên gia bảo mật.

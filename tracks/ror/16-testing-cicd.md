@@ -9,9 +9,6 @@ checklist:
   - "Viết được một E2E test với Capybara mô phỏng thao tác người dùng"
   - "Chạy được browser test ở chế độ headless trên CI"
   - "Hiểu tháp test: unit nhiều, integration vừa, E2E ít"
-related:
-  - "skill:nta-cicd-gen"
-  - "skill:nta-test-gen"
 ---
 
 ## Vì sao cần CI và coverage
@@ -125,6 +122,3 @@ chỉ cho vài luồng sống-còn (đăng nhập, thanh toán).
 - E2E flaky do timing → dùng `have_content` (Capybara tự chờ), tránh `sleep` cứng.
 - Quên `bundler-cache: true` → CI chạy chậm gấp nhiều lần.
 - Chạy đuổi theo con số coverage → viết test rỗng. Test **hành vi**, không test để lấp số.
-
-Dùng `/nta-cicd-gen` để sinh pipeline theo stack và `/nta-test-gen` để tạo khung test cho
-code có sẵn.

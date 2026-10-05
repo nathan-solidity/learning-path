@@ -9,9 +9,6 @@ checklist:
   - "Tùy biến theme (màu, font, dark mode) bằng `ThemeData`"
   - "Dùng widget tương tác: `ElevatedButton`, `Switch`, `Checkbox`, `DropdownButton`"
   - "Hoàn thành app Beginner: nhiều màn hình + form có validate + theme"
-related:
-  - "skill:nta-code-review"
-  - "skill:nta-test-gen"
 ---
 
 ## Form & validation

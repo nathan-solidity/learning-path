@@ -13,7 +13,6 @@ checklist:
 related:
   - "glossary:llm"
   - "glossary:prompt"
-  - "skill:nta-security-audit"
 ---
 
 ## Vì sao quan trọng
@@ -146,7 +145,7 @@ except (ValidationError, json.JSONDecodeError) as e:
 ```
 
 > Output của LLM là **input chưa tin cậy**. Luôn validate trước khi ghi DB, gọi API khác,
-> hay hiển thị cho người dùng. Đây là điểm skill `/nta-security-audit` hay bắt lỗi.
+> hay hiển thị cho người dùng.
 
 ## Streaming: trả kết quả dần
 
@@ -221,5 +220,4 @@ Gọi LLM là gửi **message** (system/user/assistant) qua **SDK** và nhận l
 khiển bằng **prompt** rõ ràng và **temperature** (0 cho việc cần tất định). Luôn **đọc key
 từ biến môi trường**, đo **token/chi phí**, ép **structured output** rồi **validate bằng
 Pydantic**. Output LLM là **input chưa tin cậy** — validate trước khi dùng. Bọc lời gọi
-bằng **retry có backoff** cho rate limit và lỗi server. Chạy `/nta-security-audit` để chắc
-key không bị lộ và output được kiểm tra.
+bằng **retry có backoff** cho rate limit và lỗi server.

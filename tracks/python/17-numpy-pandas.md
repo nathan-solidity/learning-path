@@ -13,7 +13,6 @@ checklist:
 related:
   - "glossary:dataframe"
   - "glossary:vectorization"
-  - "skill:nta-perf-audit"
 ---
 
 ## Vì sao quan trọng
@@ -48,7 +47,7 @@ taxed = prices * 1.1                        # array([110., 220., 330., 440.])
 | Bộ nhớ | cao (mỗi phần tử là object) | thấp (kiểu số liền khối) |
 
 > Nguyên tắc vàng của data trong Python: **thấy vòng `for` trên dữ liệu số → nghĩ ngay tới
-> vectorization**. Skill `/nta-perf-audit` bắt đúng loại vòng lặp nên thay này.
+> vectorization**.
 
 ## Series & DataFrame
 

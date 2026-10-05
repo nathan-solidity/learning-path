@@ -9,9 +9,6 @@ checklist:
   - "Dùng break/continue đúng chỗ, tránh vòng lặp lồng khó đọc"
   - "Khai báo method có tham số, giá trị trả về, và overload đúng cách"
   - "Phân biệt method static và instance; dùng varargs khi cần số tham số linh hoạt"
-related:
-  - "skill:nta-refactor"
-  - "skill:nta-code-review"
 ---
 
 ## Câu điều kiện

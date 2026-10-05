@@ -10,9 +10,6 @@ checklist:
   - "Phân biệt được Ractor, Fiber, Enumerator và mục đích mỗi cái"
   - "Biết RBS là gì và viết được một gem đơn giản để publish"
   - "Debug bằng Pry / debug gem với breakpoint thay vì rải puts"
-related:
-  - "skill:nta-docker-gen"
-  - "skill:nta-devops-security"
 ---
 
 ## Docker hóa Rails
@@ -153,8 +150,7 @@ Tại breakpoint bạn xem được biến, gọi method, chạy step-by-step �
 
 Triển khai là **làm cho người khác chạy được và bạn thấy được lỗi**: Docker cho tính nhất
 quán, error tracking cho khả năng quan sát. Ruby nâng cao (Ractor/RBS/gem) là công cụ cho
-đúng bài toán — học để biết, dùng khi cần, không phô diễn. Dùng `/nta-docker-gen` để sinh
-Dockerfile theo stack và `/nta-devops-security` để quét cấu hình trước khi lên production.
+đúng bài toán — học để biết, dùng khi cần, không phô diễn.
 
 > **Chặng đường tiếp theo**: bạn đã đi hết lộ trình từ Ruby căn bản đến vận hành production.
 > Giờ là lúc chọn một dự án thực tế và làm end-to-end — dựng, test, đóng Docker, deploy, gắn

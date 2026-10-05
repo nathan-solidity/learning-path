@@ -12,7 +12,6 @@ checklist:
 related:
   - "glossary:token"
   - "glossary:embedding"
-  - "skill:nta-perf-audit"
 ---
 
 ## Vì sao quan trọng
@@ -152,8 +151,6 @@ Trên nền số liệu này, đặt các van khóa:
   và tăng đột biến chi phí.
 - **Cảnh báo ngân sách**: cộng dồn chi phí toàn hệ thống, vượt ngưỡng thì báo động (nối với
   bài 18).
-
-Muốn soi chỗ nào ngốn token/tài nguyên bất thường trong code, chạy `/nta-perf-audit`.
 
 ## Cạm bẫy hay gặp
 

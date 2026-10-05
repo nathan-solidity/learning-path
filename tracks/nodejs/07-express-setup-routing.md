@@ -12,7 +12,6 @@ checklist:
   - "Vẽ lại được luồng một request đi qua Express: request → middleware → route handler → response"
 related:
   - "glossary:rest-api"
-  - "skill:nta-api-design-review"
 ---
 
 ## Vì sao Express

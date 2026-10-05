@@ -10,9 +10,6 @@ checklist:
   - "Giải thích Virtual Thread (Java 21) khác thread thường thế nào và khi nào dùng"
   - "Dùng @Async và @Scheduled đúng cách, chống chạy trùng khi scale nhiều instance"
   - "Áp dụng idempotency & retry (Spring Retry) với exponential backoff"
-related:
-  - "skill:nta-perf-audit"
-  - "skill:nta-debug"
 ---
 
 ## Thread & ExecutorService

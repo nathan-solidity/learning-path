@@ -58,6 +58,4 @@ lên store — học sớm sẽ không có gì để publish.
   [dart.dev](https://dart.dev/guides), [pub.dev](https://pub.dev) (package).
 - Mỗi bài có ví dụ code chạy được — nên gõ lại và chạy thử trên emulator/thiết bị thật.
 
-Nội dung liên kết với `term-glossary` (tra thuật ngữ) và các skill dev (`/nta-code-review`,
-`/nta-test-gen`, `/nta-refactor`...) — gặp thuật ngữ lạ thì mở glossary, muốn tự động hóa
-review/test thì dùng skill tương ứng.
+Nội dung liên kết với `term-glossary` (tra thuật ngữ) — gặp thuật ngữ lạ thì mở glossary.

@@ -9,9 +9,6 @@ checklist:
   - "Hiểu vai trò ArgoCD/Flux: phát hiện drift và tự reconcile về đúng trạng thái khai báo"
   - "Phân biệt continuous delivery và continuous deployment, biết khi nào cần manual gate"
   - "Giải thích progressive delivery: canary/blue-green tự động cùng auto-rollback theo metric"
-related:
-  - "skill:nta-cicd-gen"
-  - "skill:nta-deploy-checklist"
 ---
 
 ## GitOps — git là nguồn sự thật duy nhất

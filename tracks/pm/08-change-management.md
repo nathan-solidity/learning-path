@@ -9,10 +9,6 @@ checklist:
   - "Đánh giá được tác động của một thay đổi lên scope/time/cost/quality"
   - "Biết cách nói 'không' hoặc 'có nhưng...' với yêu cầu thêm mà không làm hỏng quan hệ"
   - "Ghi nhận và truy vết thay đổi để tránh tranh cãi 'ai đồng ý cái này'"
-related:
-  - "skill:nta-spec-diff"
-  - "skill:nta-risk-assessment"
-  - "skill:nta-meeting-notes"
 ---
 
 ## Thay đổi là chắc chắn — không kiểm soát mới là vấn đề
@@ -75,8 +71,8 @@ PM giỏi hiếm khi nói "không" thẳng — mà làm rõ **đánh đổi**:
 
 ## Truy vết thay đổi
 
-Mọi thay đổi được duyệt phải để lại dấu vết: trong issue tracker, biên bản họp (dùng
-`/nta-meeting-notes`), hoặc phụ lục. So sánh phiên bản spec bằng `/nta-spec-diff` khi cần chứng minh
+Mọi thay đổi được duyệt phải để lại dấu vết: trong issue tracker, biên bản họp, hoặc
+phụ lục. So sánh phiên bản spec khi cần chứng minh
 "scope đã đổi so với lúc ký".
 
 ## Cạm bẫy hay gặp

@@ -10,9 +10,6 @@ checklist:
   - "Expose health/metrics qua Actuator và cấu hình liveness/readiness probe"
   - "Thiết lập monitoring (Prometheus + Grafana) và alert cơ bản"
   - "Log có cấu trúc (JSON) kèm trace id, tập trung về ELK/Loki"
-related:
-  - "skill:nta-docker-gen"
-  - "skill:nta-devops-security"
 ---
 
 ## Dockerfile multi-stage

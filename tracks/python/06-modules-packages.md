@@ -11,7 +11,6 @@ checklist:
   - "Hiểu package (thư mục có __init__.py) và cách tổ chức code theo thư mục"
 related:
   - "glossary:module"
-  - "skill:nta-refactor"
 ---
 
 ## Vì sao quan trọng

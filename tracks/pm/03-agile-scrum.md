@@ -9,9 +9,6 @@ checklist:
   - "Nắm 5 sự kiện Scrum và mục đích từng cái (không chỉ tên)"
   - "Phân biệt được product backlog và sprint backlog"
   - "Biết khi nào Scrum không phù hợp và nên chọn Kanban/Waterfall"
-related:
-  - "skill:nta-sprint-report"
-  - "skill:nta-meeting-notes"
 ---
 
 ## Vì sao PM cần hiểu Agile sâu hơn "chạy sprint"

@@ -9,9 +9,6 @@ checklist:
   - "Định nghĩa entry/exit criteria và 'definition of done' cho việc test"
   - "Chọn metric có ý nghĩa và tránh metric bị lạm dụng (đếm số case, đếm bug)"
   - "Ước lượng effort test và truyền đạt rủi ro chất lượng cho quản lý/BrSE"
-related:
-  - "skill:nta-checklist"
-  - "skill:nta-risk-assessment"
 ---
 
 ## Từ người test giỏi thành người dẫn dắt chất lượng
@@ -78,8 +75,6 @@ Kỹ năng cuối, và quan trọng nhất với QA lead: **dịch tình trạng
 - Không nói "còn 30 case chưa chạy" → nói "luồng thanh toán **chưa test**, đây là rủi ro cao cho
   go-live; cần thêm 1 ngày hoặc chấp nhận rủi ro này một cách có ý thức".
 - Đưa **lựa chọn kèm rủi ro**, để quản lý/khách **quyết**, không giấu rủi ro để "cho kịp".
-
-`/nta-risk-assessment` giúp cấu trúc đánh giá rủi ro trước release và ra khuyến nghị go/no-go.
 
 ## Cạm bẫy hay gặp
 

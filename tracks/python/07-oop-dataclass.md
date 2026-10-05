@@ -11,8 +11,6 @@ checklist:
   - "Biết dùng @property và dunder method (__str__, __repr__, __eq__)"
 related:
   - "glossary:oop"
-  - "skill:nta-code-review"
-  - "skill:nta-refactor"
 ---
 
 ## Vì sao quan trọng

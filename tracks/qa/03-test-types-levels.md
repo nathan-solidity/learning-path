@@ -9,8 +9,6 @@ checklist:
   - "Xếp đúng 4 test level (unit/integration/system/acceptance) theo phạm vi kiểm tra"
   - "Biết ai thường làm level nào và vì sao"
   - "Giải thích vì sao bug bắt ở level càng cao thì sửa càng đắt"
-related:
-  - "skill:nta-test-case"
 ---
 
 ## Sắp xếp bức tranh testing

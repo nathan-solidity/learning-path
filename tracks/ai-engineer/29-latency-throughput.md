@@ -12,8 +12,6 @@ checklist:
   - "Bật được streaming để giảm TTFT cảm nhận và biết khi nào nên/không nên dùng"
 related:
   - "glossary:llm"
-  - "skill:nta-load-test-plan"
-  - "skill:nta-perf-audit"
 ---
 
 ## Vì sao quan trọng
@@ -100,8 +98,7 @@ tăng**. Ngược lại batch nhỏ → mỗi người nhanh nhưng phục vụ 
 | Xử lý hàng loạt (ưu tiên throughput) | batch lớn, để hàng đợi đầy | latency từng request cao, rẻ/token |
 
 > Không có cấu hình "đúng" tuyệt đối — chọn theo **SLA sản phẩm**. Đo trước, đừng đoán:
-> dựng load test bằng `/nta-load-test-plan` để tìm điểm cân bằng, `/nta-perf-audit` để soi
-> bottleneck.
+> dựng load test để tìm điểm cân bằng.
 
 ## Đo TTFT và tokens/sec
 

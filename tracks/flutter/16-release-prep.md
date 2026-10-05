@@ -9,10 +9,6 @@ checklist:
   - "Tách môi trường dev/staging/prod bằng flavor (Android) & scheme (iOS)"
   - "Quản lý biến môi trường/secret bằng `--dart-define`, không hard-code"
   - "Kiểm tra checklist trước khi build release (log, endpoint, quyền)"
-related:
-  - "skill:nta-deploy-checklist"
-  - "skill:nta-security-audit"
-  - "skill:nta-checklist"
 ---
 
 ## Định danh & phiên bản
@@ -104,8 +100,6 @@ Gọn hơn: đặt trong file `--dart-define-from-file=env/prod.json` (nhớ **g
 - [ ] Quyền (camera, vị trí...) đều có chuỗi lý do; xin runtime đầy đủ.
 - [ ] Secret truyền qua `--dart-define`, không nằm trong source.
 - [ ] Đã test bản **release** trên thiết bị thật (không chỉ debug).
-
-Có thể tự động hóa bằng skill `/nta-deploy-checklist` hoặc `/nta-checklist pre-release`.
 
 ## Ghi nhớ
 

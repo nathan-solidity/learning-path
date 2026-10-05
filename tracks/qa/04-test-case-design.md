@@ -10,9 +10,6 @@ checklist:
   - "Vẽ được state transition cho một luồng có nhiều trạng thái (đơn hàng, tài khoản)"
   - "Viết một test case đủ 3 phần: precondition, step, expected result"
   - "Gán độ ưu tiên (priority) cho test case theo rủi ro và tần suất dùng"
-related:
-  - "skill:nta-test-case"
-  - "skill:nta-test-case-review"
 ---
 
 ## Vì sao cần kỹ thuật thiết kế?

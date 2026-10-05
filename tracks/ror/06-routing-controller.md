@@ -12,7 +12,6 @@ checklist:
   - "Hiển thị được flash message sau khi tạo/sửa/xóa thành công"
 related:
   - "glossary:rest"
-  - "skill:nta-code-review"
 ---
 
 ## Routes — bảng định tuyến

@@ -9,9 +9,6 @@ checklist:
   - "Nhận ra và tránh được vanity metrics và gaming (chạy theo con số)"
   - "Viết được một Objective + Key Results đo được cho một quý"
   - "Hiểu định luật Goodhart và vì sao đo sai còn hại hơn không đo"
-related:
-  - "skill:nta-sprint-report"
-  - "skill:nta-risk-assessment"
 ---
 
 ## Đo để quyết định, không phải để trang trí

@@ -12,7 +12,6 @@ checklist:
 related:
   - "glossary:rag"
   - "glossary:embedding"
-  - "skill:nta-perf-audit"
 ---
 
 ## Vì sao quan trọng
@@ -172,8 +171,7 @@ model `cross-encoder/ms-marco-MiniLM-L-6-v2`) — chấm điểm từng cặp `(
 - **Có thể thừa**: kho nhỏ, câu hỏi thuần ngữ nghĩa, đã trả tốt với vector search — thêm
   rerank chỉ tăng độ trễ + chi phí mà không cải thiện. **Đo trước, thêm sau** (bài 12).
 
-Reranking thêm một lượt gọi model cho mỗi câu hỏi → tăng latency và chi phí. Dùng
-`/nta-perf-audit` để soi độ trễ pipeline và cân nhắc top-k retrieve (30 vs 50) cho hợp lý.
+Reranking thêm một lượt gọi model cho mỗi câu hỏi → tăng latency và chi phí.
 
 ## Cạm bẫy hay gặp
 

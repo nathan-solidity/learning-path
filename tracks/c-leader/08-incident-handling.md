@@ -9,9 +9,6 @@ checklist:
   - "Phân vai rõ trong lúc sự cố: ai điều tra, ai liên lạc khách, ai ghi timeline"
   - "Giao tiếp với khách/BrSE trong sự cố một cách trung thực, kịp thời, không hứa suông"
   - "Dẫn được một postmortem blameless để sự cố không lặp lại"
-related:
-  - "skill:nta-incident"
-  - "skill:nta-meeting-notes"
 ---
 
 ## Sự cố là lúc vai trò lead lộ rõ nhất

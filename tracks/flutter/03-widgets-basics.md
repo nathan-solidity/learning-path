@@ -10,7 +10,6 @@ checklist:
   - "Hiểu build context và cây widget; dùng hot reload để lặp nhanh"
   - "Áp dụng `const` cho widget tĩnh để tối ưu rebuild"
 related:
-  - "skill:nta-code-review"
   - "glossary:dev-git"
 ---
 

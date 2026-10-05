@@ -9,9 +9,6 @@ checklist:
   - "Dùng Queue/Deque cho hàng đợi và ngăn xếp"
   - "Khai báo generic <T> và đọc được wildcard ? extends / ? super"
   - "Duyệt Map đúng cách (entrySet) và tránh sửa collection khi đang duyệt"
-related:
-  - "skill:nta-code-review"
-  - "skill:nta-perf-audit"
 ---
 
 ## Ba nhóm Collection chính

@@ -11,8 +11,6 @@ checklist:
   - "Dùng Process Analysis để tìm điểm nghẽn trong quy trình đang chạy thật"
 related:
   - "glossary:kpi"
-  - "skill:nta-data-insight"
-  - "skill:nta-feedback-collection"
 ---
 
 ## Về nhóm technique này
@@ -98,8 +96,7 @@ Sau khi release hệ thống duyệt đơn, BA đo thời gian mỗi bước t�
 manager duyệt" trung bình mất 2 ngày trong tổng 2.5 ngày. → Điểm nghẽn rõ ràng, đề xuất
 auto-approve đơn nhỏ. Không phân tích thì cứ tưởng hệ thống chậm.
 
-> **Cạm bẫy**: phân tích quy trình theo cảm tính thay vì số liệu thật (log, timestamp). Dùng
-> `/nta-data-verify` hoặc `/nta-data-insight` để lấy số thật.
+> **Cạm bẫy**: phân tích quy trình theo cảm tính thay vì số liệu thật (log, timestamp).
 
 ## Thu thập phản hồi: Survey / Focus Groups / Observation
 
@@ -150,6 +147,3 @@ form địa chỉ quá dài. Đề xuất rút gọn, rồi đo lại tỉ lệ 
 Solution Evaluation là lúc BA **đóng vòng lặp**: yêu cầu ban đầu sinh ra để giải quyết vấn
 đề gì, giờ đo xem vấn đề đó đã được giải quyết chưa. Luôn tách **output** (chạy đúng) khỏi
 **outcome** (tạo giá trị) — và đo outcome bằng số thật, không bằng cảm giác "chắc là ổn".
-
-Công cụ: `/nta-data-insight` phân tích file dữ liệu thật tìm pattern; `/nta-feedback-collection`
-cấu trúc phản hồi UAT/sau release thành report có phân loại và ưu tiên.

@@ -9,9 +9,6 @@ checklist:
   - "Phân biệt mitigate (chặn chảy máu) và fix root cause, và vì sao mitigate luôn ưu tiên trước"
   - "Viết được post-mortem blameless tập trung vào hệ thống thay vì đổ lỗi cá nhân"
   - "Giải thích RTO/RPO và vì sao 'có backup' khác với 'đã kiểm chứng restore được'"
-related:
-  - "skill:nta-incident"
-  - "skill:nta-monitor-review"
 ---
 
 ## SRE nhìn reliability như một bài toán kỹ thuật

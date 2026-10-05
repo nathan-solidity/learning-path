@@ -12,8 +12,6 @@ checklist:
   - "Bọc thao tác nhiều bước trong transaction và biết dùng Alembic để migration"
 related:
   - "glossary:orm"
-  - "skill:nta-db-review"
-  - "skill:nta-perf-audit"
 ---
 
 ## Vì sao quan trọng
@@ -168,7 +166,7 @@ for u in users:
 | `joinedload` | JOIN chung 1 query | Many-to-one / one-to-one |
 
 > Bật `echo=True` khi dev để **nhìn thấy** số query thực tế in ra console. Thấy hàng loạt
-> `SELECT` giống nhau trong vòng lặp là dấu hiệu N+1. Chạy `/nta-perf-audit` để soát.
+> `SELECT` giống nhau trong vòng lặp là dấu hiệu N+1.
 
 ## Transaction
 
@@ -203,8 +201,7 @@ alembic downgrade -1                             # lùi lại 1 bước khi cầ
 ```
 
 > Luôn **đọc lại** file migration `--autogenerate` sinh ra trước khi chạy — nó có thể bỏ
-> sót đổi tên cột (hiểu nhầm thành drop + add, mất dữ liệu). Chạy `/nta-db-review` để soát
-> schema và migration.
+> sót đổi tên cột (hiểu nhầm thành drop + add, mất dữ liệu).
 
 ## Cạm bẫy hay gặp
 

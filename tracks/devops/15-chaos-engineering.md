@@ -9,9 +9,6 @@ checklist:
   - "Kể các dạng lỗi hay tiêm: kill instance, thêm latency, ngắt mạng, cạn tài nguyên"
   - "Giải thích vì sao phải giới hạn blast radius và có nút dừng khẩn trước khi thử ở prod"
   - "Nhận ra điều kiện tiên quyết: cần monitoring và độ chín vận hành trước khi làm chaos"
-related:
-  - "skill:nta-incident"
-  - "skill:nta-monitor-review"
 ---
 
 ## Đừng chờ production dạy bạn hệ thống yếu ở đâu

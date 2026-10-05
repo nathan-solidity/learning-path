@@ -11,7 +11,6 @@ checklist:
   - "Không tin field role/isAdmin gửi từ client; chặn route theo chức năng"
 related:
   - "glossary:dev"
-  - "skill:nta-security-audit"
 ---
 
 ## Vì sao quan trọng
@@ -99,4 +98,4 @@ Không đặt quyền trong field ẩn, cookie sửa được, hay JWT không ve
 Phân biệt **authentication** (là ai) và **authorization** (được làm gì). Phòng thủ: kiểm
 **chủ sở hữu tài nguyên** cho mọi truy cập theo id (chống **IDOR**); quyết định cho phép ở
 **server** cho **mọi** endpoint (UI không tính); **deny by default** + **least privilege**;
-**không tin** role/isAdmin từ client. Dùng `/nta-security-audit` để rà soát phân quyền.
+**không tin** role/isAdmin từ client.

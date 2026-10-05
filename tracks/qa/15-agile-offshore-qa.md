@@ -9,9 +9,6 @@ checklist:
   - "Hiểu vai trò BrSE và bug report/Q&A qua trung gian ngôn ngữ khác biệt thế nào"
   - "Viết bug report và câu hỏi rõ ràng để dịch qua BrSE không tam sao thất bản"
   - "Ý thức khác biệt kỳ vọng chất lượng của khách Nhật (tỉ mỉ, spec chặt, form/số/ngày)"
-related:
-  - "skill:nta-bug-report"
-  - "skill:nta-test-case"
 ---
 
 ## QA trong Agile và trong mô hình offshore Nhật
@@ -68,8 +65,7 @@ Cách viết để dịch tốt qua BrSE:
 - **Step to reproduce đánh số rõ**, screenshot có khoanh vùng — hình ảnh vượt qua rào ngôn ngữ.
 - **Tránh tiếng lóng, thành ngữ, chữ viết tắt** khó dịch.
 
-Đây là lý do bug report chuẩn (bài Execution & bug report) càng quan trọng ở môi trường này:
-`/nta-bug-report` giúp viết bug đủ trường và rõ ràng để dịch không sai lệch.
+Đây là lý do bug report chuẩn (bài Execution & bug report) càng quan trọng ở môi trường này.
 
 ## Kỳ vọng chất lượng của khách Nhật
 

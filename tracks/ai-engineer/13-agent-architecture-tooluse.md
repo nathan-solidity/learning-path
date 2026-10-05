@@ -12,7 +12,6 @@ checklist:
 related:
   - "glossary:agent"
   - "glossary:tool-use"
-  - "skill:nta-security-audit"
 ---
 
 ## Vì sao quan trọng
@@ -152,8 +151,7 @@ rủi ro rộng hơn hẳn:
   nhận** trước khi thực thi, đừng để agent tự quyết trong vòng lặp.
 
 Nguyên tắc như bài 6, nhưng siết chặt hơn vì tính tự lặp: **validate mọi tham số**, **giới
-hạn quyền của tool**, **confirm cho hành động rủi ro cao**. Chạy `/nta-security-audit` để soát
-tool và luồng agent trước khi cho chạy thật.
+hạn quyền của tool**, **confirm cho hành động rủi ro cao**.
 
 ## Cạm bẫy hay gặp
 

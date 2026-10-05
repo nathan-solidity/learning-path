@@ -9,7 +9,6 @@ checklist:
   - "Phân biệt được khi nào dùng flowchart, khi nào dùng sequence diagram"
   - "Xác định được các luồng: happy path, alternative flow, exception flow"
 related:
-  - "skill:nta-diagram-gen"
   - "glossary:srs"
 ---
 
@@ -59,5 +58,3 @@ API → DB). Trả lời "bước nào xảy ra trước, gọi tới đâu, tr�
   đây thường là nơi phát sinh bug nghiêm trọng.
 
 > Luôn tự hỏi: "Nếu bước này thất bại thì sao?" cho từng bước trong flow.
-
-Công cụ: `/nta-diagram-gen` sinh flowchart/sequence/ERD từ mô tả text, xuất PNG/SVG.

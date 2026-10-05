@@ -9,9 +9,6 @@ checklist:
   - "Đọc/ghi Firestore và lắng nghe realtime qua snapshots"
   - "Nhận push notification bằng FCM (foreground & background)"
   - "Đặt Firestore Security Rules cơ bản để chặn truy cập trái phép"
-related:
-  - "skill:nta-security-audit"
-  - "skill:nta-code-review"
 ---
 
 ## Firebase là gì & khi nào dùng

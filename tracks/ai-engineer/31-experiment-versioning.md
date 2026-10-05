@@ -13,7 +13,6 @@ checklist:
 related:
   - "glossary:llm"
   - "glossary:fine-tuning"
-  - "skill:nta-git-workflow"
 ---
 
 ## Vì sao quan trọng

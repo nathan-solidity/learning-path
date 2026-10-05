@@ -9,9 +9,6 @@ checklist:
   - "Hiểu secret rotation và vì sao secret sống lâu là nợ bảo mật"
   - "Nạp secret an toàn vào K8s/CI mà không commit vào git (External Secrets, SOPS, Sealed Secrets)"
   - "Xử lý đúng khi một secret bị lộ: revoke trước, xoay, rồi mới tìm nguồn rò"
-related:
-  - "skill:nta-env-gen"
-  - "skill:nta-devops-security"
 ---
 
 ## Config và secret là hai thứ khác nhau

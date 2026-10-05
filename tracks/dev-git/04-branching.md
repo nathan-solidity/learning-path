@@ -9,7 +9,6 @@ checklist:
   - "Phân biệt git switch / checkout / branch cho từng thao tác"
   - "Thực hiện được một quy trình: tạo branch → code → merge về main → xóa branch"
 related:
-  - "skill:nta-git-workflow"
   - "glossary:branch"
 ---
 
@@ -94,5 +93,4 @@ git branch -d feature/login      # xóa branch đã merge
 ```
 
 > **Đặt tên branch:** dùng quy ước rõ ràng như `feature/`, `bugfix/`, `hotfix/` +
-> mô tả ngắn (`feature/login`, `bugfix/null-avatar`). Skill `/nta-git-workflow branch`
-> gợi ý tên branch phù hợp theo nội dung thay đổi.
+> mô tả ngắn (`feature/login`, `bugfix/null-avatar`).

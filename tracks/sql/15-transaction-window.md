@@ -11,7 +11,6 @@ checklist:
   - "Tính running total và so sánh với hàng trước/sau bằng LAG/LEAD"
 related:
   - "glossary:db"
-  - "skill:nta-db-review"
 ---
 
 ## Vì sao quan trọng

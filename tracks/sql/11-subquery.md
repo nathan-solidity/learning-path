@@ -11,8 +11,6 @@ checklist:
   - "Chọn đúng giữa EXISTS, IN và JOIN cho từng tình huống"
 related:
   - "glossary:db"
-  - "skill:nta-db-review"
-  - "skill:nta-perf-audit"
 ---
 
 ## Vì sao quan trọng

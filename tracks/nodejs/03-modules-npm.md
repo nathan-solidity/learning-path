@@ -12,7 +12,6 @@ checklist:
   - "Dùng npx chạy được package mà không cài global"
 related:
   - "glossary:npm"
-  - "skill:nta-dep-audit"
 ---
 
 ## Vì sao có hai hệ module

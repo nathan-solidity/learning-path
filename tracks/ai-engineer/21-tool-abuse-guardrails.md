@@ -13,7 +13,6 @@ checklist:
 related:
   - "glossary:prompt-injection"
   - "glossary:rag"
-  - "skill:nta-security-audit"
 ---
 
 ## Vì sao quan trọng
@@ -128,4 +127,4 @@ hành động phá huỷ/không thể hoàn tác (kèm tham số thật để du
 — mạnh nhất — **tách ngữ cảnh đọc nội dung ngoài khỏi ngữ cảnh có quyền hành động** để cắt đường
 injection→tool. Bọc thêm **input/output guardrails** quanh vòng gọi tool. Mọi guardrail chỉ
 *giảm* rủi ro chứ không xoá — hãy giả định model sẽ bị chiếm quyền và thiết kế để thiệt hại vẫn
-cứu vãn được. Dùng `/nta-security-audit` để soát bề mặt tấn công của tool.
+cứu vãn được.

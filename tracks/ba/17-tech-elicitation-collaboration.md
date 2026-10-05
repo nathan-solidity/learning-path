@@ -12,8 +12,6 @@ checklist:
   - "Dùng Prototyping/Mind Mapping để làm rõ yêu cầu mơ hồ với khách qua BrSE"
 related:
   - "glossary:prototype"
-  - "skill:nta-clarify"
-  - "skill:nta-stakeholder-sim"
   - "playbook:ba"
 ---
 
@@ -122,5 +120,3 @@ cộng thêm chi phí dịch và độ trễ).
 Không có technique "tốt nhất" — chỉ có technique **phù hợp tình huống**. Với dự án Nhật qua
 BrSE, ưu tiên các technique **giảm phụ thuộc vào lời nói tức thời**: Prototyping, Document
 Analysis, câu hỏi gửi trước. Luôn xác nhận lại cách hiểu bằng văn bản, đừng tin trí nhớ.
-Công cụ hỗ trợ: `/nta-clarify` (làm rõ + scan impact), `/nta-stakeholder-sim` (tập phỏng
-vấn trước khi họp thật).

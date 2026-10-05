@@ -9,8 +9,6 @@ checklist:
   - "Viết được một mail business Nhật đủ cấu trúc: chào - nội dung - kết"
   - "Dùng các mẫu câu (定型表現) thông dụng cho mở đầu, nhờ vả, xin lỗi, cảm ơn"
   - "Tránh các lỗi keigo phổ biến (nhị trùng kính ngữ, dùng nhầm sonkeigo/kenjougo)"
-related:
-  - "skill:nta-meeting-notes"
 ---
 
 ## Keigo đúng là chữ ký chuyên nghiệp của Comtor

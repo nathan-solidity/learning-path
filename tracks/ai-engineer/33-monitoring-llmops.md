@@ -13,8 +13,6 @@ checklist:
 related:
   - "glossary:llm"
   - "glossary:hallucination"
-  - "skill:nta-monitor-review"
-  - "skill:nta-incident"
 ---
 
 ## Vì sao quan trọng
@@ -73,8 +71,7 @@ def observe(call_fn, prompt_version: str, model: str, user_input: str) -> dict:
 ```
 
 > Ghi kèm **`prompt_version` và `model`** vào mỗi log là bắt buộc trong LLMOps: khi metric xấu
-> đi, bạn cần biết *version nào* gây ra — nối thẳng về versioning ở bài 31. Chạy
-> `/nta-monitor-review` để soát xem còn thiếu alert/metric nào.
+> đi, bạn cần biết *version nào* gây ra — nối thẳng về versioning ở bài 31.
 
 ## Drift vs quality degradation: hai kiểu "xuống cấp" khác nhau
 
@@ -167,8 +164,6 @@ Ghép tất cả lại, LLMOps là một **vòng lặp**, không phải đườn
 
 > Chỗ nối quan trọng: **feedback và HITL review ở production trở thành eval case** cho lần sau,
 > nên eval set *lớn dần theo thực tế* thay vì đứng yên — đó là cách hệ thống *học* từ vận hành.
-> Khi có sự cố ở bước 2-3, dùng `/nta-incident` để dựng timeline, isolate nguyên nhân và viết
-> post-mortem.
 
 ## Cạm bẫy hay gặp
 

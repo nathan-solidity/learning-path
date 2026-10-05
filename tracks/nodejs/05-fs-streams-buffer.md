@@ -12,7 +12,6 @@ checklist:
   - "Đọc được biến môi trường và tham số dòng lệnh từ process"
 related:
   - "glossary:stream"
-  - "skill:nta-perf-audit"
 ---
 
 ## Vì sao cần stream & buffer

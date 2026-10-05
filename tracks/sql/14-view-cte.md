@@ -11,7 +11,6 @@ checklist:
   - "Biết khi nào dùng view/CTE thay vì lồng subquery"
 related:
   - "glossary:db"
-  - "skill:nta-db-review"
 ---
 
 ## Vì sao quan trọng

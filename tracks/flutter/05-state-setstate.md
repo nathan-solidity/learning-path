@@ -9,9 +9,6 @@ checklist:
   - "Dùng đúng các hàm vòng đời: `initState`, `dispose`, `didUpdateWidget`"
   - "Quản lý `TextEditingController`/`AnimationController` và `dispose` chúng"
   - "Biết giới hạn của setState và khi nào cần state management ở bài sau"
-related:
-  - "skill:nta-code-review"
-  - "skill:nta-refactor"
 ---
 
 ## StatefulWidget & setState

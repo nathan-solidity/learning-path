@@ -9,9 +9,6 @@ checklist:
   - "Dùng Form Object khi form ghi vào nhiều model cùng lúc"
   - "Dùng Decorator/Presenter để đẩy logic hiển thị ra khỏi model và view"
   - "Biết khi nào KHÔNG cần các pattern trên (tránh over-engineer)"
-related:
-  - "skill:nta-refactor"
-  - "skill:nta-code-review"
 ---
 
 ## Vì sao cần thêm tầng kiến trúc
@@ -136,5 +133,4 @@ Chọn một trong ba, áp dụng các pattern trên khi thấy code phình:
 ## Ghi nhớ
 
 Tách tầng để **giảm fat model/controller**, không phải để trông "pro". Bắt đầu từ MVC,
-chỉ trích xuất khi một class làm quá nhiều việc. Dùng `/nta-refactor` để tách an toàn từng
-bước và `/nta-code-review` soi lại sau khi tách.
+chỉ trích xuất khi một class làm quá nhiều việc.

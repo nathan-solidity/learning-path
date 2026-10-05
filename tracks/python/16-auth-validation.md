@@ -13,7 +13,6 @@ checklist:
 related:
   - "glossary:jwt"
   - "glossary:dependency-injection"
-  - "skill:nta-security-audit"
 ---
 
 ## Vì sao quan trọng
@@ -196,5 +195,4 @@ def delete_user(user_id: int, admin: Annotated[User, Depends(require_role("admin
 Validate chặt ở **tầng Pydantic** (field constraint + `field_validator`) để chặn dữ liệu
 bẩn ngay cửa. Băm mật khẩu bằng **bcrypt** (một chiều, chậm có chủ đích). JWT được **ký,
 không mã hóa** — đừng nhét bí mật, `SECRET_KEY` đọc từ env và đặt `exp` ngắn. Tách rõ **xác
-thực** (`get_current_user`) và **phân quyền** (`require_role`) thành hai dependency. Chạy
-`/nta-security-audit` để soát lỗ hổng auth.
+thực** (`get_current_user`) và **phân quyền** (`require_role`) thành hai dependency.

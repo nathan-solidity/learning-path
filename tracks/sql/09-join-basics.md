@@ -11,8 +11,6 @@ checklist:
   - "JOIN từ 3 bảng trở lên và dùng self join nối bảng với chính nó"
 related:
   - "glossary:db"
-  - "skill:nta-db-review"
-  - "skill:nta-data-verify"
 ---
 
 ## Vì sao quan trọng

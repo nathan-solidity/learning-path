@@ -47,8 +47,3 @@ tick khi bạn tự tin đã nắm. Tiến độ tính theo số item đã tick.
 | Nâng cao | 15. CI/CD & quality gates | QA từ "bấm test cuối" thành người thiết kế cổng chất lượng tự động trong pipeline. |
 | Nâng cao | 16. Test strategy, plan & metrics | Từ tester giỏi thành người dẫn dắt chất lượng: quyết test tới đâu, đo gì, truyền đạt rủi ro. |
 | Nâng cao | 17. Agile QA & làm việc với BrSE Nhật | Test liên tục, tham gia sớm, và giao tiếp bug/Q&A qua BrSE không tam sao thất bản. |
-
-Nội dung liên kết với các skill QA sẵn có (`/nta-test-case`, `/nta-test-run`, `/nta-bug-report`,
-`/nta-test-data`, `/nta-test-case-review`, `/nta-postman-gen`, `/nta-load-test-plan`,
-`/nta-load-test-run`, `/nta-security-audit`, `/nta-risk-assessment`, `/nta-checklist`) để vừa
-học vừa áp dụng vào việc thật.

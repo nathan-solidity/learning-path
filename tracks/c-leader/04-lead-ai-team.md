@@ -9,9 +9,6 @@ checklist:
   - "Duy trì được AI mistake log để rèn khả năng phán xét cho team"
   - "Nhận diện được các lỗi AI hay mắc (bịa API, version sai, bỏ edge case)"
   - "Đặt được ranh giới: việc nào cho AI làm, việc nào con người phải quyết"
-related:
-  - "skill:nta-auto-review"
-  - "skill:nta-knowledge"
 ---
 
 ## AI là công cụ đòn bẩy, không phải người thay thế phán xét
@@ -50,7 +47,7 @@ dự án và khách Nhật, càng phải để con người quyết.
 1. **Không copy mù**: member phải đọc hiểu từng dòng AI sinh, giải thích được nó làm gì.
 2. **Verify điểm rủi ro**: check API/version có thật không, edge case có xử lý không.
 3. **Chạy test**: code AI sinh phải qua test như code người viết — không ngoại lệ.
-4. **Review như PR thường**: dùng `/nta-auto-review` quét lớp đầu, lead đọc phần nghiệp vụ.
+4. **Review như PR thường**: lead đọc phần nghiệp vụ.
 
 Với khách Nhật đặc biệt cần cẩn trọng: đừng để AI dịch/diễn giải yêu cầu nghiệp vụ rồi
 gửi thẳng — dễ sai thuật ngữ và sắc thái.
@@ -67,7 +64,7 @@ quả nếu lọt. Đây là công cụ đào tạo cực tốt:
 
 Cuối sprint, lead tổng hợp log → thấy pattern lỗi lặp → nhắc cả team. Log này biến "AI hay
 sai" từ câu nói mơ hồ thành bài học cụ thể. Có thể lưu chung với knowledge base
-(`/nta-knowledge`) để thăng cấp thành shared.
+để thăng cấp thành shared.
 
 ## Đặt ranh giới cho team
 

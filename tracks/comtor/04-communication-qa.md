@@ -9,9 +9,6 @@ checklist:
   - "Viết được mail/chat business lịch sự đúng mực với khách Nhật"
   - "Làm rõ yêu cầu mơ hồ bằng câu hỏi đóng/có phương án thay vì câu hỏi mở chung chung"
   - "Nhận diện được 'はい' mang nghĩa 'tôi đang nghe' vs 'tôi đồng ý'"
-related:
-  - "skill:nta-qa-sheet"
-  - "skill:nta-meeting-notes"
 ---
 
 ## 報連相 (hōrensō) — xương sống giao tiếp Nhật

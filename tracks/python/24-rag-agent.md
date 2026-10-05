@@ -14,7 +14,6 @@ related:
   - "glossary:rag"
   - "glossary:embedding"
   - "glossary:agent"
-  - "skill:nta-docker-gen"
 ---
 
 ## Vì sao quan trọng
@@ -129,8 +128,7 @@ resp = client.messages.create(
 ```
 
 Đây là vòng lặp: model đề nghị gọi tool → code bạn thực thi → trả kết quả → model tiếp tục.
-Agent thực tế lặp nhiều lượt cho tới khi có câu trả lời cuối. Chi tiết vòng lặp và các model
-xem trong skill knowledge — ở đây nắm khái niệm là đủ.
+Agent thực tế lặp nhiều lượt cho tới khi có câu trả lời cuối.
 
 ## Đóng gói tool AI: bọc thành API FastAPI
 
@@ -177,7 +175,6 @@ EXPOSE 8000
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 ```
 
-> Skill `/nta-docker-gen` sinh Dockerfile chuẩn (multi-stage, non-root) cho tool của bạn.
 > Nhớ thêm `.env` và secret vào `.gitignore` **và** `.dockerignore` để không lọt vào image.
 
 ## Lưu ý chi phí & bảo mật khi lên production
@@ -205,4 +202,4 @@ truy vấn similarity → nhồi context vào prompt**. **Agent** = LLM + **tool
 model *hành động* qua vòng lặp đề-nghị-gọi / thực-thi / trả-kết-quả. Đóng gói tool AI bằng
 **FastAPI hoặc CLI**, quản secret qua **biến môi trường** (không nằm trong image), deploy
 bằng **Docker gọn**. Lên production phải canh **chi phí token**, **rate limit**, **prompt
-injection** và **validate output**. Dùng `/nta-docker-gen` để đóng gói chuẩn.
+injection** và **validate output**.

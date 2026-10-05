@@ -11,8 +11,6 @@ checklist:
   - "Tách config theo môi trường: development / test / production"
   - "Hiểu vì sao secret phải đến từ môi trường, không nằm trong code"
 related:
-  - "skill:nta-env-gen"
-  - "skill:nta-security-audit"
   - "glossary:environment-variable"
 ---
 
@@ -67,8 +65,7 @@ PORT=3000
 ```
 
 > **Quy tắc vàng**: `.env` (giá trị thật) **không bao giờ** vào git; `.env.example` (danh
-> sách key, giá trị rỗng/mẫu) thì commit để đồng đội biết cần khai báo gì. Skill
-> `/nta-env-gen` sinh `.env.example` từ codebase và phát hiện secret lỡ commit.
+> sách key, giá trị rỗng/mẫu) thì commit để đồng đội biết cần khai báo gì.
 
 ## Validate lúc khởi động — fail fast
 

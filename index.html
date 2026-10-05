@@ -339,6 +339,15 @@
   .key-box details { margin-top: 6px; }
   .key-box summary { cursor: pointer; color: var(--muted); }
   .key-box .note { color: var(--muted); font-size: 12px; }
+  .key-promo { padding: 12px 16px; border-bottom: 1px solid var(--border); font-size: 13px; line-height: 1.6; background: var(--bg); }
+  .key-promo p { margin: 0 0 6px; }
+  .key-promo .note { color: var(--muted); font-size: 12px; }
+  .key-promo .key-row { display: flex; gap: 8px; margin-top: 8px; }
+  .key-promo button {
+    border: 1px solid var(--border); background: var(--panel); color: var(--text);
+    border-radius: 8px; padding: 6px 12px; cursor: pointer; font-size: 12.5px;
+  }
+  .key-promo button.primary { background: var(--accent); color: var(--accent-contrast); border-color: var(--accent); }
 
   /* SQL Playground widget */
   .sqlpg {
@@ -601,6 +610,11 @@
       <button id="keyDeleteBtn">Xóa key khỏi trình duyệt này</button>
     </div>
     <p class="note">
+      Key của bạn do bạn dùng — chúng tôi không thu thập hay sử dụng key vào bất cứ việc gì
+      khác ngoài gọi Gemini cho câu hỏi của bạn. Bạn có thể xóa/thu hồi bất cứ lúc nào (xem bên dưới).
+      Key tạo miễn phí bằng tài khoản Google trên Google AI Studio (Gemini).
+    </p>
+    <p class="note">
       Key được mã hóa (AES-GCM) và chỉ lưu trên trình duyệt này. Mỗi lần hỏi, key được gửi kèm
       request tới server để gọi Gemini — server không lưu, không ghi log key.
       Mã hóa chỉ chống đọc trộm dữ liệu trình duyệt, không thay thế việc giữ máy an toàn.
@@ -626,6 +640,18 @@
         <li>Nghi key bị lộ → thu hồi ngay rồi tạo key mới.</li>
       </ol>
     </details>
+  </div>
+  <div id="keyPromo" class="key-promo hidden">
+    <p><b>Bạn có muốn tạo key riêng để câu trả lời nhanh hơn không?</b></p>
+    <p class="note">
+      Bạn đang dùng key chung — nhiều người hỏi cùng lúc nên câu trả lời có thể rất chậm hoặc lỗi.
+      Key của bạn do bạn dùng, chúng tôi không thu thập hay sử dụng key vào bất cứ việc gì.
+      Bạn có thể xóa/thu hồi bất cứ lúc nào. Key tạo miễn phí bằng tài khoản Google trên Gemini.
+    </p>
+    <div class="key-row">
+      <button id="keyPromoYes" class="primary">Tạo key riêng</button>
+      <button id="keyPromoNo">Để sau</button>
+    </div>
   </div>
   <div id="chatMessages" class="chat-messages"></div>
   <div class="chat-input-row">
@@ -915,18 +941,16 @@ function renderRoadmap() {
 }
 
 // ---------- Related links ----------
-// Glossary/playbook/skills chỉ chạy local → bản deploy ẩn các pill này để không ra link chết
+// Glossary/playbook chỉ chạy local → bản deploy ẩn các pill này để không ra link chết
 const IS_LOCAL = ["localhost", "127.0.0.1"].includes(location.hostname);
 const GLOSSARY_URL = "http://localhost:5030";
 const PLAYBOOK_URL = "http://localhost:5025";
-const SKILLS_URL = "http://localhost:5031";
 function relatedPill(ref) {
   const [kind, ...rest] = ref.split(":");
   const val = rest.join(":");
   let href = "#", label = val, kindLabel = kind;
   if (kind === "glossary") { href = GLOSSARY_URL; kindLabel = "thuật ngữ"; }
   else if (kind === "playbook") { href = PLAYBOOK_URL; kindLabel = "tình huống"; }
-  else if (kind === "skill") { href = SKILLS_URL; kindLabel = "skill"; label = "/" + val; }
   return `<a class="rel-pill" href="${href}" target="_blank" rel="noopener">
             <span class="rp-kind">${kindLabel}</span> ${label}</a>`;
 }
@@ -1273,11 +1297,18 @@ function refreshKeyUi() {
   document.getElementById("keyStatus").textContent = tail ? `Đã lưu (…${tail})` : "Chưa có key";
   document.getElementById("keyBtn").classList.toggle("key-missing", !tail);
   document.getElementById("keyDeleteBtn").disabled = !tail;
+  const promoDismissed = (() => { try { return sessionStorage.getItem(KEY_PROMO_DISMISS) === "1"; } catch (e) { return false; } })();
+  const keyBoxOpen = !document.getElementById("keyBox").classList.contains("hidden");
+  document.getElementById("keyPromo").classList.toggle("hidden", !!tail || promoDismissed || keyBoxOpen);
 }
 function toggleKeyBox(show) {
   const box = document.getElementById("keyBox");
   box.classList.toggle("hidden", show === undefined ? !box.classList.contains("hidden") : !show);
   refreshKeyUi();
+}
+const KEY_PROMO_DISMISS = "learning-path-key-promo-dismissed";
+function setKeyPromoDismissed(v) {
+  try { v ? sessionStorage.setItem(KEY_PROMO_DISMISS, "1") : sessionStorage.removeItem(KEY_PROMO_DISMISS); } catch (e) {}
 }
 
 let chatBusy = false;
@@ -1286,13 +1317,8 @@ async function sendChat() {
   const input = document.getElementById("chatInput");
   const q = input.value.trim();
   if (!q) return;
+  // Không có key riêng → server dùng key chung (GEMINI_API_KEY)
   const userKey = await loadGeminiKey();
-  // Local: server có thể dùng GEMINI_API_KEY của máy dev làm fallback; bản deploy bắt buộc BYOK
-  if (!userKey && !IS_LOCAL) {
-    toggleKeyBox(true);
-    toast("Nhập Gemini API key của bạn trước khi hỏi");
-    return;
-  }
   input.value = "";
   input.style.height = "auto";
   chatBusy = true;
@@ -1325,6 +1351,8 @@ async function sendChat() {
     e.className = "chat-error";
     e.textContent = err.message;
     pending.appendChild(e);
+    // Lỗi khi đang dùng key chung → gợi ý lại việc tạo key riêng
+    if (!userKey) { setKeyPromoDismissed(false); refreshKeyUi(); }
   } finally {
     chatBusy = false;
     document.getElementById("chatSend").disabled = false;
@@ -1341,6 +1369,8 @@ document.getElementById("chatCloseBtn").onclick = closeChat;
 document.getElementById("chatOverlay").onclick = closeChat;
 document.getElementById("chatSend").onclick = sendChat;
 document.getElementById("keyBtn").onclick = () => toggleKeyBox();
+document.getElementById("keyPromoYes").onclick = () => toggleKeyBox(true);
+document.getElementById("keyPromoNo").onclick = () => { setKeyPromoDismissed(true); refreshKeyUi(); };
 document.getElementById("keySaveBtn").onclick = async () => {
   const input = document.getElementById("keyInput");
   const v = input.value.trim();

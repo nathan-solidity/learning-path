@@ -13,7 +13,6 @@ checklist:
 related:
   - "glossary:etl"
   - "glossary:dataframe"
-  - "skill:nta-refactor"
 ---
 
 ## Vì sao quan trọng
@@ -101,7 +100,7 @@ result = filter_paid(tmp1)   # bug: lỡ dùng tmp1 thay vì tmp2
 ```
 
 > Mỗi hàm transform nên **thuần** (chỉ dựa vào đầu vào, trả bản mới, không đổi biến ngoài).
-> Như vậy test được từng bước độc lập. Skill `/nta-refactor` giúp tách bước rối thành chuỗi.
+> Như vậy test được từng bước độc lập.
 
 ## Load & tổ chức pipeline tái lặp
 

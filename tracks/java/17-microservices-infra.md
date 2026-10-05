@@ -10,9 +10,6 @@ checklist:
   - "Thiết lập distributed tracing để lần theo 1 request qua nhiều service"
   - "Dùng Redis cho distributed lock / rate limit / cache"
   - "Biết khi nào KHÔNG nên microservices để tránh over-engineer"
-related:
-  - "skill:nta-devops-review"
-  - "skill:nta-scale-check"
 ---
 
 ## Trước khi microservices: cân nhắc

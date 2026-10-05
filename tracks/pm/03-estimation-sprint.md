@@ -10,9 +10,6 @@ checklist:
   - "Đọc được burndown chart và nhận ra sprint đang lệch tiến độ"
   - "Tính được năng lực (capacity) sprint sau khi trừ nghỉ/họp/buffer"
   - "Phân biệt vai trò của sprint planning, review, và retrospective"
-related:
-  - "skill:nta-effort-estimate"
-  - "skill:nta-sprint-report"
 ---
 
 ## Story point vs giờ

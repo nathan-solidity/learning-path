@@ -11,8 +11,6 @@ checklist:
   - "Phân biệt COUNT(*), COUNT(col) và COUNT(DISTINCT col)"
 related:
   - "glossary:db"
-  - "skill:nta-db-review"
-  - "skill:nta-perf-audit"
 ---
 
 ## Vì sao quan trọng

@@ -9,8 +9,6 @@ checklist:
   - "Biết cách phối hợp với QA để AC dùng được cho test case"
   - "Nhận ra spec 'trông đầy đủ' nhưng thiếu edge case / luồng lỗi"
 related:
-  - "skill:nta-spec-review"
-  - "skill:nta-spec-write"
   - "playbook:ba"
   - "playbook:qa"
 ---
@@ -53,6 +51,3 @@ Spec dài không có nghĩa là đầy đủ. Cạm bẫy hay gặp:
 - Không nói gì về phân quyền, trạng thái, đồng thời.
 
 Dùng bộ câu hỏi edge case ở topic *Gap Analysis* để soi lại lần cuối.
-
-Công cụ: `/nta-spec-review` review completeness/consistency/ambiguity/edge case tự động;
-`/nta-spec-write` soạn spec theo template chuẩn.
